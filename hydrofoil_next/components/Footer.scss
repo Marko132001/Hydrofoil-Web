@@ -1,0 +1,25 @@
+.footer li,
+a {
+    color: #4b5f64;
+    text-decoration: none;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //padding: 0px 20%;
+    height: 40px;
+}
+
+.footerInfo {
+    float: right;
+    list-style: none;
+
+}
+
+.footerInfo li {
+    display: inline-block;
+    text-align: center;
+    padding: 0px 20px;
+}

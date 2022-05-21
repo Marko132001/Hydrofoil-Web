@@ -1,0 +1,26 @@
+.homeHeader {
+    box-sizing: border-box;
+    margin-top: 59px;
+    margin-bottom: 50px;
+    padding: 0% 10%;
+}
+
+.homeHeader h1 {
+    width: 825px;
+    height: 143px;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: 0.3em;
+}
+
+.homeHeader p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 15px;
+    line-height: 120%;
+    text-align: justify;
+    letter-spacing: 0.1em;
+    color: #7D7D7D;
+}

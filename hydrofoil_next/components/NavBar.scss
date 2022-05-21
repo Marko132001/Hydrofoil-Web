@@ -1,0 +1,66 @@
+
+.navBar li, a, button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #4b5f64;
+    text-decoration: none;
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10%;
+    height: 120px;
+    //margin-left: 15%;
+    //margin-right: 15%;
+    //border-radius: 5px;
+}
+
+.title, .subword {
+    cursor: pointer;
+    display: inline-block;
+    color: #4b5f64;
+    font-size: 25px;
+}
+
+
+.subword {
+    color: #67ace8;
+}
+
+.subword:hover {
+    color: rgba(0, 136, 169, 0.8);
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links {
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color: #0088a9;
+}
+
+
+
+
+.logo {
+    position: relative;
+    border-radius: 100px;
+    mix-blend-mode: darken;
+
+}
+
+
+
