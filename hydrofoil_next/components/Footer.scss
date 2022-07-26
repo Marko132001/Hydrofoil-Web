@@ -4,22 +4,20 @@ a {
     text-decoration: none;
 }
 
-.footer {
-    display: flex;
-    justify-content: space-between;
+.customizefooter {
+    display: grid;
+    grid-template-columns: 1fr;
+    //justify-content: space-between;
     align-items: center;
     //padding: 0px 20%;
-    height: 40px;
+    //height: 40px;
+    margin: auto;
 }
 
-.footerInfo {
-    float: right;
-    list-style: none;
-
-}
 
 .footerInfo li {
     display: inline-block;
     text-align: center;
     padding: 0px 20px;
 }
+
