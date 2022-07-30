@@ -10,9 +10,9 @@ function Footer() {
         <div className="footerColumn">
           <h4>Contacts</h4>
           <ul>
-              <li><a>+385 91 585 4867</a></li>
-              <li><a>adriahydrofoil@contact.com</a></li>
-              <li><a>Vukovarska 62, 51000 Rijeka</a></li>
+              <li><a>Mob: +385 98 9176039</a></li>
+              <li><a>E-mail: uptzri@gmail.com</a></li>
+              <li><a>Adresa: Ante Kovačića 17, 51000 Rijeka, Croatia</a></li>
           </ul>
         </div>
         <div className="footerColumn">

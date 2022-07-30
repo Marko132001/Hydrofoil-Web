@@ -17,7 +17,7 @@ function HomeLatestPosts( {posts} ) {
 
     return (
         <div className="latestPosts">
-            <h2>Latest Posts</h2>
+            <h2>Latest News</h2>
             {renderPostPreviews()}
         </div>
     )

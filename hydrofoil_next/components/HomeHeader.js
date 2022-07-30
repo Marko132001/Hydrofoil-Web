@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function HomeHeader() {
   return (
     <div class="homeHeader">
@@ -12,6 +13,7 @@ function HomeHeader() {
             a danas sudjelujemo na prestižnom natjecanju Monaco Energy Boat Challenge. 
             Natjecanje se održava održava u Kneževini Monako pod pokroviteljstvom princa Alberta II i brojnih sponzora.
         </p>
+        
     </div>    
   )
 }
