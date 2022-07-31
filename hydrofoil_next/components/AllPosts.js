@@ -1,18 +1,20 @@
 import React from "react";
-import PostPreview from "./PostPreview";
+import AllPostsPreview from "./AllPostsPreview";
 
 function AllPosts({ posts }){
     function renderPostPreviews(){
         return posts.data.map((post) => {
-            return <PostPreview post={post} key={post.id} />
+            return <AllPostsPreview post={post} key={post.id} />
         });
     }
 
     return (
-        <div className="latestPosts">
+        <>
             <h2>News</h2>
-            {renderPostPreviews()}
-        </div>
+            <div className="allPosts">     
+                {renderPostPreviews()}
+            </div>
+        </>
     );
 }
 

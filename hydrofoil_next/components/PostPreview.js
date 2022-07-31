@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 function PostPreview( {post} ) {
   return (
@@ -6,7 +7,7 @@ function PostPreview( {post} ) {
       
       <div className="postPreview">
         <div className="postImage">
-          <img src={ `${'http://localhost:1337'}${post.attributes.image.data.attributes.formats.small.url}` } width="400" height="267" alt="image"  />
+          <Image src={ `${'http://localhost:1337'}${post.attributes.image.data.attributes.formats.small.url}` } width="400" height="267" alt="image"  />
         </div>
         <div className="postInfo">
           <div className="postDate">
