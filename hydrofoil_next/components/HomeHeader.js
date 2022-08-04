@@ -3,7 +3,7 @@ import React from 'react'
 
 function HomeHeader() {
   return (
-    <div class="homeHeader">
+    <div className="homeHeader">
         <h1>THE MAIN <span style={{color: '#41A4FD'}}>PROJECT</span><br />
         OF THE <span style={{color: '#41A4FD'}}>ASSOCIATION</span>
         </h1>

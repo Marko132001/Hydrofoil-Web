@@ -1,28 +1,26 @@
 
-.navBar li, a, button {
+.navBar a {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    font-size: 16px;
     color: #4b5f64;
     text-decoration: none;
 }
 
 .navBar {
+    height: 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 10%;
-    height: 120px;
+    z-index: 1; 
     position: sticky;
-    z-index: 1;
     top: 0;
     transition: 0.6s;
-
 }
+
 
 .navBar.active {
     background: rgba(151, 204, 238, 0.8);
-    padding: 5px 100px;
+    //padding: 5px 50px;
 }
 
 
@@ -33,6 +31,10 @@
     font-size: 25px;
 }
 
+.title {
+    margin-left: 15px;
+    margin-right: 15px;
+}
 
 .subword {
     color: #67ace8;
@@ -43,23 +45,37 @@
     transition: all 0.3s ease 0s;
 }
 
-.nav__links {
-    list-style: none;
+.navBar .nav__links a{
+
+    margin: 15px;
+    position: relative;
+    opacity: 0.9;
+
+    font-size: 18px;
+    text-decoration: none;
+
 }
 
-.nav__links li {
-    display: inline-block;
-    padding: 0px 20px;
-}
 
-.nav__links li a {
-    transition: all 0.3s ease 0s;
-}
-
-.nav__links li a:hover {
+.navBar .nav__links a:hover {
     color: #0088a9;
+    opacity: 1;
 }
 
+.navBar .nav__links a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    transition: all .45s;
+    background: black;
+}
+
+.navBar .nav__links a:hover::before {
+    width: 100%;
+}
 
 
 
@@ -67,8 +83,91 @@
     position: relative;
     border-radius: 100px;
     mix-blend-mode: darken;
-
 }
 
 
+.navBar .nav-toggle {
+    display: none;
+}
 
+
+@media (max-width: 700px) {
+
+    .navBar {
+        background: rgba(151, 204, 238, 0.8);
+    }
+
+    .navBar .nav__links {
+        position: fixed;
+        z-index: 1;
+        top: 149px;
+        display: flex;
+        flex-direction: column;
+        background: rgba(151, 204, 238, 0.8);
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        transition: all .45s;
+    }
+
+    .navBar .nav__links a::before {
+        background: transparent;
+    }
+
+    .navBar .nav__links.open {
+        left: 0;
+    }
+
+    .navBar .nav-toggle {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .nav-toggle .bar {
+
+        position: relative;
+        width: 32px;
+        height: 2px;
+        background: black;
+        transition: all .45s ease-in-out;
+    }
+
+    .nav-toggle .bar::before,
+    .nav-toggle .bar::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        background: black;
+        border-radius: 2px;
+        transition: all .45s ease-in-out;
+    }
+
+    .nav-toggle .bar::before {
+        width: 25px;
+        transform: translateY(-8px);
+        right: 0;
+      }
+
+    .nav-toggle .bar::after {
+        width: 32px;
+        transform: translateY(8px);
+    }
+
+    .nav-toggle.open .bar {
+        transform: translateX(-40px);
+        background: transparent;
+    }
+  
+    .nav-toggle.open .bar::before {
+        width: 32px;
+        transform: rotate(45deg) translate(26px, -26px);
+    }
+  
+    .nav-toggle.open .bar::after {
+      transform: rotate(-45deg) translate(26px, 26px);
+    }
+}

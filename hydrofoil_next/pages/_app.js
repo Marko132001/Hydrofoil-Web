@@ -1,13 +1,14 @@
 import "../styles/index.scss";
-import NavBar from "../components/NavBar";
 import Image from "next/image";
 import vector1 from "../images/vector1.png";
 import vector2 from "../images/vector2.png";
 import Footer from "../components/Footer";
+import React from "react";
+import NavBar from "../components/NavBar";
 
-const Vector1 = (props) => {
+const Vector1 = ({pictures}) => {
   return <Image
-          class="vector" 
+          className="vector" 
           src = {vector1}
           alt = "vector1"
           width="2000px"
@@ -15,9 +16,9 @@ const Vector1 = (props) => {
           />
 }
 
-const Vector2 = (props) => {
+const Vector2 = ({pictures}) => {
   return <Image
-          class="vector" 
+          className="vector"
           src = {vector2}
           alt = "vector2"
           width="2000px"
@@ -31,7 +32,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <NavBar />
       <Vector1 /><Vector2 />
-      <div class="container">
+      <div className="container">
         <Component {...pageProps} />
       </div>
       <Footer />
@@ -40,3 +41,4 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp
+

@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teredo_navalises",
+  "info": {
+    "singularName": "teredo-navalis",
+    "pluralName": "teredo-navalises",
+    "displayName": "Teredo-Navalis",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "changeLayout": {
+      "type": "boolean"
+    },
+    "images_and_video": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
