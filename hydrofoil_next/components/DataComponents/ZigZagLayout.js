@@ -1,33 +1,38 @@
 import React from 'react';
 import Image from 'next/image';
 import MarkdownIt from "markdown-it";
-import ReactPlayer from 'react-player';
+import dynamic from "next/dynamic";
+
 
 function ZigZagLayout( {element} ){
 
+    const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
     const md = new MarkdownIt();
     const htmlContent = md.render(element.attributes.description);
 
     function renderVideo(){
         return element.attributes.images_and_video.data.map((video) => {
-            return <ReactPlayer controls url={ `${'http://localhost:1337'}${video.attributes.url}` } />
+            return <ReactPlayer className="videoPlayer" video={video} key={video.id} controls url={ `${'http://localhost:1337'}${video.attributes.url}` } />
         });
     }
     
     
-    if((element.attributes.title === null || element.attributes.title === "") && (element.attributes.description === null || element.attributes.description === "")){
+    
+    if((element.attributes.title == null || element.attributes.title == "") && (element.attributes.description == null || element.attributes.description == "")){
         
         return(
             <>
-                <div>
+
+                <div className="videoPlayerLayout">
                     {renderVideo()}
                 </div>
+
             </>        
         );
 
     }
-    else if(element.attributes.description === null || element.attributes.description === ""){
+    else if(element.attributes.description == null || element.attributes.description == ""){
         
         return(
         <>
@@ -42,14 +47,14 @@ function ZigZagLayout( {element} ){
                     />
                 </div>
     
-                <div className="layout_text">
+                <div className="layout_title">
                     <h3>{element.attributes.title}</h3>
                 </div>
             </div>
         </> 
         );
     }
-    else if(element.attributes.title === null || element.attributes.title === ""){
+    else if(element.attributes.title == null || element.attributes.title == ""){
         
         return(
             <div className={element.attributes.changeLayout ? 'layout active' : 'layout'}>
@@ -72,8 +77,14 @@ function ZigZagLayout( {element} ){
 
 
     return(
-        <>
-        </>
+        <div className="layout_statistic">
+            <div className="layout_title">
+                <h3>{element.attributes.title}</h3>
+            </div>
+            <div className="text_statistic" dangerouslySetInnerHTML={{__html: htmlContent}}>
+
+            </div>
+        </div>
     );
 
     

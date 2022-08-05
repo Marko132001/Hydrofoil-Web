@@ -3,13 +3,13 @@ import Image from 'next/image'
 import hydrofoil_logo from '../images/hydrofoil_logo.png'
 
 
-const Logo = (props) => {
+const Logo = () => {
   return <Image
           className="logo" 
           src = {hydrofoil_logo}
           alt = "hydrofoil logo"
           width="112px"
-          height="100px" 
+          height="100px"
           />
 }
 

@@ -6,18 +6,20 @@
     padding: 75px;
     align-items: center;
 
-    background-color: #abc3cd;
+    //background-color: #abc3cd;
+    background-color: rgba(86, 139, 165, 0.8);
 }
 
 .layout.active {
 
     display: flex;
-    //flex-direction: row-reverse;
     flex-direction: row;
+
     padding: 75px;
     align-items: center;
 
-    background-color: #dfe9eb;
+    //background-color: #dfe9eb;
+    background-color: rgba(86, 139, 165, 0.8);
 }
 
 .layout::after {
@@ -27,47 +29,97 @@
 }
 
 .layout_image {
-
-    float: left;
-    width: 40%;
-    padding: 25px;
-}
-
-.layout_image img {
+    
     display: block;
-    height: auto;
-    max-width: 100%;
+    width: 40%;
+    margin: 0 0 30px 0;
 }
+
+
 
 
 .layout_text {
     
-    float: left;
+
+    text-align: center;
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, 1.0);  
+    margin-top: 10px;
+    margin-bottom: 1.5rem;
+    margin-left: 20px;
+    margin-right: 20px;
+    
     width: 60%;
-    padding: 25px;
-
 }
 
-.layout_text h3{
-
+.layout_title {
+    text-align: center;
     font-size: 2rem;
+    margin-bottom: 1.5rem;
+    margin-left: 20px;
+    margin-right: 20px;
 
 }
 
-.layout_text {
+.layout_title h3 {
+    padding: 20px;
+}
+
+.text_statistic{
+    text-align: center;
     font-size: 1.3rem;
     color: rgba(0, 0, 0, 1.0);
+    margin-top: 10px;
+    margin-bottom: 1.5rem;
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 2.8;
+}
 
+.layout_statistic {
+
+    background-color: rgba(86, 139, 165, 0.8);
+}
+
+
+.videoPlayerLayout {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(86, 139, 165, 0.8);
+}
+
+.videoPlayerLayout .videoPlayer:hover{
+    transition: .2s linear;
+    transform: scale(1.1);
+}
+
+.videoPlayer{
+
+    height: 15rem;
+    width: 25rem;
+    margin: 2rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
+    overflow: hidden;
+    border-radius: 1rem;
+
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    outline: none;
+    border: none;
 }
 
 
 @media screen and (max-width: 800px) {
-    .layout{
+    .layout, .layout.active{
         display: block;
     }
 
+
     .layout_text,
-    .layout_image {
+    .layout_image{
       width: 100%;
       text-align: center;
     }
@@ -75,4 +127,19 @@
     .layout_image img {
       margin: auto;
     }
-  }
+}
+
+@media screen and (max-width: 385px){
+
+    .layout_text{
+        font-size: 0.8rem;
+    }
+
+    .layout_title{
+        font-size: 1.5rem;
+    }
+
+    .text_statistic{
+        font-size: 1.0rem;
+    }
+}

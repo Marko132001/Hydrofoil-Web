@@ -83,6 +83,7 @@
     position: relative;
     border-radius: 100px;
     mix-blend-mode: darken;
+
 }
 
 
@@ -170,4 +171,6 @@
     .nav-toggle.open .bar::after {
       transform: rotate(-45deg) translate(26px, 26px);
     }
+
+
 }
