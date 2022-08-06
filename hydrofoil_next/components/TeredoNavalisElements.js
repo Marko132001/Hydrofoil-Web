@@ -1,4 +1,5 @@
 import React from "react";
+import CountingAnimation from "./DataComponents/CountingAnimation";
 import ZigZagLayout from "./DataComponents/ZigZagLayout";
 
 function TeredoNavalisElements({ elements }){
@@ -12,6 +13,7 @@ function TeredoNavalisElements({ elements }){
         <>
             <div>     
                 {renderTeredoNavalisElements()}
+                <CountingAnimation />
             </div>
         </>
     );

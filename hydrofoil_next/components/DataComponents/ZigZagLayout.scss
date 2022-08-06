@@ -70,7 +70,7 @@
     font-size: 1.3rem;
     color: rgba(0, 0, 0, 1.0);
     margin-top: 10px;
-    margin-bottom: 1.5rem;
+    //margin-bottom: 1.5rem;
     margin-left: 20px;
     margin-right: 20px;
     line-height: 2.8;
@@ -88,6 +88,7 @@
     justify-content: center;
     flex-wrap: wrap;
     background-color: rgba(86, 139, 165, 0.8);
+
 }
 
 .videoPlayerLayout .videoPlayer:hover{
@@ -103,7 +104,8 @@
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .5);
     overflow: hidden;
     border-radius: 1rem;
-
+    margin-bottom: 16rem;
+    margin-top: 16rem;
     height: 100%;
     width: 100%;
     object-fit: cover;
