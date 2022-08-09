@@ -35,9 +35,6 @@ function ZigZagLayout( {element} ){
         return (
             <>
 
-            <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide}/>
-            <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide}/>
-
             <div className="slider">
                 
                 {element.attributes.images_and_video.data.map((image, index) => {
@@ -59,6 +56,25 @@ function ZigZagLayout( {element} ){
                 );
                 })}
             </div>
+
+            <nav className="slider-nav">
+                <ul>
+                    <li className="arrow">
+                        <button className="previous">
+                            <span>
+                                <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide}/>
+                            </span>
+                        </button>
+                    </li>
+                    <li className="arrow">
+                        <button className="next">
+                            <span>
+                                <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide}/>
+                            </span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
             </>
         );
     }
