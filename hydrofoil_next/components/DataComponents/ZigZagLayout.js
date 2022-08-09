@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Image from 'next/image';
 import MarkdownIt from "markdown-it";
 import dynamic from "next/dynamic";
+import {FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
 
 function ZigZagLayout( {element} ){
@@ -16,11 +17,56 @@ function ZigZagLayout( {element} ){
             return <ReactPlayer className="videoPlayer" video={video} key={video.id} controls url={ `${'http://localhost:1337'}${video.attributes.url}` } />
         });
     }
-    
-    
-    
-    if((element.attributes.title == null || element.attributes.title == "") && (element.attributes.description == null || element.attributes.description == "")){
+
+    function renderImageSlider(){
+
+        const [current, setCurrent] = useState(0);
+        const length = element.attributes.images_and_video.data.length;
         
+        const nextSlide = () => {
+            setCurrent(current === length - 1 ? 0 : current + 1);
+        };
+
+        const prevSlide = () => {
+            setCurrent(current === 0 ? length - 1 : current - 1);
+        };
+
+
+        return (
+            <>
+
+            <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide}/>
+            <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide}/>
+
+            <div className="slider">
+                
+                {element.attributes.images_and_video.data.map((image, index) => {
+                return (
+                    <div className={index === current ? 'slide active' : 'slide'} key={index}>
+                        {index === current && (  
+                            <Image
+                                    image={image}
+                                    key={image.id}
+                                    className="slider_image"
+                                    src = { `${'http://localhost:1337'}${image.attributes.url}` }
+                                    alt = "image"
+                                    width="1000"
+                                    height="600"
+                            />
+                        )}
+                    </div> 
+                    
+                );
+                })}
+            </div>
+            </>
+        );
+    }
+    
+    
+    
+    if((element.attributes.title == null || element.attributes.title == "") && (element.attributes.description == null || element.attributes.description == "") && element.attributes.changeLayout){
+        //render videos
         return(
             <>
 
@@ -32,8 +78,18 @@ function ZigZagLayout( {element} ){
         );
 
     }
+    else if((element.attributes.title == null || element.attributes.title == "") && (element.attributes.description == null || element.attributes.description == "") && !element.attributes.changeLayout){
+        //render image slider
+        return(
+            <>
+                <div className="slider-container">
+                    {renderImageSlider()}
+                </div>
+            </>
+        );
+    }
     else if(element.attributes.description == null || element.attributes.description == ""){
-        
+        //render title and image
         return(
         <>
             <div className={element.attributes.changeLayout ? 'layout active' : 'layout'}>
@@ -54,8 +110,8 @@ function ZigZagLayout( {element} ){
         </> 
         );
     }
-    else if(element.attributes.title == null || element.attributes.title == ""){
-        
+    else if((element.attributes.title == null || element.attributes.title == "") && element.attributes.images_and_video.data == null){
+        //render text and image
         return(
             <div className={element.attributes.changeLayout ? 'layout active' : 'layout'}>
                 <div className="layout_image">
@@ -74,9 +130,27 @@ function ZigZagLayout( {element} ){
             </div>
         );
     }
+    else if((element.attributes.title == null || element.attributes.title == "") && element.attributes.image.data == null){
+        //render text and video
+        return(
+            <div className={element.attributes.changeLayout ? 'layout active' : 'layout'}>
+                <div className="layout_image">
+                    <div className="videoPlayerLayout">
+                        {renderVideo()}
+                    </div>
+                </div>
+
+                <div className="text_statistic" dangerouslySetInnerHTML={{__html: htmlContent}}>
+        
+                </div>
+                
+            </div>
+        );
+    }
 
 
     return(
+        //render title and text
         <div className="layout_statistic">
             <div className="layout_title">
                 <h3>{element.attributes.title}</h3>

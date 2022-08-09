@@ -11,9 +11,9 @@ function TeredoNavalisElements({ elements }){
 
     return (
         <>
-            <div>     
+            <div className="teredoNavalis-layout">
+                <CountingAnimation />     
                 {renderTeredoNavalisElements()}
-                <CountingAnimation />
             </div>
         </>
     );
