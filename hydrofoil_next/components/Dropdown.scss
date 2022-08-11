@@ -1,0 +1,37 @@
+.projects-submenu {
+    width: 10rem;
+    position: absolute;
+    top: 83px;
+    list-style: none;
+    text-align: start;
+    background: rgba(151, 204, 238, 1.0);
+    z-index: 10;
+  }
+  
+  .projects-submenu li {
+    //background: rgba(151, 204, 238, 0.8);
+    cursor: pointer;
+  }
+  
+  .projects-submenu li a:hover {
+    //background: rgba(151, 204, 238, 0.8);
+  }
+  
+  .projects-submenu.clicked {
+    display: none;
+  }
+  
+  .submenu-item {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    padding: 16px;
+  }
+
+  @media (max-width: 700px) {
+
+    .projects-submenu{
+      top: 63px;
+    }
+  }
