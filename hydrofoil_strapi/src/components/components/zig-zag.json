@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_zig_zags",
+  "info": {
+    "displayName": "TextAndImage",
+    "icon": "address-book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "changeLayout": {
+      "type": "boolean"
+    }
+  }
+}

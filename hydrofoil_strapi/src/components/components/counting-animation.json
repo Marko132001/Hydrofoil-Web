@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_components_counting_animations",
+  "info": {
+    "displayName": "CountingAnimation",
+    "icon": "arrow-up",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "CountElement": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.counting-element"
+    }
+  }
+}

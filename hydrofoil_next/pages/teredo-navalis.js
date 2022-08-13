@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "axios";
-import TeredoNavalisElements from "../components/TeredoNavalisElements";
+import LayoutElements from "../components/LayoutElements";
 
 function TeredoNavalis( {teredoNavalis} ){
 
     return(
         <>
-            <TeredoNavalisElements elements={teredoNavalis} />
+            <LayoutElements elements={teredoNavalis} />
         </>
     );
 }
@@ -16,7 +16,7 @@ export default TeredoNavalis;
 
 export async function getStaticProps(){
 
-    const teredoNavalisRes = await axios.get("http://localhost:1337/api/teredo-navalises/?populate=*");
+    const teredoNavalisRes = await axios.get("http://localhost:1337/api/teredo-navalis/?populate=deep");
   
     return {
       props: {

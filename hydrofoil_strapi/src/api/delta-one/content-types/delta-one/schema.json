@@ -1,10 +1,11 @@
 {
   "kind": "singleType",
-  "collectionName": "teredo_navalises",
+  "collectionName": "delta_ones",
   "info": {
-    "singularName": "teredo-navalis",
-    "pluralName": "teredo-navalises",
-    "displayName": "Teredo-Navalis"
+    "singularName": "delta-one",
+    "pluralName": "delta-ones",
+    "displayName": "Delta-One",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,12 +15,12 @@
     "layout": {
       "type": "dynamiczone",
       "components": [
-        "components.counting-animation",
         "components.image-slider",
         "components.text-and-video",
         "components.title-and-text",
         "components.video-player",
-        "components.zig-zag"
+        "components.zig-zag",
+        "components.counting-animation"
       ]
     }
   }

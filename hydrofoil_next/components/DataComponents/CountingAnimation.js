@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
+import Image from 'next/image';
 
-function CountingAnimation(){
+function CountingAnimation( {element} ){
 
         useEffect(() => {
 
@@ -30,22 +31,27 @@ function CountingAnimation(){
 
     return(
         <div className="counter-layout">
-            <div className="counter-container">
-                <i className="gg-chevron-double-up"></i>
-                <div className="counter" data-target="16"></div>
-                <span>MAKSIMALNA BRZINA U ČVOROVIMA</span>
-            </div>
-            <div className="counter-container">
-                <i className="gg-time"></i>
-                <div className="counter" data-target="25"></div>
-                <span>DOMET U MINUTAMA PRI MAKSIMALNOJ BRZINI</span>
-            </div>
-            <div className="counter-container">
-                <i className="gg-sun"></i>
-                <div className="counter" data-target="0"></div>
-                <span>CO2 EMISIJA</span>
-            </div>
+            {element.CountElement.map((item) => {
+                
+                return(
+                    <div className="counter-container">
+                        <i className="image-logo">
+                        <Image
+                                    src = { `${'http://localhost:1337'}${item.logo.data.attributes.url}` }
+                                    alt = "image"
+                                    width="100"
+                                    height="100"
+                            />
+                        </i>
+                        <div className="counter" data-target={ `${item.numbers}` }></div>
+                        <span>{item.description}</span>
+                	</div>
+                );
+
+            })}
+
         </div>
+
     );
 
 

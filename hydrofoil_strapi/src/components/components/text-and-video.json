@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_text_and_videos",
+  "info": {
+    "displayName": "TextAndVideo",
+    "icon": "american-sign-language-interpreting",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "videos": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "changeLayout": {
+      "type": "boolean"
+    }
+  }
+}

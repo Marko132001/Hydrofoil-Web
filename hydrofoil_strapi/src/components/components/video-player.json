@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_video_players",
+  "info": {
+    "displayName": "VideoPlayer",
+    "icon": "atlas"
+  },
+  "options": {},
+  "attributes": {
+    "videos": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}
