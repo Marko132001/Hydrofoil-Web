@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_hero_section_videos",
+  "info": {
+    "displayName": "HeroSectionVideo",
+    "icon": "backward"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "video": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

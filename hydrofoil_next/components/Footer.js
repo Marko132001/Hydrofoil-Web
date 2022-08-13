@@ -18,7 +18,7 @@ function Footer() {
         <div className="footerColumn">
           <h4>Follow us</h4>
           <div className="socialLinks">
-            <a href="https://hr-hr.facebook.com/adriahydrofoil/"><i className="fab fa-facebook-f"></i></a>
+            <a href="https://www.facebook.com/uptz18/"><i className="fab fa-facebook-f"></i></a>
             <a href="https://twitter.com/adriahydrofoil?lang=hr"><i className="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com/adriahydrofoil/"><i className="fab fa-instagram"></i></a>
           </div>

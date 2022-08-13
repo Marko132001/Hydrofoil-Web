@@ -20,7 +20,8 @@
         "components.title-and-text",
         "components.video-player",
         "components.zig-zag",
-        "components.counting-animation"
+        "components.counting-animation",
+        "components.hero-section-video"
       ]
     }
   }

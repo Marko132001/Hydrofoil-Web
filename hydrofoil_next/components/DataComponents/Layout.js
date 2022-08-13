@@ -4,6 +4,7 @@ import MarkdownIt from "markdown-it";
 import ImageSlider from './ImageSlider';
 import VideoPlayer from './VideoPlayer';
 import CountingAnimation from './CountingAnimation';
+import HeroSection from './HeroSection';
 
 
 function Layout( {element} ){
@@ -86,6 +87,14 @@ function Layout( {element} ){
         return(
             <>
                 <CountingAnimation element={element} />
+            </>
+        );
+    }
+    else if(element.__component == "components.hero-section-video"){
+
+        return(
+            <>
+                <HeroSection element={element} />
             </>
         );
     }

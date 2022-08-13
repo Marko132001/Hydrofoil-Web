@@ -4,7 +4,8 @@
   "info": {
     "singularName": "teredo-navalis",
     "pluralName": "teredo-navalises",
-    "displayName": "Teredo-Navalis"
+    "displayName": "Teredo-Navalis",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,7 +20,8 @@
         "components.text-and-video",
         "components.title-and-text",
         "components.video-player",
-        "components.zig-zag"
+        "components.zig-zag",
+        "components.hero-section-video"
       ]
     }
   }
