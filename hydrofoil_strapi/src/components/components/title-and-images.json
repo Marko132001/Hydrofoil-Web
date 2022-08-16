@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_components_title_and_images",
+  "info": {
+    "displayName": "TitleAndImages",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "imageComponent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.image-and-caption"
+    }
+  }
+}

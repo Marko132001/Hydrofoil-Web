@@ -1,15 +1,45 @@
 import React from 'react';
+import Image from 'next/image';
 import dynamic from "next/dynamic";
 
 function HeroSection( {element} ) {
 
   const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+
+  if(element.__component == "components.hero-section-video"){
+
+    return (
+      <div className="heroWrapper">
+          <div className="imageWrapper">
+            <video autoPlay loop muted src={ `${'http://localhost:1337'}${element.video.data.attributes.url}` } />
+          </div>
+          <div className="heroContent">
+            <h1>{element.title}</h1>
+          </div>
+      </div>
+    )
+  }
+
   return (
-    <div className="hero-container">
-        <video autoPlay loop muted src={ `${'http://localhost:1337'}${element.video.data.attributes.url}` } />
+
+    <div className="heroWrapper">
+      <div className="imageWrapper">
+        <Image
+          priority
+          src = { `${'http://localhost:1337'}${element.image.data.attributes.url}` }
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          alt="hero image example"
+        />
+      </div>
+
+      <div className="heroContent">
         <h1>{element.title}</h1>
+      </div>
     </div>
   )
+  
 }
 
 export default HeroSection

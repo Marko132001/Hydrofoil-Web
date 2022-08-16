@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_components_hero_section_images",
+  "info": {
+    "displayName": "HeroSectionImage",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

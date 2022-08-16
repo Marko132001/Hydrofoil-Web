@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_components_parallel_paragraphs",
+  "info": {
+    "displayName": "ParallelParagraphs",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "paragraphs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.title-and-text"
+    }
+  }
+}

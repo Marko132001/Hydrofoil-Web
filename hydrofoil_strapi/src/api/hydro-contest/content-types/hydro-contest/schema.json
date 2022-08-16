@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "hydro_contests",
+  "info": {
+    "singularName": "hydro-contest",
+    "pluralName": "hydro-contests",
+    "displayName": "HydroContest"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "layout": {
+      "type": "dynamiczone",
+      "components": [
+        "components.hero-section-image",
+        "components.image-slider",
+        "components.parallel-paragraphs",
+        "components.title-and-text"
+      ]
+    }
+  }
+}

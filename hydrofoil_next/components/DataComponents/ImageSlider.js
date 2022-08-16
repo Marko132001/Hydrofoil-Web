@@ -21,9 +21,9 @@ function ImageSlider( {element} ){
 
         return (
             <>
-
+            
             <div className="slider">
-                
+                <h2 className="caption">{(element.caption != null || element.caption != "") ? element.caption : ""}</h2>
                 {element.images.data.map((image, index) => {
                 return (
                     <div className={index === current ? 'slide active' : 'slide'} key={index}>

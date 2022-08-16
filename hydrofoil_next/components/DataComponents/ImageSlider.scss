@@ -1,4 +1,21 @@
+  .caption{
 
+    margin: 20px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    font-size: 2.3rem;
+    text-align: center;
+    color: #0784f1;
+
+  }
+
+  @media screen and (max-width: 400px) {
+
+    .caption{
+      font-size: 1.3rem;
+    }
+      
+  }
 
   .slider-container{
     max-width: 800px;
