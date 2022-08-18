@@ -12,7 +12,7 @@
     "imageComponent": {
       "type": "component",
       "repeatable": true,
-      "component": "components.image-and-caption"
+      "component": "global.image-and-caption"
     }
   }
 }

@@ -7,6 +7,7 @@ import ParallelParagraphs from './ParallelParagraphs';
 import TextAndImage from './TextAndImage';
 import TitleAndText from './TitleAndText';
 import ImageAndCaption from './ImageAndCaption';
+import PDFViewer from './PDFViewer';
 
 
 function Layout( {element} ){
@@ -75,6 +76,14 @@ function Layout( {element} ){
         return(
             <>
                 <ImageAndCaption element={element} />
+            </>
+        );
+    }
+    else if(element.__component == "components.pdf-viewer"){
+
+        return(
+            <>
+                <PDFViewer element={element} />
             </>
         );
     }

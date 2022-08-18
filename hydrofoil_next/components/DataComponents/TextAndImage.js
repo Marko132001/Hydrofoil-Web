@@ -17,8 +17,8 @@ function TextAndImage( {element} ) {
                     src = { `${'http://localhost:1337'}${element.image.data.attributes.url}` }
                     alt = "image"
                     layout="responsive"
-                    width="400"
-                    height="267"
+                    width={(element.image.data.attributes.width == null) ? "400" : element.image.data.attributes.width}
+                    height={(element.image.data.attributes.height == null) ? "267" : element.image.data.attributes.height}
                     />
                 </div>
 

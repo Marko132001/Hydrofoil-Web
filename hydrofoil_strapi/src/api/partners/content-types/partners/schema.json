@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "partnerses",
+  "info": {
+    "singularName": "partners",
+    "pluralName": "partnerses",
+    "displayName": "Partners",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "layout": {
+      "type": "dynamiczone",
+      "components": [
+        "components.hero-section-image",
+        "components.pdf-viewer",
+        "components.title-and-images",
+        "components.zig-zag",
+        "components.title-and-text"
+      ]
+    }
+  }
+}

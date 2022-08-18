@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "professional_articleses",
+  "info": {
+    "singularName": "professional-articles",
+    "pluralName": "professional-articleses",
+    "displayName": "Professional-articles",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "layout": {
+      "type": "dynamiczone",
+      "components": [
+        "components.hero-section-image",
+        "components.title-and-images"
+      ]
+    }
+  }
+}

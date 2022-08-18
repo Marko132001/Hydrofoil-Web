@@ -15,6 +15,7 @@ function VideoPlayer( {element} ){
     return(
         <>
             <div className="videoPlayerLayout">
+                <h1 className="about-title">{element.caption}</h1>
                 {renderVideo()}
             </div>
         </>        

@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "medias",
+  "info": {
+    "singularName": "media",
+    "pluralName": "medias",
+    "displayName": "Media"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "layout": {
+      "type": "dynamiczone",
+      "components": [
+        "components.video-player",
+        "components.title-and-images"
+      ]
+    }
+  }
+}

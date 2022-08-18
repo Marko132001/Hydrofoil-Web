@@ -11,13 +11,19 @@ function ImageAndCaption( {element} ) {
                 {element.imageComponent.map((item) => {
 
                     return(
-                        <div className="imageAndCaption">
-                            <div className="image">
-                                <Image src={ `${'http://localhost:1337'}${item.image.data.attributes.url}` } width="300" height="400" alt="image"  />
+                        <a href={item.link}>
+                            <div className="imageAndCaption">
+                                <div className="image">
+                                    <Image src={ `${'http://localhost:1337'}${item.image.data.attributes.url}` } 
+                                    width={(item.image.data.attributes.width == null) ? "392" : item.image.data.attributes.width} 
+                                    height={(item.image.data.attributes.height == null) ? "30" : item.image.data.attributes.height} 
+                                    alt="image"  
+                                    />
+                                </div>
+                                <h3 className="name">{item.name}</h3>    
+                                <p className="description">{item.description}</p>
                             </div>
-                            <h3 className="name">{item.name}</h3>    
-                            <p className="description">{item.description}</p>
-                        </div>
+                        </a>
                     );
 
                 })}
