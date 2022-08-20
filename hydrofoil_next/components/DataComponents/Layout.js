@@ -10,6 +10,7 @@ import ImageAndCaption from './ImageAndCaption';
 import PDFViewer from './PDFViewer';
 import TextAndButton from './TextAndButton';
 import WebForm from './WebForm';
+import LogoSlider from './LogoSlider';
 
 
 function Layout( {element} ){
@@ -103,6 +104,14 @@ function Layout( {element} ){
         return(
             <>
                 <WebForm element={element} />
+            </>
+        );
+    }
+    else if(element.__component == "components.logo-slider"){
+
+        return(
+            <>
+                <LogoSlider element={element} />
             </>
         );
     }

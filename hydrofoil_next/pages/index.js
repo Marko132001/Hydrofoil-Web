@@ -1,5 +1,6 @@
 import HomeHeader from "../components/HomeHeader";
 import HomeLatestPosts from "../components/HomeLatestPosts";
+import LayoutElements from "../components/LayoutElements";
 import axios from "axios";
 import Image from "next/image";
 import vector1 from "../images/vector1.png";
@@ -26,13 +27,14 @@ const Vector2 = () => {
 }
 
 
-// posts will be populated at build time by getStaticProps()
-function Home( {posts} ) {
+
+function Home( {posts, home} ) {
   return (
     <>
       <Vector1 /><Vector2 />
       <HomeHeader />
       <HomeLatestPosts posts={posts}/>
+      <LayoutElements elements={home} />
     </>
   )
 }
@@ -44,12 +46,13 @@ export default Home;
 export async function getStaticProps(){
 
   const postRes = await axios.get("http://localhost:1337/api/posts/?populate=*");
+  const homeRes = await axios.get("http://localhost:1337/api/home-page/?populate=deep")
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
+
   return {
     props: {
-      posts: postRes.data,        //postsRes.data -> array of posts
+      posts: postRes.data,
+      home: homeRes.data,        
     },       
   };
 }

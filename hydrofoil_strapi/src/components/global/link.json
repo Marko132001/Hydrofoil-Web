@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "angle-double-right"
+  },
+  "options": {},
+  "attributes": {
+    "caption": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

@@ -7,6 +7,92 @@ function WebForm( {element} ) {
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
 
+    //   Form validation state
+  const [errors, setErrors] = useState({});
+
+  //   Setting button text on form submission
+  const [buttonText, setButtonText] = useState("Send");
+
+  // Setting success or failure messages states
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [showFailureMessage, setShowFailureMessage] = useState(false);
+
+  // Validation check method
+  const handleValidation = () => {
+    let tempErrors = {};
+    let isValid = true;
+
+    if (fullname.length <= 0) {
+      tempErrors["fullname"] = true;
+      isValid = false;
+    }
+    if (email.length <= 0) {
+      tempErrors["email"] = true;
+      isValid = false;
+    }
+    if (subject.length <= 0) {
+      tempErrors["subject"] = true;
+      isValid = false;
+    }
+    if (message.length <= 0) {
+      tempErrors["message"] = true;
+      isValid = false;
+    }
+
+    setErrors({ ...tempErrors });
+    console.log("errors", errors);
+    return isValid;
+  };
+
+  //   Handling form submit
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let isValidForm = handleValidation();
+
+    if (isValidForm) {
+      setButtonText("Sending");
+      const res = await fetch("/api/sendmail", {
+        body: JSON.stringify({
+          email: email,
+          fullname: fullname,
+          subject: subject,
+          message: message,
+        }),
+        headers: {
+          "Accept": "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
+
+      const { error } = await res.json();
+      if (error) {
+        console.log(error);
+        setShowSuccessMessage(false);
+        setShowFailureMessage(true);
+        setButtonText("Send");
+
+        // Reset form fields
+        setFullname("");
+        setEmail("");
+        setMessage("");
+        setSubject("");
+        return;
+      }
+      setShowSuccessMessage(true);
+      setShowFailureMessage(false);
+      setButtonText("Send");
+      // Reset form fields
+      setFullname("");
+      setEmail("");
+      setMessage("");
+      setSubject("");
+    }
+    console.log(fullname, email, subject, message);
+  };
+
   return (
     
     <div className="web-form">
@@ -78,19 +164,32 @@ function WebForm( {element} ) {
                 </div>
                 <div className="col">
                     <div className="form-group">
-                        <label for="subject">Predmet</label>
-                        <input type="text" name="subject"/>
+                        <label htmlFor="subject">Predmet</label>
+                        <input 
+                        type="text" 
+                        name="subject"
+                        value={subject}
+                        onChange={(e) => {
+                        setSubject(e.target.value);
+                        }}
+                        />
                     </div>
                 </div>
                 <div className="col">
                     <div className="form-group solo">
-                        <label for="message">Vaša poruka</label>
-                        <textarea name="message"></textarea>
+                        <label htmlFor="message">Vaša poruka</label>
+                        <textarea 
+                        name="message"
+                        value={message}
+                        onChange={(e) => {
+                        setMessage(e.target.value);
+                        }}
+                        ></textarea>
                     </div>
                 </div>
                 <div className="col">
                     <div className="form-group solo right">
-                        <button className="primary">Pošalji</button>
+                        <button type="submit" className="primary">{buttonText}</button>
                     </div>
                 </div>    
 
