@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_components_text_and_buttons",
+  "info": {
+    "displayName": "TextAndButton",
+    "icon": "book-open"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "global.button"
+    }
+  }
+}

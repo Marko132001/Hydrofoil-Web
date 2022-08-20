@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_components_web_forms",
+  "info": {
+    "displayName": "WebForm",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "email"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "open_sources",
+  "info": {
+    "singularName": "open-source",
+    "pluralName": "open-sources",
+    "displayName": "Open Source"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "layout": {
+      "type": "dynamiczone",
+      "components": [
+        "components.text-and-button",
+        "components.title-and-text"
+      ]
+    }
+  }
+}

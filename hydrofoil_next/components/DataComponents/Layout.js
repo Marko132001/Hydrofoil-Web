@@ -8,6 +8,8 @@ import TextAndImage from './TextAndImage';
 import TitleAndText from './TitleAndText';
 import ImageAndCaption from './ImageAndCaption';
 import PDFViewer from './PDFViewer';
+import TextAndButton from './TextAndButton';
+import WebForm from './WebForm';
 
 
 function Layout( {element} ){
@@ -84,6 +86,23 @@ function Layout( {element} ){
         return(
             <>
                 <PDFViewer element={element} />
+            </>
+        );
+    }
+    else if(element.__component == "components.text-and-button"){
+
+        return(
+            <>
+                <TextAndButton element={element} />
+            </>
+        );
+
+    }
+    else if(element.__component == "components.web-form"){
+
+        return(
+            <>
+                <WebForm element={element} />
             </>
         );
     }
