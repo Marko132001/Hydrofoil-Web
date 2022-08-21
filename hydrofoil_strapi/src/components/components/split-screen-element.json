@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_components_split_screen_elements",
+  "info": {
+    "displayName": "SplitScreenElement",
+    "icon": "adjust"
+  },
+  "options": {},
+  "attributes": {
+    "splitScreen": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.split-screen"
+    }
+  }
+}

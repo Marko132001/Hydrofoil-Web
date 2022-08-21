@@ -8,7 +8,7 @@ function TitleAndText( {element} ) {
 
     return(
         
-        <div>
+        <div className="title-and-text">
             <div className="layout_title">
                 <h3>{element.title}</h3>
             </div>

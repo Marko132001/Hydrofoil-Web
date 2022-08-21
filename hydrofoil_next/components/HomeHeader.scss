@@ -2,7 +2,6 @@
 
     
     box-sizing: border-box;
-    
     margin: 0;
     padding: 0;
     display: flex;
@@ -25,11 +24,8 @@
 .homeHeader p {
     font-family: 'Inter';
     font-weight: 200;
-    font-size: 17px;
-    line-height: 120%;
-    text-align: justify;
+    font-size: 20px;
     letter-spacing: 0.1em;
-    margin-right: 100px;
 }
 
 @media screen and (max-width: 523px){
@@ -39,6 +35,10 @@
         font-size: 28px;
         line-height: 38px;
     }
+
+    .homeHeader p{
+        font-size: 17px;
+    }
 }
 
 @media screen and (max-width: 298px){
@@ -46,6 +46,10 @@
     .homeHeader h1{
         font-size: 18px;
         line-height: 28px;
+    }
+
+    .homeHeader p{
+        font-size: 10px;
     }
 }
 

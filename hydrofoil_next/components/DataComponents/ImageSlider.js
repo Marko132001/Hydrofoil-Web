@@ -20,7 +20,7 @@ function ImageSlider( {element} ){
 
 
         return (
-            <>
+            <div className="imageSlider-container">
             
             <div className="slider">
                 <h2 className="caption">{(element.caption != null || element.caption != "") ? element.caption : ""}</h2>
@@ -34,8 +34,8 @@ function ImageSlider( {element} ){
                                     className="slider_image"
                                     src = { `${'http://localhost:1337'}${image.attributes.url}` }
                                     alt = "image"
-                                    width="1000"
-                                    height="600"
+                                    width={(image.attributes.width == 1920) ? "1920" : "1000"}
+                                    height={(image.attributes.height == 852) ? "852" : "600"}
                             />
                         )}
                     </div> 
@@ -62,7 +62,8 @@ function ImageSlider( {element} ){
                     </li>
                 </ul>
             </nav>
-            </>
+            <a href={(element.link == null) ? "" : element.link.url}>{(element.link == null) ? "" : element.link.caption}</a>
+            </div>
         );
     }
 

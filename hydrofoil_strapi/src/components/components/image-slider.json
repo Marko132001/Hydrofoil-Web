@@ -17,6 +17,11 @@
     },
     "caption": {
       "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "global.link"
     }
   }
 }

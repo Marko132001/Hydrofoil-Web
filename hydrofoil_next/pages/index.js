@@ -46,7 +46,7 @@ export default Home;
 export async function getStaticProps(){
 
   const postRes = await axios.get("http://localhost:1337/api/posts/?populate=*");
-  const homeRes = await axios.get("http://localhost:1337/api/home-page/?populate=deep")
+  const homeRes = await axios.get("http://localhost:1337/api/home-page/?populate=deep");
 
 
   return {

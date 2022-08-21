@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import PostPreview from './PostPreview';
+import Timeline from './DataComponents/Timeline';
 
 
 function HomeLatestPosts( {posts} ) {
@@ -10,16 +10,22 @@ function HomeLatestPosts( {posts} ) {
     }, [posts.data]);
 
     function renderPostPreviews(){
-        return latestPosts.map((post) => {
-            return <PostPreview post={post} key={post.id}/>
-        });
+        return( 
+        <div className="timeline-container">
+            {latestPosts.map((post) => {
+                
+                return <Timeline post={post} key={post.id}/>
+                
+            })};
+        </div>
+        );
     }
 
     return (
-        <div className="latestPosts">
-            <h2>Latest News</h2>
+        <>
+            
             {renderPostPreviews()}
-        </div>
+        </>
     )
 }
 

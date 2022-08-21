@@ -11,6 +11,7 @@ import PDFViewer from './PDFViewer';
 import TextAndButton from './TextAndButton';
 import WebForm from './WebForm';
 import LogoSlider from './LogoSlider';
+import SplitScreen from './SplitScreen';
 
 
 function Layout( {element} ){
@@ -112,6 +113,14 @@ function Layout( {element} ){
         return(
             <>
                 <LogoSlider element={element} />
+            </>
+        );
+    }
+    else if(element.__component == "components.split-screen-element"){
+        
+        return(
+            <>
+                <SplitScreen element={element} />
             </>
         );
     }
