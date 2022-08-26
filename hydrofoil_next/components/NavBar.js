@@ -4,7 +4,6 @@ import hydrofoil_logo from '../images/hydrofoil_logo.png';
 import axios from "axios";
 import Dropdown from './Dropdown';
 
-
 const Logo = () => {
   return <Image
           className="logo" 
@@ -16,7 +15,9 @@ const Logo = () => {
 }
 
 
-function Navbar() {
+
+function NavBar( {navItems} ) {
+
 
   const [navBar, setNavBar] = React.useState(false);
 
@@ -32,15 +33,14 @@ function Navbar() {
   }, []);
 
 
+  const [dropdown, setDropdown] = React.useState(false);
 
-  const [dropdown, setDropdown] = useState(false);
+  //const [isLoading, setIsLoading] = useState(true);
 
-  const [isLoading, setIsLoading] = useState(true);
+  //const [navItems, setNavItems] = useState([]);
 
-  const [navItems, setNavItems] = useState([]);
-
-  const [isOpen, setIsOpen] = useState(false);
-
+  const [isOpen, setIsOpen] = React.useState(false);
+/*
   useEffect(() => {
     async function fetchNavData(){
       const navRes = await axios.get("http://localhost:1337/api/navigation-items/?populate=*");
@@ -53,37 +53,37 @@ function Navbar() {
   if(isLoading){
     return <></>
   }
-
+*/
 
   return (
     <>
       <nav className={navBar ? 'navbar active' : 'navbar'}>
         <a href="/" className="navbar-logo">
-          <h3 className="title">Adria<h3 className="subword">Hydrofoil</h3></h3>
+          <h3 className="title">Adria<span className="subword">Hydrofoil</span></h3>
         </a>
         <ul className={`nav-items ${isOpen && "open"}`}>
           {navItems.data.map((item) => {
-            if (item.attributes.navItem.title === "Projects") {
+            if (item.attributes.title === "Projects") {
               return (
                 <li
                   key={item.id}
-                  className={item.attributes.navItem.cName}
+                  className="nav-item"
                   onMouseEnter={() => setDropdown(true)}
                   onMouseLeave={() => setDropdown(false)}
                 >
-                  <a href={item.attributes.navItem.path}>{item.attributes.navItem.title}</a>
-                  {dropdown && <Dropdown navItems={navItems}/>}
+                  <a href={item.attributes.url}>{item.attributes.title}</a>
+                  {dropdown && <Dropdown nav={item.attributes.submenu}/>}
                 </li>
               );
             }
-            else if(item.attributes.navItem.cName === "nav-item"){
             
-              return (
-                <li key={item.id} className={item.attributes.navItem.cName}>
-                  <a href={item.attributes.navItem.path}>{item.attributes.navItem.title}</a>
-                </li>
-              );
-            }
+            
+            return (
+              <li key={item.id} className="nav-item">
+                <a href={item.attributes.url}>{item.attributes.title}</a>
+              </li>
+            );
+            
 
           })}
         </ul>
@@ -95,7 +95,12 @@ function Navbar() {
       </nav>
     </>
   );
+
+
+    
+
+
 }
 
-export default Navbar;
+export default NavBar;
 

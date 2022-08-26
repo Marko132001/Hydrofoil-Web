@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 
 
-function Dropdown( {navItems} ) {
+function Dropdown( {nav} ) {
     const [dropdown, setDropdown] = useState(false);
+    const [subMenu, setSubMenu] = useState(false);
   
     return (
       <>
@@ -10,21 +11,38 @@ function Dropdown( {navItems} ) {
           className={dropdown ? "projects-submenu clicked" : "projects-submenu"}
           onClick={() => setDropdown(!dropdown)}
         >
-          {navItems.data.map((item) => {
-            if(item.attributes.navItem.cName === "submenu-item"){
-  
+
+          {nav.map((item) => {
+
+              if(item.extendCheck){
+                  
                 return (
-                <li key={item.id}>
-                    <a
-                    href={item.attributes.navItem.path}
-                    className={item.attributes.navItem.cName}
-                    onClick={() => setDropdown(false)}
-                    >
-                    {item.attributes.navItem.title}
-                    </a>
-                </li>
+                  <li key={item.id} onMouseEnter={() => setSubMenu(true)}
+                  onMouseLeave={() => setSubMenu(false)}>
+                      <a
+                      href={item.url}
+                      className="submenu-item"                 
+                      >
+                      {item.title}
+                      </a>
+                      
+                  </li>           
                 );
-            }
+              }
+              
+              return (
+              <li key={item.id}>
+                  <a
+                  href={item.url}
+                  className="submenu-item"
+                  onClick={() => setDropdown(false)}
+                  >
+                  {item.title}
+                  </a>
+                  
+              </li>           
+              );
+            
 
           })}
         </ul>

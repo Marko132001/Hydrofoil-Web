@@ -4,17 +4,24 @@
   "info": {
     "singularName": "navigation-item",
     "pluralName": "navigation-items",
-    "displayName": "navigation-item"
+    "displayName": "navigation-item",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "navItem": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "submenu": {
       "type": "component",
-      "repeatable": false,
-      "component": "global.nav-item"
+      "repeatable": true,
+      "component": "global.menu-item"
     }
   }
 }

@@ -15,11 +15,7 @@ function Timeline({post}) {
                     </div>
                     <time>{post.attributes.date}</time>
                     <p>{post.attributes.description}</p>
-                    <a
-                        href={`/posts/${post.id}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <a href={`/posts/${post.id}`}>
                         Read more
                     </a>
                     <span className="circle" />

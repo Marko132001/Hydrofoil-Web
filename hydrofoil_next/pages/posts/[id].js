@@ -1,19 +1,23 @@
 import axios from "axios";
 import React from "react";
 import MarkdownIt from "markdown-it";
+import NavBar from "../../components/NavBar";
 
-function PostPage({post}) {
+function PostPage({post, nav}) {
 
   const md = new MarkdownIt();
   const htmlContent = md.render(post.data.attributes.content);
 
   return (
-  <article>
-    <header>
-      <h1 className="postPage-title">{post.data.attributes.title}</h1>
-    </header>
-    <section className="postPage-content" dangerouslySetInnerHTML={{__html: htmlContent}}></section>
-  </article>
+  <>
+    <NavBar navItems={nav} />
+    <article className="articleText">
+      <header>
+        <h1 className="postPage-title">{post.data.attributes.title}</h1>
+      </header>
+      <section className="postPage-content" dangerouslySetInnerHTML={{__html: htmlContent}}></section>
+    </article>
+  </>
   );
 }
 
@@ -21,10 +25,12 @@ export default PostPage;
 
 export async function getStaticProps({params}){
   const postRes = await axios.get(`http://localhost:1337/api/posts/${params.id}`);
+  const navRes = await axios.get("http://localhost:1337/api/navigation-items/?populate=deep");
 
   return {
     props: {
-      post: postRes.data
+      post: postRes.data,
+      nav: navRes.data,
     }
   }
 }

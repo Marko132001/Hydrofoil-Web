@@ -5,6 +5,7 @@ import axios from "axios";
 import Image from "next/image";
 import vector1 from "../images/vector1.png";
 import vector2 from "../images/vector2.png";
+import NavBar from "../components/NavBar";
 
 const Vector1 = () => {
   return <Image
@@ -28,9 +29,10 @@ const Vector2 = () => {
 
 
 
-function Home( {posts, home} ) {
+function Home( {posts, home, nav} ) {
   return (
     <>
+      <NavBar navItems={nav} />
       <Vector1 /><Vector2 />
       <HomeHeader />
       <HomeLatestPosts posts={posts}/>
@@ -47,12 +49,13 @@ export async function getStaticProps(){
 
   const postRes = await axios.get("http://localhost:1337/api/posts/?populate=*");
   const homeRes = await axios.get("http://localhost:1337/api/home-page/?populate=deep");
-
+  const navRes = await axios.get("http://localhost:1337/api/navigation-items/?populate=deep");
 
   return {
     props: {
       posts: postRes.data,
-      home: homeRes.data,        
+      home: homeRes.data,
+      nav: navRes.data,        
     },       
   };
 }

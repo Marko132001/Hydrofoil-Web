@@ -10,7 +10,6 @@ function AllPosts({ posts }){
 
     return (
         <>
-            <h2>News</h2>
             <div className="allPosts">     
                 {renderPostPreviews()}
             </div>
