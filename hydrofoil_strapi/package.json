@@ -14,6 +14,8 @@
     "@strapi/plugin-users-permissions": "^4.3.4",
     "@strapi/strapi": "^4.3.4",
     "better-sqlite3": "7.4.6",
+    "pg": "^8.8.0",
+    "pg-connection-string": "^2.5.0",
     "strapi-plugin-menus": "^1.0.2",
     "strapi-plugin-populate-deep": "^0.1.2"
   },
