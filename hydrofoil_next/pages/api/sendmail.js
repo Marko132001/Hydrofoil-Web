@@ -1,36 +1,23 @@
-import nodemailer from 'nodemailer';
+import mail from '@sendgrid/mail';
 
+mail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async (req, res) => {
-  require('dotenv').config()
 
-  console.log(req.body)
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
-    auth: {
-      user: process.env.email,
-      pass: process.env.password,
-    },
+
+  await mail.send({
+      to: process.env.email,
+      from: process.env.email,    
+      subject: `${req.body.subject}`,
+      html: `<p>You have a new contact form submission</p><br>
+      <p><strong>Name: </strong> ${req.body.fullname} </p><br>
+      <p><strong>Email: </strong> ${req.body.email} </p><br>
+      <p><strong>Message: </strong> ${req.body.message} </p><br>
+
+      `,
   });
 
-  try {
-     const emailRes = await transporter.sendMail({
-       from: `${req.body.email}`,
-       to: process.env.email,
-       subject: `Contact form submission from ${req.body.subject}`,
-       html: `<p>You have a new contact form submission</p><br>
-       <p><strong>Name: </strong> ${req.body.fullname} </p><br>
-       <p><strong>Message: </strong> ${req.body.message} </p><br>
+  res.status(200).json({ status: 'Ok' });
 
-       `,
-     });
 
-    console.log('Message Sent');
-  } catch (err) {
-    console.log(err);
-  }
-
-  res.status(200).json(req.body);
 };

@@ -123,16 +123,16 @@ function WebForm( {element} ) {
                     <span>Ante Kovačića 17, 51000 Rijeka, Croatia</span>
                 </div>
                 <div className="social-media">
-                    <a href="#" className="icon-circle">
+                    <a href="https://www.facebook.com/uptz18/" className="icon-circle">
                         <i className="fab fa-facebook"></i>
                     </a>
-                    <a href="#" className="icon-circle">
+                    <a href="https://www.instagram.com/uptz_aats" className="icon-circle">
                         <i className="fab fa-instagram"></i>
                     </a>
-                    <a href="#" className="icon-circle">
+                    <a href="https://www.linkedin.com/company/uptz" className="icon-circle">
                         <i className="fab fa-linkedin"></i>
                     </a>
-                    <a href="#" className="icon-circle">
+                    <a href="https://www.youtube.com/channel/UC7Z4qrgwJTPRyPaHnAP94hg" className="icon-circle">
                         <i className="fab fa-youtube"></i>
                     </a>
                 </div>
