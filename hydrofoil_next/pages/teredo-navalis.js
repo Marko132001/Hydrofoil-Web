@@ -18,8 +18,8 @@ export default TeredoNavalis;
 
 export async function getStaticProps(){
 
-    const teredoNavalisRes = await axios.get("http://localhost:1337/api/teredo-navalis/?populate=deep");
-    const navRes = await axios.get("http://localhost:1337/api/navigation-items/?populate=deep");
+    const teredoNavalisRes = await axios.get(`${process.env.STRAPI_URL}/api/teredo-navalis/?populate=deep`);
+    const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
   
     return {
       props: {

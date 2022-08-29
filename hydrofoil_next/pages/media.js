@@ -18,8 +18,8 @@ export default Media;
 
 export async function getStaticProps(){
 
-    const mediaRes = await axios.get("http://localhost:1337/api/media/?populate=deep");
-    const navRes = await axios.get("http://localhost:1337/api/navigation-items/?populate=deep");
+    const mediaRes = await axios.get(`${process.env.STRAPI_URL}/api/media/?populate=deep`);
+    const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
   
     return {
       props: {

@@ -13,7 +13,7 @@ function LogoSlider( {element} ) {
                 return(
                     <div className="logo-slide">
                         <Image
-                                src = { `${'http://localhost:1337'}${image.attributes.url}` }
+                                src = {process.env.STRAPI_URL + image.attributes.url}
                                 alt = "image"
                                 layout="responsive"
                                 width="250"

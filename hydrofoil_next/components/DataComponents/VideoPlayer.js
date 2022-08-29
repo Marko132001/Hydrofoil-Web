@@ -8,7 +8,7 @@ function VideoPlayer( {element} ){
 
     function renderVideo(){
         return element.videos.data.map((video) => {
-            return <ReactPlayer className="videoPlayer" video={video} key={video.id} controls url={ `${'http://localhost:1337'}${video.attributes.url}` } />
+            return <ReactPlayer className="videoPlayer" video={video} key={video.id} controls url={process.env.STRAPI_URL + video.attributes.url} />
         });
     }
     

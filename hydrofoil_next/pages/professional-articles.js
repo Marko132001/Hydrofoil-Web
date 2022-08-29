@@ -18,8 +18,8 @@ export default ProfessionalArticles;
 
 export async function getStaticProps(){
 
-    const articlesRes = await axios.get("http://localhost:1337/api/professional-articles/?populate=deep");
-    const navRes = await axios.get("http://localhost:1337/api/navigation-items/?populate=deep");
+    const articlesRes = await axios.get(`${process.env.STRAPI_URL}/api/professional-articles/?populate=deep`);
+    const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
   
     return {
       props: {

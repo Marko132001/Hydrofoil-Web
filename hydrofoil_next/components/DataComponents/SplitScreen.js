@@ -14,7 +14,7 @@ function SplitScreen( {element} ) {
                 <div className="image">
                 <Image
                   priority
-                  src = { `${'http://localhost:1337'}${item.image.data.attributes.url}` }
+                  src = {process.env.STRAPI_URL + item.image.data.attributes.url}
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center"

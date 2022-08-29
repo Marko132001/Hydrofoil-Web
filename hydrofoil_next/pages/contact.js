@@ -18,8 +18,8 @@ export default Contact;
 
 export async function getStaticProps(){
 
-    const contactRes = await axios.get("http://localhost:1337/api/contact/?populate=deep");
-    const navRes = await axios.get("http://localhost:1337/api/navigation-items/?populate=deep");
+    const contactRes = await axios.get(`${process.env.STRAPI_URL}/api/contact/?populate=deep`);
+    const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
   
     return {
       props: {

@@ -18,8 +18,8 @@ export default OpenSource;
 
 export async function getStaticProps(){
 
-    const openSourceRes = await axios.get("http://localhost:1337/api/open-source/?populate=deep");
-    const navRes = await axios.get("http://localhost:1337/api/navigation-items/?populate=deep");
+    const openSourceRes = await axios.get(`${process.env.STRAPI_URL}/api/open-source/?populate=deep`);
+    const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
   
     return {
       props: {

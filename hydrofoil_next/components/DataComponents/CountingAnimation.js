@@ -37,7 +37,7 @@ function CountingAnimation( {element} ){
                     <div className="counter-container">
                         <i className="image-logo">
                         <Image
-                                    src = { `${'http://localhost:1337'}${item.logo.data.attributes.url}` }
+                                    src = {process.env.STRAPI_URL + item.logo.data.attributes.url}
                                     alt = "image"
                                     width="100"
                                     height="100"

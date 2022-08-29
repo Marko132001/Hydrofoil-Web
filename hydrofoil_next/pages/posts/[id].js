@@ -24,8 +24,8 @@ function PostPage({post, nav}) {
 export default PostPage;
 
 export async function getStaticProps({params}){
-  const postRes = await axios.get(`http://localhost:1337/api/posts/${params.id}`);
-  const navRes = await axios.get("http://localhost:1337/api/navigation-items/?populate=deep");
+  const postRes = await axios.get(`${process.env.STRAPI_URL}/api/posts/${params.id}`);
+  const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
 
   return {
     props: {
@@ -36,7 +36,7 @@ export async function getStaticProps({params}){
 }
 
 export async function getStaticPaths(){
-const postsRes = await axios.get("http://localhost:1337/api/posts");
+const postsRes = await axios.get(`${process.env.STRAPI_URL}/api/posts`);
 
 const paths = postsRes.data.data.map((post) => {
   return {params: {id: post.id.toString()}}

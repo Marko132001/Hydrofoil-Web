@@ -11,7 +11,7 @@ function HeroSection( {element} ) {
     return (
       <div className="heroWrapper">
           <div className="imageWrapper">
-            <video autoPlay loop muted src={ `${'http://localhost:1337'}${element.video.data.attributes.url}` } />
+            <video autoPlay loop muted src={process.env.STRAPI_URL + element.video.data.attributes.url} />
           </div>
           <div className="heroContent">
             <h1>{element.title}</h1>
@@ -26,7 +26,7 @@ function HeroSection( {element} ) {
       <div className="imageWrapper">
         <Image
           priority
-          src = { `${'http://localhost:1337'}${element.image.data.attributes.url}` }
+          src = {process.env.STRAPI_URL + element.image.data.attributes.url}
           layout="fill"
           objectFit="cover"
           objectPosition="center"
