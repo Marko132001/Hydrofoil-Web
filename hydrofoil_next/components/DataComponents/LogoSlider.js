@@ -11,9 +11,9 @@ function LogoSlider( {element} ) {
             {element.images.data.map((image) => {
 
                 return(
-                    <div className="logo-slide">
+                    <div key={image.id} className="logo-slide">
                         <Image
-                                src = {process.env.STRAPI_URL + image.attributes.url}
+                                src = {image.attributes.url}
                                 alt = "image"
                                 layout="responsive"
                                 width="250"

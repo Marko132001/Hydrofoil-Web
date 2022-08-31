@@ -10,11 +10,11 @@ function SplitScreen( {element} ) {
 
           return(
 
-            <div className={item.fullScreen ? 'left center' : 'left'}>
+            <div key={item.id} className={item.fullScreen ? 'left center' : 'left'}>
                 <div className="image">
                 <Image
                   priority
-                  src = {process.env.STRAPI_URL + item.image.data.attributes.url}
+                  src = {item.image.data.attributes.url}
                   layout="fill"
                   objectFit="cover"
                   objectPosition="center"

@@ -34,10 +34,10 @@ function CountingAnimation( {element} ){
             {element.CountElement.map((item) => {
                 
                 return(
-                    <div className="counter-container">
+                    <div key={item.id} className="counter-container">
                         <i className="image-logo">
                         <Image
-                                    src = {process.env.STRAPI_URL + item.logo.data.attributes.url}
+                                    src = {item.logo.data.attributes.url}
                                     alt = "image"
                                     width="100"
                                     height="100"

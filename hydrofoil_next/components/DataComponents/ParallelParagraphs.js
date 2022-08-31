@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import MarkdownIt from "markdown-it";
 
 function ParallelParagraphs( {element} ) {
@@ -14,7 +14,7 @@ function ParallelParagraphs( {element} ) {
 
                 return(
                     
-                        <div className="card">
+                        <div key={element.id} className="card">
                             <h3>{element.title}</h3>
                             <div className="paragraph-text" dangerouslySetInnerHTML={{__html: htmlContent}}>
                             

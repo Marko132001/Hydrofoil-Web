@@ -1568,7 +1568,7 @@
   "resolved" "https://registry.npmjs.org/markdown-it-image-figures/-/markdown-it-image-figures-2.1.0.tgz"
   "version" "2.1.0"
 
-"markdown-it@*":
+"markdown-it@*", "markdown-it@^13.0.1":
   "integrity" "sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q=="
   "resolved" "https://registry.npmjs.org/markdown-it/-/markdown-it-13.0.1.tgz"
   "version" "13.0.1"

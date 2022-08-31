@@ -11,10 +11,10 @@ function ImageAndCaption( {element} ) {
                 {element.imageComponent.map((item) => {
 
                     return(
-                        <a href={item.link}>
+                        <a href={item.link} key={item.id}>
                             <div className="imageAndCaption">
                                 <div className="image">
-                                    <Image src={process.env.STRAPI_URL + item.image.data.attributes.url} 
+                                    <Image src={item.image.data.attributes.url} 
                                     width={(item.image.data.attributes.width == null) ? "392" : item.image.data.attributes.width} 
                                     height={(item.image.data.attributes.height == null) ? "30" : item.image.data.attributes.height} 
                                     alt="image"  
