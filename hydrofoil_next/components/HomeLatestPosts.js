@@ -6,7 +6,7 @@ function HomeLatestPosts( {posts} ) {
     const [latestPosts, setLatestPosts] = useState([]);
 
     useEffect(() => {
-        setLatestPosts(posts.data.slice(0, 5));
+        setLatestPosts(posts.data.slice(-3));
     }, [posts.data]);
 
     function renderPostPreviews(){

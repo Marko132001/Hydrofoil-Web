@@ -15,7 +15,7 @@ function Footer() {
           <h4>Contacts</h4>
           <ul>
               <li><a>Mob: +385 98 9176039</a></li>
-              <li><a>E-mail: uptzri@gmail.com</a></li>
+              <li><a>E-Mail: uptzri@gmail.com</a></li>
               <li><a>Adresa: Ante Kovačića 17, 51000 Rijeka, Croatia</a></li>
           </ul>
         </div>

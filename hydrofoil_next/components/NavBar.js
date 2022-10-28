@@ -4,6 +4,7 @@ import hydrofoil_logo from '../images/hydrofoil_logo.png';
 import Dropdown from './Dropdown';
 import Link from 'next/link';
 
+
 const Logo = () => {
   return <Image
           className="logo" 
@@ -80,8 +81,6 @@ function NavBar( {navItems} ) {
     </>
   );
 
-
-    
 
 
 }

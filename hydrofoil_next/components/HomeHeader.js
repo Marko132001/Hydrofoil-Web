@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 
 function HomeHeader() {
+  
   return (
     <div className="homeHeader">
         <h1>THE MAIN <span style={{color: '#41A4FD'}}>PROJECT</span><br />
@@ -16,6 +17,7 @@ function HomeHeader() {
         
     </div>    
   )
+  
 }
 
 export default HomeHeader
