@@ -43,11 +43,11 @@ function HomeHeader() {
 						Adria Hydrofoil 
 					</span>
 				</div>
-				<p class="text-[40px] lg:text-[45px] xl:text-[55px] font-bold leading-tight mt-5 sm:mt-0 ">
+				<p className="text-[40px] lg:text-[45px] xl:text-[55px] font-bold leading-tight mt-5 sm:mt-0 ">
 					THE MAIN <span className="text-blue-500">PROJECT</span> <br />
 					OF THE <span className="text-blue-500">ASSOCIATION</span> 
 				</p>
-				<p class="mt-5 md:text-md ">
+				<p className="mt-5 md:text-md ">
 					AHSB naš je glavni projekt udruge i nastavak našeg uspješnog višegodišnjeg projekta. 
 					Adria Hydrofoil s kojim smo se natjecali na međunarodnom natjecanju radio-upravljivih plovila Hydrocontest 
 					a danas sudjelujemo na prestižnom natjecanju Monaco Energy Boat Challenge. 

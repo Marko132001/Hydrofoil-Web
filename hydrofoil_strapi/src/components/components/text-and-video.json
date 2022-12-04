@@ -9,7 +9,7 @@
   "attributes": {
     "description": {
       "type": "richtext",
-      "required": true
+      "required": false
     },
     "videos": {
       "type": "media",
@@ -24,6 +24,14 @@
     },
     "changeLayout": {
       "type": "boolean"
+    },
+    "title": {
+      "type": "string"
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "global.link"
     }
   }
 }
