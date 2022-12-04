@@ -21,7 +21,8 @@
         "components.title-and-text",
         "components.video-player",
         "components.zig-zag",
-        "components.hero-section-video"
+        "components.hero-section-video",
+        "components.features-section"
       ]
     }
   }

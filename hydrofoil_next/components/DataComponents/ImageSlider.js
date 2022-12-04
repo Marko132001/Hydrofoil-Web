@@ -5,6 +5,7 @@ import {FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
 function ImageSlider( {element} ){
 
+
     const [current, setCurrent] = useState(0);
     const length = element.images.data.length;
 
@@ -18,8 +19,8 @@ function ImageSlider( {element} ){
             setCurrent(current === 0 ? length - 1 : current - 1);
         };
 
-
         return (
+            
             <div className="imageSlider-container">
             
             <div className="slider">
@@ -64,6 +65,8 @@ function ImageSlider( {element} ){
             </nav>
             <a href={(element.link == null) ? "" : element.link.url}>{(element.link == null) ? "" : element.link.caption}</a>
             </div>
+            
+
         );
     }
 

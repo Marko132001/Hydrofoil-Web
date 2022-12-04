@@ -15,7 +15,7 @@ module.exports = {
   },
 
   images: {
-    domains: [process.env.IMAGES_DOMAIN],
+    domains: [process.env.IMAGES_DOMAIN, process.env.IMAGES_LOCAL],
   },
 
 }

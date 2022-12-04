@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_components_features_sections",
+  "info": {
+    "displayName": "FeaturesSection",
+    "icon": "archway",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.title-and-text"
+    }
+  }
+}

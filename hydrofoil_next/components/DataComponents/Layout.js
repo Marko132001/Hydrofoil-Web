@@ -11,6 +11,7 @@ import TextAndButton from './TextAndButton';
 import WebForm from './WebForm';
 import LogoSlider from './LogoSlider';
 import SplitScreen from './SplitScreen';
+import FeaturesSection from './FeaturesSection';
 
 
 function Layout( {element} ){
@@ -112,6 +113,14 @@ function Layout( {element} ){
         return(
             <>
                 <SplitScreen element={element} />
+            </>
+        );
+    }
+    else if(element.__component == "components.features-section"){
+        
+        return(
+            <>
+                <FeaturesSection element={element} />
             </>
         );
     }
