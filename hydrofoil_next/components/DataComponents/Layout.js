@@ -12,6 +12,7 @@ import WebForm from './WebForm';
 import LogoSlider from './LogoSlider';
 import SplitScreen from './SplitScreen';
 import FeaturesSection from './FeaturesSection';
+import VideoCard from './VideoCard';
 
 
 function Layout( {element} ){
@@ -121,6 +122,14 @@ function Layout( {element} ){
         return(
             <>
                 <FeaturesSection element={element} />
+            </>
+        );
+    }
+    else if(element.__component == "components.video-card"){
+        
+        return(
+            <>
+                <VideoCard element={element} />
             </>
         );
     }

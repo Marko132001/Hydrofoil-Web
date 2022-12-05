@@ -21,7 +21,8 @@
         "components.zig-zag",
         "components.title-and-text",
         "components.title-and-images",
-        "components.split-screen-element"
+        "components.split-screen-element",
+        "components.video-card"
       ]
     }
   }

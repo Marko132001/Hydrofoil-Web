@@ -9,6 +9,7 @@ function HeroSection( {element} ) {
   if(element.__component == "components.hero-section-video"){
 
     return (
+      
       <div className="heroWrapper">
           <div className="imageWrapper">
             <video autoPlay loop muted src={process.env.IMAGES_STRAPI_URL + element.video.data.attributes.url} />
@@ -17,7 +18,7 @@ function HeroSection( {element} ) {
             <h1>{element.title}</h1>
           </div>
       </div>
-    )
+      );
   }
 
   return (
