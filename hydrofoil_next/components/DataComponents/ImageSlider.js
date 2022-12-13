@@ -20,7 +20,7 @@ function ImageSlider( {element} ){
         };
 
         return (
-            
+            /*
             <div className="imageSlider-container">
             
             <div className="slider">
@@ -65,14 +65,37 @@ function ImageSlider( {element} ){
             </nav>
             <a href={(element.link == null) ? "" : element.link.url}>{(element.link == null) ? "" : element.link.caption}</a>
             </div>
-            
+            */
+
+            <>
+            <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
+                <div class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
+                {element.images.data.map((image, index) => {
+                return (
+                        <div class="inline-block px-3">
+                            <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                            <Image
+                                    image={image}
+                                    key={image.id}
+                                    src = {process.env.IMAGES_STRAPI_URL + image.attributes.url}
+                                    alt = "image"
+                                    width={(image.attributes.width == 1920) ? "1920" : "1000"}
+                                    height={(image.attributes.height == 852) ? "852" : "600"}
+                            />
+                            </div>
+                        </div>
+                );
+                })}
+                </div>
+                </div>
+            </>
 
         );
     }
 
     return(
         <>
-            <div className="slider-container">
+            <div>
                 {renderImageSlider()}
             </div>
         </>
