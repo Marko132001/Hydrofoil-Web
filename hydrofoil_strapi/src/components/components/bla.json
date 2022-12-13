@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_components_blas",
+  "info": {
+    "displayName": "bla",
+    "icon": "archway"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

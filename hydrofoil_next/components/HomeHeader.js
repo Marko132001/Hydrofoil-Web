@@ -43,7 +43,7 @@ function HomeHeader() {
 						Adria Hydrofoil 
 					</span>
 				</div>
-				<p className="text-[40px] lg:text-[45px] xl:text-[55px] font-bold leading-tight mt-5 sm:mt-0 ">
+				<p className="text-[37px] lg:text-[45px] xl:text-[55px] font-bold leading-tight mt-5 sm:mt-0">
 					THE MAIN <span className="text-blue-500">PROJECT</span> <br />
 					OF THE <span className="text-blue-500">ASSOCIATION</span> 
 				</p>

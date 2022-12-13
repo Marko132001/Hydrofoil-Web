@@ -1,8 +1,6 @@
 import React, {useEffect} from "react";
 import Image from "next/image";
 import MarkdownIt from "markdown-it";
-import VideoPlayer from "./VideoPlayer";
-import parseLinkDestination from "markdown-it/lib/helpers/parse_link_destination";
 
 function TextAndImage( {element} ) {
     const md = new MarkdownIt();
@@ -13,30 +11,13 @@ function TextAndImage( {element} ) {
 
     
         return(
-            /*
-            <div className={element.changeLayout ? 'layout active' : 'layout'}>
-                <div className="layout_image">
-                    <Image
-                    src = {process.env.IMAGES_STRAPI_URL + element.image.data.attributes.url}
-                    alt = "image"
-                    layout="responsive"
-                    width={(element.image.data.attributes.width == null) ? "400" : element.image.data.attributes.width}
-                    height={(element.image.data.attributes.height == null) ? "267" : element.image.data.attributes.height}
-                    />
-                </div>
-
-                <div className="layout_text" dangerouslySetInnerHTML={{__html: htmlContent}}>
-                    
-                </div>
-            </div>
-            */
             <>
                 <section className="bg-white dark:bg-gray-900">
                     <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                             {(element.description == null || element.description == "") && (
                                 <>
-                                    <p className="text-[40px] lg:text-[45px] xl:text-[45px] font-bold leading-tight mt-5 sm:mt-0 text-blue-400">
+                                    <p className="text-[40px] lg:text-[45px] xl:text-[45px] font-bold leading-tight mt-5 sm:mt-0 text-blue-600">
                                         {element.title}
 				                    </p>
                                 </>
@@ -75,18 +56,6 @@ function TextAndImage( {element} ) {
     }
 
     return(
-        /*
-        <div className={element.changeLayout ? 'layout active' : 'layout'}>
-            <div className="layout_image">
-                <VideoPlayer element={element} />
-            </div>
-
-            <div className="text_statistic" dangerouslySetInnerHTML={{__html: htmlContent}}>
-    
-            </div>
-            
-        </div>
-        */
         <>
         <section className="bg-white dark:bg-gray-900">
             <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
@@ -114,7 +83,9 @@ function TextAndImage( {element} ) {
                     )}                          
                 </div>
                 <div className={element.changeLayout ? 'grid grid-cols-1 mt-8 -order-1' : 'grid grid-cols-1 mt-8'}>
-                    <VideoPlayer className="mt-4 w-full lg:mt-10 rounded-lg" element={element} />
+                    <video controls className="h-full w-full object-cover">
+                    <source src={process.env.IMAGES_STRAPI_URL + element.videos.data[0].attributes.url} type="video/mp4" />
+                    </video>
                 </div>
             </div>
         </section>
