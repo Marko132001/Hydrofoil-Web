@@ -37,7 +37,7 @@ function TextAndImage( {element} ) {
                                 </>
                             )}                          
                         </div>
-                        <div className={element.changeLayout ? 'grid grid-cols-1 mt-8 -order-1' : 'grid grid-cols-1 mt-8'}>
+                        <div className={element.changeLayout ? 'grid grid-cols-1 mt-8 -order-1 shadow-xl rounded-lg' : 'grid grid-cols-1 mt-8 shadow-xl rounded-lg'}>
                             <Image
                                 className="mt-4 w-full lg:mt-10 rounded-lg"
                                 src = {process.env.IMAGES_STRAPI_URL + element.image.data.attributes.url}

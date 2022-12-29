@@ -39,9 +39,25 @@ function VideoCard( {element} ){
             <div className={`col-span-9 lg:col-span-7 xl:col-span-5 ${element.left && 'order-first'}`}>
                 <div className="mt-4 h-full -translate-x-4 -rotate-2 rounded-3xl bg-gradient-to-r from-purple-400 via-blue-500 to-indigo-500 p-4">
                 <div className="h-full translate-x-4 rotate-6 overflow-hidden rounded-3xl shadow-lg transition-transform hover:scale-125">
-                    <video autoPlay muted loop className="h-full w-full object-cover">
-                    <source src={process.env.IMAGES_STRAPI_URL + element.media.data.attributes.url} type="video/mp4" />
-                    </video>
+                    {(element.media.data.attributes.ext == ".jpg" || element.media.data.attributes.ext == ".png")
+                        &&
+                        (
+                            <video autoPlay muted loop className="h-full w-full object-cover" poster={process.env.IMAGES_STRAPI_URL + element.media.data.attributes.url}>
+                            
+                            </video>
+                        )
+                    }
+                    {    
+                        element.media.data.attributes.ext == ".mp4"
+                        &&
+                        (
+                            <video autoPlay muted loop className="h-full w-full object-cover">
+                            <source src={process.env.IMAGES_STRAPI_URL + element.media.data.attributes.url} type="video/mp4" />
+                            </video>
+                        )
+
+                    }
+                    
                 </div>
                 </div>
             </div>
