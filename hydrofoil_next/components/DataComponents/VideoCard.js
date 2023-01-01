@@ -9,7 +9,7 @@ function VideoCard( {element} ){
                 <p className="mb-3 text-lg font-semibold uppercase leading-snug tracking-wide text-blue-600">
                 {element.category}
                 </p>
-                <h2 className="mb-8 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 xl:text-6xl">
+                <h2 className="mb-8 text-4xl font-extrabold tracking-tight text-gray-900 xl:text-6xl">
                 {element.title}
                 </h2>
                 <p className="mb-6 text-lg font-medium leading-6 text-gray-500 xl:text-xl xl:leading-8">

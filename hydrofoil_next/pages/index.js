@@ -6,6 +6,7 @@ import Image from "next/image";
 import vector1 from "../images/vector1.png";
 import vector2 from "../images/vector2.png";
 import NavBar from "../components/NavBar";
+import Testimonials from "../components/DataComponents/Testimonials";
 
 const Vector1 = () => {
   return <Image
@@ -36,7 +37,8 @@ function Home( {posts, home, nav} ) {
       <Vector1 /><Vector2 />
       <HomeHeader />
       <HomeLatestPosts posts={posts}/>
-      <LayoutElements elements={home} />
+      <Testimonials />
+      <LayoutElements elements={home} />     
     </>
   )
 }

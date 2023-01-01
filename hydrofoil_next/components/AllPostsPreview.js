@@ -16,9 +16,8 @@ function AllPostsPreview( {post} ) {
             <h3 className="allPosts-title">{post.attributes.title}</h3>    
             <p className="allPosts-text">{post.attributes.description}</p>
         </a>
-      </div>
-      
-    </>
+      </div>    
+    </>   
     
   )
 }
