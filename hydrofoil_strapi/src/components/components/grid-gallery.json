@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_components_grid_galleries",
+  "info": {
+    "displayName": "GridGallery",
+    "icon": "asterisk",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.faded-image"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

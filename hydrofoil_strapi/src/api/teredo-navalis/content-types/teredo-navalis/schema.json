@@ -22,7 +22,10 @@
         "components.video-player",
         "components.zig-zag",
         "components.hero-section-video",
-        "components.features-section"
+        "components.features-section",
+        "components.hero-section-image",
+        "components.video-card",
+        "components.grid-gallery"
       ]
     }
   }

@@ -21,7 +21,10 @@
         "components.video-player",
         "components.zig-zag",
         "components.counting-animation",
-        "components.hero-section-video"
+        "components.hero-section-video",
+        "components.features-section",
+        "components.hero-section-image",
+        "components.video-card"
       ]
     }
   }

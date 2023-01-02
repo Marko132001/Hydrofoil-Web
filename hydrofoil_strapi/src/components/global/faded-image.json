@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_global_faded_images",
+  "info": {
+    "displayName": "FadedImage",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "text": {
+      "type": "string"
+    }
+  }
+}

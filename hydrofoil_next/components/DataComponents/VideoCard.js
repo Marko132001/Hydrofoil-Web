@@ -15,11 +15,12 @@ function VideoCard( {element} ){
                 <p className="mb-6 text-lg font-medium leading-6 text-gray-500 xl:text-xl xl:leading-8">
                 {element.content}
                 </p>
+                {element.link!=null &&
                 <a
-                href={element.url}
+                href={element.link.url}
                 className="text-xl font-medium text-blue-600 transition-colors duration-200 hover:text-blue-800 hover:underline xl:text-2xl"
                 >
-                Learn more
+                {element.link.caption}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="ml-2 inline-flex h-6 w-6"
@@ -35,6 +36,7 @@ function VideoCard( {element} ){
                     />
                 </svg>
                 </a>
+                }
             </div>
             <div className={`col-span-9 lg:col-span-7 xl:col-span-5 ${element.left && 'order-first'}`}>
                 <div className="mt-4 h-full -translate-x-4 -rotate-2 rounded-3xl bg-gradient-to-r from-purple-400 via-blue-500 to-indigo-500 p-4">

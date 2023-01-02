@@ -33,13 +33,15 @@ p.sub-title{
     //overflow: hidden;
     padding: 10px;
     display: flex;
-    backdrop-filter: blur(55px);
+    //backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.55);
     border: 1px solid rgba(255, 255, 255, .2);
     -webkit-box-shadow: 0px 10px 33px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 10px 33px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 10px 33px 0px rgba(0,0,0,0.75);
     .contact-info{
-        background-color: #4b3269;
+        //background-color: #4b3269;
+        background-color: #224ab2;
         border-radius: 15px;
         flex: 0 1 40%;
         padding: 40px;

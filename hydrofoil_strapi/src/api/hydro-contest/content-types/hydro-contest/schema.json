@@ -4,7 +4,8 @@
   "info": {
     "singularName": "hydro-contest",
     "pluralName": "hydro-contests",
-    "displayName": "HydroContest"
+    "displayName": "HydroContest",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,7 +18,11 @@
         "components.hero-section-image",
         "components.image-slider",
         "components.parallel-paragraphs",
-        "components.title-and-text"
+        "components.title-and-text",
+        "components.features-section",
+        "components.grid-gallery",
+        "components.zig-zag",
+        "components.video-card"
       ]
     }
   }

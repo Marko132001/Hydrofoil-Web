@@ -13,6 +13,7 @@ import LogoSlider from './LogoSlider';
 import SplitScreen from './SplitScreen';
 import FeaturesSection from './FeaturesSection';
 import VideoCard from './VideoCard';
+import GridGallery from './GridGallery';
 
 
 function Layout( {element} ){
@@ -130,6 +131,14 @@ function Layout( {element} ){
         return(
             <>
                 <VideoCard element={element} />
+            </>
+        );
+    }
+    else if(element.__component == "components.grid-gallery"){
+
+        return(
+            <>
+                <GridGallery element={element} />
             </>
         );
     }
