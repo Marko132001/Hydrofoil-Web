@@ -17,7 +17,6 @@
       "components": [
         "components.hero-section-image",
         "components.image-slider",
-        "components.parallel-paragraphs",
         "components.title-and-text",
         "components.features-section",
         "components.grid-gallery",

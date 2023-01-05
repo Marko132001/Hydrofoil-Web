@@ -15,9 +15,6 @@
     "title": {
       "type": "string"
     },
-    "content": {
-      "type": "richtext"
-    },
     "description": {
       "type": "text"
     },
@@ -36,6 +33,16 @@
       "type": "date",
       "default": "2022-07-01",
       "required": true
+    },
+    "paragraph": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.paragraph"
+    },
+    "gallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.grid-gallery"
     }
   }
 }

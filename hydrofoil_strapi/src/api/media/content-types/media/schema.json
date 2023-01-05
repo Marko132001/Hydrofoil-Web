@@ -4,7 +4,8 @@
   "info": {
     "singularName": "media",
     "pluralName": "medias",
-    "displayName": "Media"
+    "displayName": "Media",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +16,9 @@
       "type": "dynamiczone",
       "components": [
         "components.video-player",
-        "components.title-and-images"
+        "components.title-and-images",
+        "components.grid-gallery",
+        "components.video-card"
       ]
     }
   }
