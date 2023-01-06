@@ -1,19 +1,19 @@
 import React from "react";
 import MarkdownIt from "markdown-it";
 
-function TitleAndText( {element} ) {
+function TitleAndText({ element }) {
 
     const md = new MarkdownIt();
     const htmlContent = md.render(element.description);
 
-    return(
-        
+    return (
+
         <div className="title-and-text">
             <div className="layout_title">
                 <h3>{element.title}</h3>
             </div>
-            <div className="text_statistic" dangerouslySetInnerHTML={{__html: htmlContent}}>
-
+            <div className="text_statistic">
+                {element.description}
             </div>
         </div>
     );

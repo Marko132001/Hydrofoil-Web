@@ -1,0 +1,667 @@
+.partners-page-hero {
+    background-image: url("../images/sponsors-painting.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 50vh;
+    background-color: black;
+}
+
+@media only screen and (max-width: 700px) {
+    .partners-page-hero {
+        height: 100vh;
+    }
+}
+
+
+.partners-page-hero-title {
+    text-transform: uppercase;
+    color: white;
+    position: relative;
+    text-align: center;
+    font-size: 5rem;
+    letter-spacing: -2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 5px 5px #1da1f2;
+    transition-duration: 0.3s;
+}
+
+.partners-page-hero-title:hover {
+    text-shadow: 5px 5px #198dd6, 0px 0px 5px #a7dafa;
+    transition: 0.3s ease;
+}
+
+.partners-page-hero-description {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 700px) {
+    .partners-page-hero-description {
+        top: auto;
+        bottom: 10%;
+        font-size: 2em;
+        left: auto;
+        transform: none;
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+/* platinum */
+
+.partners-page-platinum-sponors {
+    background: rgb(229, 228, 226);
+    /* background: radial-gradient(circle, rgba(229, 228, 226, 1) 0%, rgba(255, 255, 255, 1) 100%); */
+}
+
+.partners-page-platinum-sponsors-title {
+    text-align: center;
+    font-size: 50px;
+}
+
+.partners-page--platinum-sponsors-container {
+    display: flexbox;
+    text-align: center;
+}
+
+.parners-page-platinum-sponsors-1 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/PGZ.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 8vw;
+    width: 10vw;
+}
+
+.parners-page-platinum-sponsors-2 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/kord-CB.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 8vw;
+    width: 10vw;
+}
+
+.parners-page-platinum-sponsors-3 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/IHC.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 8vw;
+    width: 10vw;
+}
+
+.parners-page-platinum-sponsors-4 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/PFRI.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 8vw;
+    width: 10vw;
+}
+
+.parners-page-platinum-sponsors-5 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/ALARM.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 8vw;
+    width: 10vw;
+}
+
+.parners-page-platinum-sponsors-6 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/ELOG.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 8vw;
+    width: 10vw;
+}
+
+.parners-page-platinum-sponsors-7 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/KLIK.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 8vw;
+    width: 10vw;
+}
+
+:root {
+    --platinum: rgb(229, 228, 226);
+    --platinum-light-shadow: rgb(163, 163, 163);
+    --platinum-dark-shadow: rgb(36, 36, 36);
+}
+
+.partners-page-platinum-sponsors-title {
+    display: grid;
+    grid-template-areas: 'overlap';
+    place-content: center;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.partners-page-platinum-sponsors-title>div {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: #00090b;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: clamp(0.9em, 5vw, 10rem);
+    grid-area: overlap;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 4px transparent;
+}
+
+div.partners-page-platinum-sponsors-title-bg {
+    background-image: repeating-linear-gradient(105deg,
+            var(--platinum) 0%,
+            var(--platinum-dark-shadow) 5%,
+            var(--platinum) 12%);
+    color: transparent;
+    filter: drop-shadow(5px 15px 10px black);
+    transform: scaleY(1.05);
+    transform-origin: top;
+}
+
+div.partners-page-platinum-sponsors-title-fg {
+    background-image: repeating-linear-gradient(5deg,
+            var(--platinum) 0%,
+            var(--platinum-light-shadow) 23%,
+            var(--platinum) 31%);
+    color: #000a1e;
+    transform: scale(1);
+}
+
+/* end */
+
+/* diamond */
+
+.partners-page-diamond-sponors {
+    background: rgb(185, 242, 255);
+    /* background: linear-gradient(42deg, rgba(185, 242, 255, 1) 0%, rgba(255, 255, 255, 1) 100%); */
+}
+
+.partners-page-diamond-sponsors-title {
+    text-align: center;
+    font-size: 50px;
+}
+
+.partners-page--diamond-sponsors-container {
+    display: flexbox;
+    text-align: center;
+}
+
+.parners-page-diamond-sponsors-1 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/Szsur.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10vw;
+    width: 30vw;
+}
+
+.parners-page-diamond-sponsors-2 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/SCRI.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10vw;
+    width: 30vw;
+}
+
+.parners-page-diamond-sponsors-3 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/Schrack.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 10vw;
+    width: 30vw;
+}
+
+:root {
+    --diamond: #b9f2ff;
+    --diamond-light-shadow: #769da6;
+    --dark-light-shadow: #013c49;
+}
+
+.partners-page-diamond-sponsors-title {
+    display: grid;
+    grid-template-areas: 'overlap';
+    place-content: center;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.partners-page-diamond-sponsors-title>div {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: #00090b;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: clamp(1em, 6vw, 10rem);
+    grid-area: overlap;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 4px transparent;
+}
+
+div.partners-page-diamond-sponsors-title-bg {
+    background-image: repeating-linear-gradient(105deg,
+            var(--diamond) 0%,
+            var(--dark-light-shadow) 5%,
+            var(--diamond) 12%);
+    color: transparent;
+    filter: drop-shadow(5px 15px 10px black);
+    transform: scaleY(1.05);
+    transform-origin: top;
+}
+
+div.partners-page-diamond-sponsors-title-fg {
+    background-image: repeating-linear-gradient(5deg,
+            var(--diamond) 0%,
+            var(--diamond-light-shadow) 23%,
+            var(--diamond) 31%);
+    color: #000a1e;
+    transform: scale(1);
+}
+
+/* end */
+
+/* gold */
+
+.partners-page-gold-sponors {
+    background: #ffd9006c;
+    /* background: linear-gradient(42deg, #ffd9003e 0%, rgba(255, 255, 255, 1) 100%); */
+}
+
+.partners-page-gold-sponsors-title {
+    text-align: center;
+    font-size: 30px;
+}
+
+.partners-page--gold-sponsors-container {
+    display: flexbox;
+    text-align: center;
+}
+
+.parners-page-gold-sponsors-1 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/AITAC.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 7vw;
+    width: 8vw;
+}
+
+.parners-page-gold-sponsors-2 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/MONTELEKTRO.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 7vw;
+    width: 8vw;
+}
+
+.parners-page-gold-sponsors-3 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/YACHT-POOL.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 7vw;
+    width: 8vw;
+}
+
+.parners-page-gold-sponsors-4 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/MARSERVIS.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 7vw;
+    width: 8vw;
+}
+
+.parners-page-gold-sponsors-5 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/TREATRADE.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 7vw;
+    width: 8vw;
+}
+
+.parners-page-gold-sponsors-6 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/FLY-SOLARTECH.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 7vw;
+    width: 8vw;
+}
+
+:root {
+    --gold: #FFD700;
+    --gold-light-shadow: #b09601;
+    --gold-dark-shadow: #453b00;
+}
+
+.partners-page-gold-sponsors-title {
+    display: grid;
+    grid-template-areas: 'overlap';
+    place-content: center;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.partners-page-gold-sponsors-title>div {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: #00090b;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: clamp(0.8em, 4.5vw, 10rem);
+    grid-area: overlap;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 4px transparent;
+}
+
+div.partners-page-gold-sponsors-title-bg {
+    background-image: repeating-linear-gradient(105deg,
+            var(--gold) 0%,
+            var(--gold-dark-shadow) 5%,
+            var(--gold) 12%);
+    color: transparent;
+    filter: drop-shadow(5px 15px 10px black);
+    transform: scaleY(1.05);
+    transform-origin: top;
+}
+
+div.partners-page-gold-sponsors-title-fg {
+    background-image: repeating-linear-gradient(5deg,
+            var(--gold) 0%,
+            var(--gold-light-shadow) 23%,
+            var(--gold) 31%);
+    color: #000a1e;
+    transform: scale(1);
+}
+
+/* end */
+
+
+/* BRONZE */
+
+.partners-page-bronze-sponors {
+    background: #8d4a0686;
+}
+
+.partners-page-bronze-sponsors-title {
+    text-align: center;
+    font-size: 30px;
+}
+
+.partners-page--bronze-sponsors-container {
+    display: flexbox;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.parners-page-bronze-sponsors-1 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/proteam.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-2 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/messer.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-3 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/efra.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-4 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/dnnautica.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-5 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/easycomposites.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-6 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/logoprinter.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-7 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/polychem.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-8 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/navis.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-9 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/dynomax.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-10 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/sph.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-11 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/duing.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-12 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/sika.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-13 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/camtech.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+.parners-page-bronze-sponsors-14 {
+    display: inline-block;
+    margin: 50px;
+    background-image: url("../images/logos/ventex.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 6vw;
+    width: 6vw;
+}
+
+:root {
+    --bronze: #CD7F32;
+    --bronze-light-shadow: #905922;
+    --bronze-dark-shadow: #452a10;
+}
+
+.partners-page-bronze-sponsors-title {
+    display: grid;
+    grid-template-areas: 'overlap';
+    place-content: center;
+    text-transform: uppercase;
+    padding: 20px;
+}
+
+.partners-page-bronze-sponsors-title>div {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: #00090b;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: clamp(0.7em, 3vw, 7rem);
+    grid-area: overlap;
+    letter-spacing: 1px;
+    -webkit-text-stroke: 4px transparent;
+}
+
+div.partners-page-bronze-sponsors-title-bg {
+    background-image: repeating-linear-gradient(105deg,
+            var(--bronze) 0%,
+            var(--bronze-dark-shadow) 5%,
+            var(--bronze) 12%);
+    color: transparent;
+    filter: drop-shadow(5px 15px 10px black);
+    transform: scaleY(1.05);
+    transform-origin: top;
+}
+
+div.partners-page-bronze-sponsors-title-fg {
+    background-image: repeating-linear-gradient(5deg,
+            var(--bronze) 0%,
+            var(--bronze-light-shadow) 23%,
+            var(--bronze) 31%);
+    color: #000a1e;
+    transform: scale(1);
+}
+
+/* end */
+
+
+/* BENEFITS */
+
+.partners-page-benefits {
+    padding: 10vw;
+    display: flexbox;
+}
+
+.partners-page-benefits-text {
+    display: inline-block;
+}
+
+.partners-page-benefits-image {
+    display: inline-block;
+    height: 50vh;
+    background-image: url("../images/Hrv-pogodnosti.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* end */

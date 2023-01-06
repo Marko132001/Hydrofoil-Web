@@ -1,0 +1,325 @@
+.open-source-page {
+  margin: 0;
+  padding-top: 100vh;
+  padding: 0;
+  background-color: #14171a;
+  /* background-color: #f5f8fa; */
+}
+
+.open-source-page-horizontal-line {
+  border-width: 0;
+  color: #003459;
+  background-color: #003459;
+  opacity: 0.3;
+  height: 1px;
+}
+
+.open-source-page-hero-shadow {
+  position: absolute;
+  top: 50%;
+  width: 150vw;
+  height: 0px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.105);
+  box-shadow:
+    0 0 140px 30px #caf0f805,
+    0 0 100px 60px #0034590f,
+    0 0 140px 90px #caf0f807;
+}
+
+
+/* "open source" page hero */
+
+.open-source-page-hero {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #f5f8fa;
+  height: calc(100vh - 120px);
+}
+
+.open-source-page-hero p {
+  position: absolute;
+  top: calc(75% - 10vh);
+  left: calc(50% - 25vw);
+  width: 50vw;
+  /* color: #ffb730; */
+  color: #f5f8fa;
+  background-color: #1790dc;
+
+  padding: 2em 3em;
+  justify-content: center;
+  text-align: justify;
+  text-align-last: center;
+  border-radius: 20px;
+  box-shadow: 5px 5px #1c2125;
+  z-index: 1;
+  transition-duration: 0.3s;
+}
+
+@media only screen and (max-width: 1100px) {
+  .open-source-page-hero p {
+    top: calc(75% - 10vh);
+    left: calc(50% - 37.5vw);
+    height: 25vh;
+    width: 75vw;
+    padding: 2em 4em;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .open-source-page-hero p {
+    top: calc(65% - 10vh);
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  .open-source-page-hero p {
+    top: calc(55% - 10vh);
+  }
+
+  .open-source-page-hero-title {
+    position: absolute;
+    top: 20px;
+  }
+}
+
+.open-source-page-hero p:hover {
+  box-shadow: 7px 7px #1c2125;
+  transition: 0.3s ease-out;
+}
+
+
+.open-source-page-hero-circle1 {
+  position: absolute;
+  top: -25vw;
+  left: -45vw;
+  background: rgb(0, 46, 61);
+  background: linear-gradient(90deg, rgba(0, 46, 61, 1) 0%, rgba(0, 168, 232, 1) 35%, rgba(255, 255, 255, 1) 100%);
+  width: 90vw;
+  height: 90vw;
+  border-radius: 50%;
+  opacity: 25%;
+}
+
+.dummy-code1 {
+  position: absolute;
+  top: 20vh;
+  left: 3vw;
+  opacity: 10%;
+  font-size: 5px;
+  color: #fff;
+}
+
+.open-source-pagedown-arrow {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url("../images/down-arrow.png");
+  background-size: contain;
+  /* filter: invert(100%); */
+  left: calc(50% - 40px);
+  text-align: center;
+  opacity: 80%;
+
+  animation-name: jump;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.21, .6, .59, .85);
+}
+
+@keyframes jump {
+  0% {
+    top: 96vh;
+  }
+
+  100% {
+    top: 94vh;
+  }
+
+  /* 
+  100% {
+    top: 91vh;
+  } */
+}
+
+.open-source-page-hero-title {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: prespective(1000px) translate(-50%, -50%);
+  transform: skewY(13deg);
+  transition: 0.5s;
+}
+
+.open-source-page-hero-title:hover {
+  transform: prespective(1000px) translate(-50%, -50%);
+  transform: skewY(0deg);
+}
+
+.open-source-page-hero-title h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 7vw;
+  color: #1da1f2;
+  transform-style: preserve-3d;
+  transition: 0.8s;
+}
+
+.open-source-page-hero-title h1 span:nth-child(1) {
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.open-source-page-hero-title h1 span:nth-child(2) {
+  color: #003459;
+  transform: translate(-50%, -50%) skewX(-60deg);
+  left: -10px;
+  clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+}
+
+.open-source-page-hero-title h1 span:nth-child(3) {
+  transform: translate(-50%, -50%) skewY(0deg);
+  left: -26px;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+.open-source-page-hero-title:hover h1 span:nth-child(2),
+.open-source-page-hero-title:hover h1 span:nth-child(3) {
+  transform: translate(-50%, -50%) skewX(0deg);
+  left: 0;
+  color: #1da1f2;
+}
+
+/* end */
+
+
+/* project teredo */
+
+.open-source-page-projects-teredo {
+  height: 100vh;
+  width: 100vw;
+  color: #f5f8fa;
+  font-size: 12px;
+  margin: auto;
+  background-image: url("../images/teredo-background.jpg");
+  background-size: cover;
+  background-position: bottom;
+  /* -webkit-filter: invert(100%); */
+  line-height: 3rem;
+}
+
+.open-source-page-projects-title {
+  font-size: 3vw;
+  padding-top: 22vh;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.open-source-page-projects-title-horizontal-line {
+  width: 33vw;
+  border: 2px solid #1da1f2;
+  margin: auto;
+}
+
+.open-source-page-projects-teredo-description {
+  text-align: center;
+}
+
+.open-source-page-projects-wrapper {
+  padding: 0px 12vw 0px 12vw;
+  margin: auto;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 2rem;
+}
+
+.open-source-page-projects-wrapper-section {
+  width: 30%;
+  margin: 3%;
+  padding: 10px 0px 10px 0px;
+  border-radius: 10px;
+  display: inline-block;
+  transition-duration: 0.3s;
+}
+
+.open-source-page-projects-wrapper-section:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: 0.3s;
+  box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 0.78);
+}
+
+
+.open-source-page-projects-wrapper-section-1-icon {
+  position: relative;
+  background-image: url("../images/bulb.png");
+  background-size: cover;
+  background-position: center;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  left: calc(50% - 1rem);
+}
+
+.open-source-page-projects-wrapper-section-2-icon {
+  position: relative;
+  background-image: url("../images/cog-wheel.png");
+  background-size: cover;
+  background-position: center;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  left: calc(50% - 1rem);
+}
+
+.open-source-page-button {
+  color: #fff;
+  background-color: #1da1f2;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 0%;
+  font-size: large;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px;
+  transition-duration: 0.3s;
+}
+
+.open-source-page-button:hover {
+  background-color: #1790dc;
+  transition: 0.3s;
+}
+
+/* end */
+
+
+/* Project Delta One */
+
+.open-source-page-projects-delta {
+  height: 100vh;
+  width: 100vw;
+  color: #f5f8fa;
+  font-size: 12px;
+  margin: auto;
+  background-image: url("../images/delta-one.jpg");
+  background-size: cover;
+  background-position: left;
+  /* -webkit-filter: invert(100%); */
+  line-height: 3rem;
+}
+
+/* end */

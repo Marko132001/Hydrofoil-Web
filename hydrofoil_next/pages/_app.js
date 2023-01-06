@@ -1,18 +1,18 @@
 import "../styles/index.scss";
 import React from "react";
 import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 
-
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, nav }) {
 
 
   return (
     <>
-      
-        <Component {...pageProps} />
+      <NavBar navItems={nav} />
+      <Component {...pageProps} />
       <Footer />
     </>
-    );
+  );
 }
 
 
