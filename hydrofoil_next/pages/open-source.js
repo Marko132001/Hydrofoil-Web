@@ -27,7 +27,7 @@ function OpenSource({ openSource, nav }) {
           more. If you have any questions or comments, send us a message! We
           will be happy to answer!
         </p>
-        <div className="dummy-code1">
+        {/* <div className="dummy-code1">
 
 
           export async function getStaticProps&#40;&#41;&#123;  <br></br>
@@ -118,7 +118,7 @@ function OpenSource({ openSource, nav }) {
 
           export default Dropdown;
 
-        </div>
+        </div> */}
         {/* <div className="open-source-page-hero-circle1"></div> */}
 
         <div className="open-source-pagedown-arrow"></div>
@@ -142,9 +142,9 @@ function OpenSource({ openSource, nav }) {
             <div className="open-source-page-projects-wrapper-section-1-icon">&nbsp;</div>
             <div className="open-source-page-projects-wrapper-section-1-text">
               <strong>Electrical Systems </strong> <br></br>
-              Battery Management System <br></br>
+              Battery Management <br></br>
               Electrical Schematic <br></br>
-              Printed Circuit Boards (PCBs) <br></br>
+              Printed Circuit Boards <br></br>
               Documentation <br></br>
             </div>
             <button className="open-source-page-button">
@@ -185,9 +185,9 @@ function OpenSource({ openSource, nav }) {
             <div className="open-source-page-projects-wrapper-section-1-icon">&nbsp;</div>
             <div className="open-source-page-projects-wrapper-section-1-text">
               <strong>Electrical Systems </strong> <br></br>
-              Battery Management System <br></br>
+              Battery Management<br></br>
               Electrical Schematic <br></br>
-              Printed Circuit Boards (PCBs) <br></br>
+              Printed Circuit Boards<br></br>
               Documentation <br></br>
             </div>
             <button className="open-source-page-button">

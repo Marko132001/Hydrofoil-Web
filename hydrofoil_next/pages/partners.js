@@ -7,7 +7,6 @@ function Partners({ partners, nav }) {
 
   return (
     <>
-      {/* <LayoutElements elements={partners} /> */}
       <div className="partners-page-hero">
         <div className="partners-page-hero-title">The cog wheel that runs us</div>
         <div className="partners-page-hero-description">Our dear partners without
@@ -80,13 +79,13 @@ function Partners({ partners, nav }) {
         </div>
       </div>
 
-      <div className="partners-page-benefits">
+      {/* <div className="partners-page-benefits">
         <div className="partners-page-benefits-text">
           ADVERTISING BENEFITS
         </div>
         <div className="partners-page-benefits-image">&nbsp;</div>
         &nbsp;
-      </div>
+      </div> */}
     </>
   );
 }

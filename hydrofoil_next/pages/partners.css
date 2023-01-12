@@ -7,7 +7,7 @@
     background-color: black;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
     .partners-page-hero {
         height: 100vh;
     }
@@ -28,6 +28,15 @@
     transition-duration: 0.3s;
 }
 
+@media only screen and (max-width: 800px) {
+    .partners-page-hero-title {
+        font-size: 3rem;
+        top: 30%;
+    }
+}
+
+
+
 .partners-page-hero-title:hover {
     text-shadow: 5px 5px #198dd6, 0px 0px 5px #a7dafa;
     transition: 0.3s ease;
@@ -39,19 +48,19 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
     .partners-page-hero-description {
+        font-size: 0.8rem;
         top: auto;
-        bottom: 10%;
-        font-size: 2em;
-        left: auto;
-        transform: none;
-        padding: 20px;
-        text-align: center;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
+
 
 /* platinum */
 
@@ -145,6 +154,50 @@
     background-position: center;
     height: 8vw;
     width: 10vw;
+}
+
+@media only screen and (max-width: 800px) {
+    .parners-page-platinum-sponsors-1 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-platinum-sponsors-2 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-platinum-sponsors-3 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-platinum-sponsors-4 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-platinum-sponsors-5 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-platinum-sponsors-6 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-platinum-sponsors-7 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
 }
 
 :root {
@@ -243,6 +296,26 @@ div.partners-page-platinum-sponsors-title-fg {
     background-position: center;
     height: 10vw;
     width: 30vw;
+}
+
+@media only screen and (max-width: 800px) {
+    .parners-page-diamond-sponsors-1 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-diamond-sponsors-2 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-diamond-sponsors-3 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
 }
 
 :root {
@@ -374,6 +447,44 @@ div.partners-page-diamond-sponsors-title-fg {
     background-position: center;
     height: 7vw;
     width: 8vw;
+}
+
+@media only screen and (max-width: 800px) {
+    .parners-page-gold-sponsors-1 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-gold-sponsors-2 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-gold-sponsors-3 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-gold-sponsors-4 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-gold-sponsors-5 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-gold-sponsors-6 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
 }
 
 :root {
@@ -594,6 +705,93 @@ div.partners-page-gold-sponsors-title-fg {
     background-position: center;
     height: 6vw;
     width: 6vw;
+}
+
+@media only screen and (max-width: 800px) {
+    .parners-page-bronze-sponsors-1 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-2 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-3 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-4 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-5 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-6 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-7 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-8 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-9 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-10 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-11 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-12 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-13 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
+    .parners-page-bronze-sponsors-14 {
+        margin: 1vw 5vw;
+        height: 20vw;
+        width: 40vw;
+    }
+
 }
 
 :root {
