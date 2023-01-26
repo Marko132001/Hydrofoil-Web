@@ -18,7 +18,9 @@
         "components.video-player",
         "components.title-and-images",
         "components.grid-gallery",
-        "components.video-card"
+        "components.video-card",
+        "components.zig-zag",
+        "components.text-and-video"
       ]
     }
   }

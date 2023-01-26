@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import LayoutElements from "../components/LayoutElements";
 import NavBar from "../components/NavBar";
+import DownloadsSection from "../components/DataComponents/DownloadsSection";
 
 function OpenSource( {openSource, nav} ){
 
@@ -9,6 +10,7 @@ function OpenSource( {openSource, nav} ){
         <>
             <NavBar navItems={nav} />
             <LayoutElements elements={openSource} />
+            <DownloadsSection />
         </>
     );
 }
