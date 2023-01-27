@@ -18,7 +18,7 @@ export default HydroContest;
 
 export async function getStaticProps(){
 
-    const hydroContestRes = await axios.get(`${process.env.STRAPI_URL}/api/hydro-contest/?populate=deep`);
+    const hydroContestRes = await axios.get(`${process.env.STRAPI_URL}/api/hydro-contest/?locale=hr&populate=deep`);
     const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
   
     return {

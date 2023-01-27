@@ -18,7 +18,7 @@ export default DeltaOne;
 
 export async function getStaticProps(){
 
-    const deltaOneRes = await axios.get(`${process.env.STRAPI_URL}/api/delta-one/?populate=deep`);
+    const deltaOneRes = await axios.get(`${process.env.STRAPI_URL}/api/delta-one/?locale=hr&populate=deep`);
     const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
   
     return {

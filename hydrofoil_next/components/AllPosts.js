@@ -25,11 +25,11 @@ function AllPosts({ posts }){
                             return(
                                 <>
                                 <div class="p-4 sm:w-1/2 lg:w-1/3">
-                                    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
+                                    <div class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden hover:bg-blue-700 hover:text-white transition duration-300 ease-in">
                                             <div class="lg:h-72 md:h-48 h-48 w-full object-cover object-center relative">
                                             <Image src={process.env.IMAGES_STRAPI_URL + post.attributes.image.data.attributes.url} layout="fill" alt="image"  />
                                             </div>
-                                        <div class="p-6 hover:bg-blue-700 hover:text-white transition duration-300 ease-in">
+                                        <div class="p-6">
                                             <h2 class="text-base font-medium text-blue-300 mb-1">{post.attributes.date}</h2>
                                             <h1 class="text-2xl font-semibold mb-3">{post.attributes.title}</h1>
                                             <p class="leading-relaxed mb-3 text_desc">{post.attributes.description}</p>

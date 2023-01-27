@@ -18,7 +18,7 @@ export default AboutUs;
 
 export async function getStaticProps(){
 
-    const aboutUsRes = await axios.get(`${process.env.STRAPI_URL}/api/about-us?populate=deep`);
+    const aboutUsRes = await axios.get(`${process.env.STRAPI_URL}/api/about-us/?locale=hr&populate=deep`);
     const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
 
     return {

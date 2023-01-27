@@ -50,7 +50,7 @@ export default Home;
 export async function getStaticProps(){
 
   const postRes = await axios.get(`${process.env.STRAPI_URL}/api/posts/?populate=*`);
-  const homeRes = await axios.get(`${process.env.STRAPI_URL}/api/home-page/?populate=deep`);
+  const homeRes = await axios.get(`${process.env.STRAPI_URL}/api/home-page/?locale=hr&populate=deep`);
   const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
 
   return {

@@ -83,7 +83,7 @@ export default Partners;
 
 export async function getStaticProps(){
 
-    const partnersRes = await axios.get(`${process.env.STRAPI_URL}/api/partners/?populate=deep`);
+    const partnersRes = await axios.get(`${process.env.STRAPI_URL}/api/partners/?locale=hr&populate=deep`);
     const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
   
     return {
