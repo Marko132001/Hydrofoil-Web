@@ -1,6 +1,6 @@
 import React from 'react';
 
-function DownloadsSection() {
+function DownloadsSection({t}) {
 
         return(
             <>
@@ -14,9 +14,7 @@ function DownloadsSection() {
                     <div class="text-center">
                     <h1 class="mt-3 text-[3.5rem] font-bold leading-[4rem] tracking-tight text-black">Open Source</h1>
                     <p class="mt-3 text-lg leading-relaxed text-gray-800">
-                    Vjerujemo da zajedničkim radom i međusobnim doprinosom, možemo poboljšati jedne druge te napraviti veliki iskorak s tehnologijom.
-                        Ovdje možete pronaći  korisne informacije, izvorni kod, 3D modele te još mnogo toga.
-                        Ako imate bilo kakvih pitanja ili komentara, pošaljite nam poruku! Rado ćemo odgovoriti!
+                    {t("open-source:text")}
                     </p>
                     </div>
                 </div>
@@ -40,27 +38,26 @@ function DownloadsSection() {
                         class="rounded-lg text-center overflow-hidden w-full transform hover:shadow-2xl hover:scale-105 hover:backdrop-blur-sm transition duration-200 ease-in"
                     >
                         <div id="title" class="w-full py-5 border-b-2 border-blue-400">
-                        <h2 class="font-bold text-3xl text-white">Samogradnja električne bicikle</h2>
+                        <h2 class="font-bold text-3xl text-white">{t("open-source:card_title")}</h2>
 
                         </div>
                         <div id="content" class="">
                         <div id="icon" class="my-5">
                             <p class="text-gray-200 text-sm pt-2">
-                            Mislav Selec, dipl.ing.elektrotehnike
+                            {t("open-source:author_selec")}
                             </p>
                         </div>
                         <div id="contain" class="leading-8 mb-10 text-lg font-light text-gray-50">
                             <ul>
-                            <li>Mid drive vs Hub drive pogon</li>
+                            <li>Mid drive vs Hub drive</li>
                             <li>BLDC motor</li>
-                            <li>Litij-ionska baterija</li>
+                            <li>{t("open-source:bicikla_baterija")}</li>
                             </ul>
                             <div id="choose" class="w-full mt-10 px-6">
                             <a
                                 href="https://drive.google.com/file/d/1tFhgbGCFRLFPlKbMMS8PxoROlkYms1uh/view?usp=share_link"
                                 class="w-full block bg-gray-900 font-medium text-xl py-4 rounded-xl hover:shadow-lg transition duration-200 ease-in-out hover:bg-indigo-600 hover:text-white"
-                                >Download</a
-                            >
+                                >Download</a>
                             </div>
                         </div>
                         </div>

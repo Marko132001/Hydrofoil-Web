@@ -13,7 +13,7 @@ const Header = () => {
  }
 
 
-function HomeHeader() {
+function HomeHeader({t}) {
 
 	return(
 	<>
@@ -32,10 +32,7 @@ function HomeHeader() {
 					OF THE <span className="text-blue-500">ASSOCIATION</span> 
 				</p>
 				<p className="mt-5 md:text-md ">
-					AHSB naš je glavni projekt udruge i nastavak našeg uspješnog višegodišnjeg projekta. 
-					Adria Hydrofoil s kojim smo se natjecali na međunarodnom natjecanju radio-upravljivih plovila Hydrocontest 
-					a danas sudjelujemo na prestižnom natjecanju Monaco Energy Boat Challenge. 
-					Natjecanje se održava održava u Kneževini Monako pod pokroviteljstvom princa Alberta II i brojnih sponzora.
+					{t("home:home_header")}
 				</p>
 
 			

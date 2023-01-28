@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function WebForm( {element} ) {
+function WebForm( {t} ) {
 
     const [fullname, setFullname] = useState("");
     const [email, setEmail] = useState("");
@@ -11,7 +11,7 @@ function WebForm( {element} ) {
   const [errors, setErrors] = useState({});
 
   //   Setting button text on form submission
-  const [buttonText, setButtonText] = useState("Send");
+  const [buttonText, setButtonText] = useState(`${t("contact:button_send")}`);
 
   // Setting success or failure messages states
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
@@ -52,7 +52,7 @@ function WebForm( {element} ) {
     let isValidForm = handleValidation();
 
     if (isValidForm) {
-      setButtonText("Sending");
+      setButtonText(`${t("contact:button_sending")}`);
       const res = await fetch("/api/sendmail", {
         body: JSON.stringify({
           email: email,
@@ -97,19 +97,17 @@ function WebForm( {element} ) {
     
     <div className="web-form">
 
-        <h1>Javite se</h1>
+        <h1>{t("contact:title")}</h1>
         <p className="sub-title">
-            Želite li stupiti u kontakt? 
-            Voljeli bismo čuti vaše mišljenje. 
-            Evo kako možete doći do nas.
+            {t("contact:subtitle")}
         </p>
 
         <div id="contact-container">
             <div className="contact-info">
                 <h4>
-                    Kontaktne informacije
+                    {t("contact:form_title")}
                 </h4>
-                <p>Ispunite obrazac i pošaljite</p>
+                <p>{t("contact:form_subtitle")}</p>
                 <div className="icon-text">
                     <i className="fa gg-phone"></i>
                     <span>+385 98 9176039</span>
@@ -140,7 +138,7 @@ function WebForm( {element} ) {
             <form onSubmit={handleSubmit}>
                 <div className="col">
                     <div className="form-group">
-                        <label htmlFor="fullname">Ime</label>
+                        <label htmlFor="fullname">{t("contact:name")}</label>
                         <input 
                         type="text" 
                         value={fullname}
@@ -151,7 +149,7 @@ function WebForm( {element} ) {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="email">Vaš mail</label>
+                        <label htmlFor="email">{t("contact:e-mail")}</label>
                         <input 
                         type="email" 
                         name="email"
@@ -164,7 +162,7 @@ function WebForm( {element} ) {
                 </div>
                 <div className="col">
                     <div className="form-group">
-                        <label htmlFor="subject">Predmet</label>
+                        <label htmlFor="subject">{t("contact:subject")}</label>
                         <input 
                         type="text" 
                         name="subject"
@@ -177,7 +175,7 @@ function WebForm( {element} ) {
                 </div>
                 <div className="col">
                     <div className="form-group solo">
-                        <label htmlFor="message">Vaša poruka</label>
+                        <label htmlFor="message">{t("contact:message")}</label>
                         <textarea 
                         name="message"
                         value={message}

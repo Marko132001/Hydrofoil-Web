@@ -2,12 +2,16 @@ import axios from "axios";
 import React from "react";
 import NavBar from "../../components/NavBar";
 import PostPagePreview from "../../components/PostPagePreview";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import { useTranslation, UseTranslation } from "next-i18next";
 
-function PostPage({post, nav}) {
+function PostPage({post, nav, locale}) {
+
+  const { t }  = useTranslation();
 
   return (
   <>
-    <NavBar navItems={nav} />
+    <NavBar t={t} />
     <PostPagePreview post={post} />
   </>
   );
@@ -15,7 +19,7 @@ function PostPage({post, nav}) {
 
 export default PostPage;
 
-export async function getStaticProps({params}){
+export async function getStaticProps({params, locale}){
   const postRes = await axios.get(`${process.env.STRAPI_URL}/api/posts/${params.id}/?populate=deep`);
   const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
 
@@ -23,6 +27,7 @@ export async function getStaticProps({params}){
     props: {
       post: postRes.data,
       nav: navRes.data,
+      ...(await serverSideTranslations(locale, ["navbar"])),
     }
   }
 }

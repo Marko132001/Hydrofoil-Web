@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Timeline from './DataComponents/Timeline';
+import { t } from 'i18next';
 
 
-function HomeLatestPosts( {posts} ) {
+function HomeLatestPosts( {posts, t} ) {
     const [latestPosts, setLatestPosts] = useState([]);
 
     useEffect(() => {
@@ -42,7 +43,7 @@ function HomeLatestPosts( {posts} ) {
                         })}
                         </div>
                         <div className="flex justify-center pb-10">
-                            <a href="/posts" className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">Više novosti</a>
+                            <a href="/posts" className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">{t("home:more_news")}</a>
                         </div>
                     </div>
                 </section>
@@ -67,7 +68,7 @@ function HomeLatestPosts( {posts} ) {
     return (
         <div className="dark:bg-gray-800 dark:text-gray-100">
             <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center mt-9 pt-7">
-                Blog Adria Hydrofoil Tima
+                {t("home:blog_header")}
             </h1>
             {renderPostPreviews()}
         </div>

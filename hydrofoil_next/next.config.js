@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-
+const { i18n } = require('./next-i18next.config');
 module.exports = nextConfig
 
 module.exports = {
@@ -17,5 +17,6 @@ module.exports = {
   images: {
     domains: [process.env.IMAGES_DOMAIN, process.env.IMAGES_LOCAL],
   },
+  i18n,
 
 }
