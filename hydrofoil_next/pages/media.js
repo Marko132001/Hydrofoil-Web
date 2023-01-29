@@ -2,13 +2,19 @@ import React from "react";
 import axios from "axios";
 import LayoutElements from "../components/LayoutElements";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import { useTranslation, UseTranslation } from "next-i18next";
 
-function Media( {media, nav} ){
+function Media( {media, locale} ){
+
+  const { t }  = useTranslation();
 
     return(
         <>
-            <NavBar navItems={nav} />
+            <NavBar t={t} />
             <LayoutElements elements={media} />
+            <Footer t={t} />
         </>
     );
 }
@@ -16,15 +22,14 @@ function Media( {media, nav} ){
 export default Media;
 
 
-export async function getStaticProps(){
+export async function getStaticProps({locale}){
 
-    const mediaRes = await axios.get(`${process.env.STRAPI_URL}/api/media/?populate=deep`);
-    const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
+    const mediaRes = await axios.get(`${process.env.STRAPI_URL}/api/media/?locale=${locale}&populate=deep`);
   
     return {
       props: {
-        media: mediaRes.data,
-        nav: navRes.data,        
+        media: mediaRes.data,   
+        ...(await serverSideTranslations(locale, ["navbar", "footer"])),     
       },       
     };
   }

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import hydrofoil_logo from '../images/hydrofoil_logo.png';
+import cro_flag from '../images/flag-for-croatia-svgrepo-com.svg';
+import eng_flag from '../images/united-kingdom-svgrepo-com.svg';
 import Link from 'next/link';
-
+import { useRouter } from "next/router";
 
 const Logo = () => {
   return <Image
@@ -15,7 +17,9 @@ const Logo = () => {
 }
 
 
-function NavBar( {navItems} ) {
+function NavBar( {t} ) {
+
+	const router = useRouter();
 
 	const [dropdown1, setDropdown1] = React.useState(false);
 	const [dropdown2, setDropdown2] = React.useState(false);
@@ -44,23 +48,23 @@ function NavBar( {navItems} ) {
 							<ul className="flex flex-col p-4 mt-4 md:flex-row items-baseline space-x-2">
 								
 								<li onMouseLeave={() => setDropdown1(false)} onMouseOver={() => setDropdown1(true)}>
-									<button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">News <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+									<button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">{t("navbar:news")}<svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
 									{dropdown1 && (
 									<div className="absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
 										<ul className="py-1 text-sm text-gray-700 dark:text-gray-400">
 											<Link href="/posts">
 											<li>
-											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Blog</a>
+											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{t("navbar:blog")}</a>
 											</li>
 											</Link>
 											<Link href="/media">
 											<li>
-											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Media</a>
+											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{t("navbar:media")}</a>
 											</li>
 											</Link>
 											<Link href="/professional-articles">
 											<li>
-											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Articles</a>
+											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{t("navbar:articles")}</a>
 											</li>
 											</Link>
 										</ul>
@@ -68,7 +72,7 @@ function NavBar( {navItems} ) {
 									)}
 								</li>
 								<li onMouseLeave={() => setDropdown2(false)} onMouseOver={() => setDropdown2(true)}>
-									<button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Projects <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+									<button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">{t("navbar:projects")} <svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
 									{dropdown2 && (
 									<div className="absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
 										<ul className="py-1 text-sm text-gray-700 dark:text-gray-400">
@@ -92,7 +96,7 @@ function NavBar( {navItems} ) {
 									)}
 								</li>
 								<Link href="/open-source"><li><a href="#" className="block py-4 px-3 text-gray-700 hover:text-black text-base">Open Source</a></li></Link>
-								<Link href="/partners"><li><a href="#" className="block py-4 px-3 text-gray-700 hover:text-black text-base">Partners</a></li></Link>
+								<Link href="/partners"><li><a href="#" className="block py-4 px-3 text-gray-700 hover:text-black text-base">{t("navbar:partners")}</a></li></Link>
 							</ul>
 							</div>
 							
@@ -102,10 +106,26 @@ function NavBar( {navItems} ) {
 
 						{/*secondary nav*/}
 						<div className="hidden lg:flex items-center space-x-1">
-							<Link href="/about-us"><a href="#" className="py-4 px-3" text-lg>About us</a></Link>
+							<Link href={router.asPath} locale={router.locale === "en" ? "hr" : "en"}><a href="#" className="py-4 px-3 text-lg">
+								{router.locale === "en" ?
+								 <Image
+								 src = {cro_flag}
+								 alt = "image"
+								 width="32px"
+								 height="32px"
+							 	/>
+							  :
+							  <Image
+							  src = {eng_flag}
+							  alt = "image"
+							  width="32px"
+							  height="32px"
+							  />
+							}</a></Link>
+							<Link href="/about-us"><a href="#" className="py-4 px-3 text-lg">{t("navbar:about-us")}</a></Link>
 							<Link href="/contact"><a href="#" className="py-3 px-3 bg-blue-300 hover:bg-blue-200 
-							text-blue-800 rounded hover:text-blue-700 transition duration-300 text-lg">Contact us</a></Link>
-						
+							text-blue-800 rounded hover:text-blue-700 transition duration-300 text-lg">{t("navbar:contact")}</a></Link>
+							
 						</div>
 
 						{/*mobile button goes here*/}
@@ -140,23 +160,23 @@ function NavBar( {navItems} ) {
 					<div>
 						<ul>
 							<li onMouseLeave={() => setDropdown1(false)} onMouseOver={() => setDropdown1(true)} className="mb-1">
-								<a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">News</a>
+								<a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:news")}</a>
 								{dropdown1 && (
 									<div className="absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
 										<ul className="py-1 text-sm text-gray-700 dark:text-gray-400">
 											<Link href="/posts">
 											<li>
-											<a className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Blog</a>
+											<a className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:blog")}</a>
 											</li>
 											</Link>
 											<Link href="/media">
 											<li>
-											<a className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Media</a>
+											<a className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:media")}</a>
 											</li>
 											</Link>
 											<Link href="/professional-articles">
 											<li>
-											<a className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Articles</a>
+											<a className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:articles")}</a>
 											</li>
 											</Link>
 										</ul>
@@ -164,7 +184,7 @@ function NavBar( {navItems} ) {
 									)}
 							</li>
 							<li onMouseLeave={() => setDropdown2(false)} onMouseOver={() => setDropdown2(true)} className="mb-1">
-								<a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Projects</a>
+								<a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:projects")}</a>
 								{dropdown2 && (
 									<div className="absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
 										<ul className="py-1 text-sm text-gray-700 dark:text-gray-400">
@@ -188,7 +208,7 @@ function NavBar( {navItems} ) {
 									)}
 							</li>
 							<li className="mb-1">
-								<Link href="/partners"><a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Partners</a></Link>
+								<Link href="/partners"><a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:partners")}</a></Link>
 							</li>
 							<li className="mb-1">
 								<Link href="/open-source"><a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">Open Source</a></Link>
@@ -197,8 +217,24 @@ function NavBar( {navItems} ) {
 					</div>
 					<div className="mt-auto">
 						<div className="pt-6">
-							<Link href="/about-us"><a className="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="#">About us</a></Link>
-							<Link href="/contact"><a className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl" href="#">Contact us</a></Link>
+							<Link href={router.asPath} locale={router.locale === "en" ? "hr" : "en"}><a href="#" className="py-4 px-3 text-lg">
+								{router.locale === "en" ?
+								 <Image
+								 src = {cro_flag}
+								 alt = "image"
+								 width="32px"
+								 height="32px"
+							 	/>
+							  :
+							  <Image
+							  src = {eng_flag}
+							  alt = "image"
+							  width="32px"
+							  height="32px"
+							  />
+							}</a></Link>
+							<Link href="/about-us"><a className="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="#">{t("navbar:about-us")}</a></Link>
+							<Link href="/contact"><a className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl" href="#">{t("navbar:contact")}</a></Link>
 						</div>
 
 					</div>

@@ -4,7 +4,7 @@ import Uptz from "../images/uptz-logo.png";
 import RitehWeb from "../images/riteh-web2.png";
 import CreativeCommons from "../images/cc.png";
 
-function Footer() {
+function Footer({t}) {
   return (
 
 
@@ -12,15 +12,15 @@ function Footer() {
     <div className="containerFooter">
       <div className="row">
         <div className="footerColumn">
-          <h4>Contacts</h4>
+          <h4>{t("footer:contacts")}</h4>
           <ul>
               <li><a>Mob: +385 98 9176039</a></li>
               <li><a>E-Mail: uptzri@gmail.com</a></li>
-              <li><a>Adresa: Ante Kovačića 17, 51000 Rijeka, Croatia</a></li>
+              <li><a>{t("footer:adresa")}: Ante Kovačića 17, 51000 Rijeka, Croatia</a></li>
           </ul>
         </div>
         <div className="footerColumn">
-          <h4>Follow us</h4>
+          <h4>{t("footer:follow-us")}</h4>
           <div className="socialLinks">
             <a href="https://www.facebook.com/uptz18/"><i className="fab fa-facebook-f"></i></a>
             <a href="https://www.youtube.com/channel/UC7Z4qrgwJTPRyPaHnAP94hg"><i className="fab fa-youtube"></i></a>
@@ -36,7 +36,7 @@ function Footer() {
                 width="100px"
                 height="100px"
             />
-            <h5>COPYRIGHT © 2020. UPTZ • SVA PRAVA ZADRŽANA.</h5>
+            <h5>COPYRIGHT © 2020. UPTZ • {t("footer:copyright")}</h5>
           </div>
         </div>
         <div className="footerColumn">

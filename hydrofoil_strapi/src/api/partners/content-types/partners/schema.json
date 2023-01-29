@@ -10,17 +10,25 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "layout": {
       "type": "dynamiczone",
       "components": [
         "components.hero-section-image",
-        "components.pdf-viewer",
         "components.title-and-images",
         "components.zig-zag",
         "components.title-and-text"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

@@ -1,46 +1,43 @@
 import axios from "axios";
 import React from "react";
-import MarkdownIt from "markdown-it";
 import NavBar from "../../components/NavBar";
+import Footer from "../../components/Footer";
+import PostPagePreview from "../../components/PostPagePreview";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import { useTranslation, UseTranslation } from "next-i18next";
 
-function PostPage({post, nav}) {
+function PostPage({post, locale}) {
 
-  const md = new MarkdownIt();
-  const htmlContent = md.render(post.data.attributes.content);
+  const { t }  = useTranslation();
 
   return (
   <>
-    <NavBar navItems={nav} />
-    <article className="articleText">
-      <header>
-        <h1 className="postPage-title">{post.data.attributes.title}</h1>
-      </header>
-      <section className="postPage-content" dangerouslySetInnerHTML={{__html: htmlContent}}></section>
-    </article>
+    <NavBar t={t} />
+    <PostPagePreview post={post} />
+    <Footer t={t} />
   </>
   );
 }
 
 export default PostPage;
 
-export async function getStaticProps({params}){
-  const postRes = await axios.get(`${process.env.STRAPI_URL}/api/posts/${params.id}`);
-  const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
+export async function getStaticProps({params, locale}){
+  const postRes = await axios.get(`${process.env.STRAPI_URL}/api/posts/${params.id}/?populate=deep`);
 
   return {
     props: {
       post: postRes.data,
-      nav: navRes.data,
+      ...(await serverSideTranslations(locale, ["navbar", "footer"])),
     }
   }
 }
 
-export async function getStaticPaths(){
+export async function getStaticPaths({locales}){
 const postsRes = await axios.get(`${process.env.STRAPI_URL}/api/posts`);
 
-const paths = postsRes.data.data.map((post) => {
-  return {params: {id: post.id.toString()}}
-});
+const paths = postsRes.data.data.map((post) => locales.map((locale) => ({
+   params: {id: post.id.toString()}, locale
+}))).flat();
 
   return{
     paths,

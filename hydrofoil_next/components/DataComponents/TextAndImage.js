@@ -3,8 +3,6 @@ import Image from "next/image";
 import MarkdownIt from "markdown-it";
 
 function TextAndImage( {element} ) {
-    const md = new MarkdownIt();
-    const htmlContent = md.render(element.description);
     
     
     if(element.__component == "components.zig-zag"){

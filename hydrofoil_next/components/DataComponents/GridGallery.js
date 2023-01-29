@@ -53,7 +53,19 @@ function GridGalleryCard({ imageUrl, show }) {
           {imageUrl.text}
         </div>
       </div>
-      <img className="w-full h-full" src={process.env.IMAGES_STRAPI_URL + imageUrl.image.data.attributes.url} alt="" />
+      {(imageUrl.image.data.attributes.ext == ".jpg" || imageUrl.image.data.attributes.ext == ".png") && 
+      (
+        <img className="w-full h-full" src={process.env.IMAGES_STRAPI_URL + imageUrl.image.data.attributes.url} alt="" />
+      )
+      }
+      
+      {imageUrl.image.data.attributes.ext == ".mp4" &&
+        (
+          <video autoPlay muted className="h-full w-full object-cover">
+          <source src={process.env.IMAGES_STRAPI_URL + imageUrl.image.data.attributes.url} type="video/mp4" />
+          </video>
+        )
+      }
     </div>
   );
 }

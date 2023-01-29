@@ -4,19 +4,33 @@
   "info": {
     "singularName": "media",
     "pluralName": "medias",
-    "displayName": "Media"
+    "displayName": "Media",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "layout": {
       "type": "dynamiczone",
       "components": [
         "components.video-player",
-        "components.title-and-images"
-      ]
+        "components.title-and-images",
+        "components.grid-gallery",
+        "components.video-card",
+        "components.zig-zag",
+        "components.text-and-video"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

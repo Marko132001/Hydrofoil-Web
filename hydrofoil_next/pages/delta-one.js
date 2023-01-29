@@ -2,13 +2,19 @@ import React from "react";
 import axios from "axios";
 import LayoutElements from "../components/LayoutElements";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+import { useTranslation, UseTranslation } from "next-i18next";
 
-function DeltaOne( {deltaOne, nav} ){
+function DeltaOne( {deltaOne, locale} ){
+
+  const { t }  = useTranslation();
 
     return(
         <>
-            <NavBar navItems={nav} />
+            <NavBar t={t} />
             <LayoutElements elements={deltaOne} />
+            <Footer t={t} />
         </>
     );
 }
@@ -16,15 +22,14 @@ function DeltaOne( {deltaOne, nav} ){
 export default DeltaOne;
 
 
-export async function getStaticProps(){
+export async function getStaticProps({locale}){
 
-    const deltaOneRes = await axios.get(`${process.env.STRAPI_URL}/api/delta-one/?populate=deep`);
-    const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
+    const deltaOneRes = await axios.get(`${process.env.STRAPI_URL}/api/delta-one/?locale=${locale}&populate=deep`);
   
     return {
       props: {
         deltaOne: deltaOneRes.data,
-        nav: navRes.data,        
+        ...(await serverSideTranslations(locale, ["navbar", "footer"])),       
       },       
     };
   }
