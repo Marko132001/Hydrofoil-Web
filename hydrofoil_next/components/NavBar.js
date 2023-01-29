@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import hydrofoil_logo from '../images/hydrofoil_logo.png';
+import cro_flag from '../images/flag-for-croatia-svgrepo-com.svg';
+import eng_flag from '../images/united-kingdom-svgrepo-com.svg';
 import Link from 'next/link';
 import { useRouter } from "next/router";
 
@@ -104,11 +106,26 @@ function NavBar( {t} ) {
 
 						{/*secondary nav*/}
 						<div className="hidden lg:flex items-center space-x-1">
-							<Link href={router.asPath} locale={router.locale === "en" ? "hr" : "en"}><a href="#" className="py-4 px-3 text-lg">{router.locale === "en" ? "HR" : "EN"}</a></Link>
+							<Link href={router.asPath} locale={router.locale === "en" ? "hr" : "en"}><a href="#" className="py-4 px-3 text-lg">
+								{router.locale === "en" ?
+								 <Image
+								 src = {cro_flag}
+								 alt = "image"
+								 width="32px"
+								 height="32px"
+							 	/>
+							  :
+							  <Image
+							  src = {eng_flag}
+							  alt = "image"
+							  width="32px"
+							  height="32px"
+							  />
+							}</a></Link>
 							<Link href="/about-us"><a href="#" className="py-4 px-3 text-lg">{t("navbar:about-us")}</a></Link>
 							<Link href="/contact"><a href="#" className="py-3 px-3 bg-blue-300 hover:bg-blue-200 
 							text-blue-800 rounded hover:text-blue-700 transition duration-300 text-lg">{t("navbar:contact")}</a></Link>
-						
+							
 						</div>
 
 						{/*mobile button goes here*/}
@@ -200,6 +217,22 @@ function NavBar( {t} ) {
 					</div>
 					<div className="mt-auto">
 						<div className="pt-6">
+							<Link href={router.asPath} locale={router.locale === "en" ? "hr" : "en"}><a href="#" className="py-4 px-3 text-lg">
+								{router.locale === "en" ?
+								 <Image
+								 src = {cro_flag}
+								 alt = "image"
+								 width="32px"
+								 height="32px"
+							 	/>
+							  :
+							  <Image
+							  src = {eng_flag}
+							  alt = "image"
+							  width="32px"
+							  height="32px"
+							  />
+							}</a></Link>
 							<Link href="/about-us"><a className="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="#">{t("navbar:about-us")}</a></Link>
 							<Link href="/contact"><a className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl" href="#">{t("navbar:contact")}</a></Link>
 						</div>

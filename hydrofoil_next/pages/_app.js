@@ -1,5 +1,4 @@
 import "../styles/index.scss";
-import Footer from "../components/Footer";
 import { appWithTranslation } from "next-i18next"; 
 
 function MyApp({ Component, pageProps }) {
@@ -9,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     <>
       
         <Component {...pageProps} />
-      <Footer />
+      
     </>
     );
 }

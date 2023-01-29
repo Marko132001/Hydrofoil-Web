@@ -2,10 +2,11 @@ import React from "react";
 import axios from "axios";
 import LayoutElements from "../components/LayoutElements";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import { useTranslation, UseTranslation } from "next-i18next";
 
-function TeredoNavalis( {teredoNavalis, nav, locale} ){
+function TeredoNavalis( {teredoNavalis, locale} ){
 
   const { t }  = useTranslation();
 
@@ -13,6 +14,7 @@ function TeredoNavalis( {teredoNavalis, nav, locale} ){
         <>
             <NavBar t={t} />
             <LayoutElements elements={teredoNavalis} />
+            <Footer t={t} />
         </>
     );
 }
@@ -23,13 +25,11 @@ export default TeredoNavalis;
 export async function getStaticProps({locale}){
 
     const teredoNavalisRes = await axios.get(`${process.env.STRAPI_URL}/api/teredo-navalis/?locale=${locale}&populate=deep`);
-    const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
   
     return {
       props: {
-        teredoNavalis: teredoNavalisRes.data,
-        nav: navRes.data,   
-        ...(await serverSideTranslations(locale, ["navbar"])),      
+        teredoNavalis: teredoNavalisRes.data,  
+        ...(await serverSideTranslations(locale, ["navbar", "footer"])),      
       },       
     };
   }

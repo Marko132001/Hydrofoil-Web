@@ -2,10 +2,11 @@ import React from "react";
 import axios from "axios";
 import LayoutElements from "../components/LayoutElements";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 import { useTranslation, UseTranslation } from "next-i18next";
 
-function Partners( {partners, nav, locale} ){
+function Partners( {partners, locale} ){
 
   const { t }  = useTranslation();
 
@@ -78,6 +79,7 @@ function Partners( {partners, nav, locale} ){
               <div className="parners-page-bronze-sponsors-14"></div>
             </div>
           </div>
+          <Footer t={t} />
         </>
     );
 }
@@ -88,13 +90,11 @@ export default Partners;
 export async function getStaticProps({locale}){
 
     const partnersRes = await axios.get(`${process.env.STRAPI_URL}/api/partners/?locale=${locale}&populate=deep`);
-    const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
   
     return {
       props: {
-        partners: partnersRes.data,
-        nav: navRes.data,  
-        ...(await serverSideTranslations(locale, ["navbar"])),      
+        partners: partnersRes.data,  
+        ...(await serverSideTranslations(locale, ["navbar", "footer"])),      
       },       
     };
   }
