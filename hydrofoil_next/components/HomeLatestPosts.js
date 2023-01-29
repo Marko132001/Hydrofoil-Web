@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Timeline from './DataComponents/Timeline';
 import { t } from 'i18next';
+import Link from 'next/link';
 
 
 function HomeLatestPosts( {posts, t} ) {
@@ -16,7 +17,8 @@ function HomeLatestPosts( {posts, t} ) {
             <>
                 <section className="dark:bg-gray-800 dark:text-gray-100">
                     <div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
-                        <a href={`/posts/${posts.data[posts.data.length-1].id}`} className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-900">
+                        <Link href={`/posts/${posts.data[posts.data.length-1].id}`}>
+                        <a href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 dark:bg-gray-900">
                             <img src={process.env.IMAGES_STRAPI_URL + posts.data[posts.data.length-1].attributes.image.data.attributes.url} alt="" className="object-cover w-full h-64 rounded sm:h-96 lg:col-span-7 dark:bg-gray-500" />
                             <div className="p-6 space-y-2 lg:col-span-5">
                                 <h3 className="text-2xl font-semibold sm:text-4xl group-hover:underline group-focus:underline">{posts.data[posts.data.length-1].attributes.title}</h3>
@@ -24,12 +26,14 @@ function HomeLatestPosts( {posts, t} ) {
                                 <p className="text_desc">{posts.data[posts.data.length-1].attributes.description}</p>
                             </div>
                         </a>
+                        </Link>
                         <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {latestPosts.reverse().map((post, index) => {
                             if(index>0){
                                 return(
                                     <>
-                                        <a href={`/posts/${post.id}`} className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
+                                        <Link href={`/posts/${post.id}`}>
+                                        <a href="#" className="max-w-sm mx-auto group hover:no-underline focus:no-underline dark:bg-gray-900">
                                             <img role="presentation" className="object-cover w-full rounded h-44 dark:bg-gray-500" src={process.env.IMAGES_STRAPI_URL + post.attributes.image.data.attributes.url} />
                                             <div className="p-6 space-y-2">
                                                 <h3 className="text-2xl font-semibold group-hover:underline group-focus:underline">{post.attributes.title}</h3>
@@ -37,13 +41,14 @@ function HomeLatestPosts( {posts, t} ) {
                                                 <p className="text_desc">{post.attributes.description}</p>
                                             </div>
                                         </a>
+                                        </Link>
                                     </>
                                 );
                             }
                         })}
                         </div>
                         <div className="flex justify-center pb-10">
-                            <a href="/posts" className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">{t("home:more_news")}</a>
+                            <Link href="/posts"><a href="#" className="px-6 py-3 text-sm rounded-md hover:underline dark:bg-gray-900 dark:text-gray-400">{t("home:more_news")}</a></Link>
                         </div>
                     </div>
                 </section>

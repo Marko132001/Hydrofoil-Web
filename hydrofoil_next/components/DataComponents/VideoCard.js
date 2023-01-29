@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function VideoCard( {element} ){
 
@@ -16,8 +17,9 @@ function VideoCard( {element} ){
                 {element.content}
                 </p>
                 {element.link!=null &&
+                <Link href={element.link.url}>
                 <a
-                href={element.link.url}
+                href="#"
                 className="text-xl font-medium text-blue-600 transition-colors duration-200 hover:text-blue-800 hover:underline xl:text-2xl"
                 >
                 {element.link.caption}
@@ -36,6 +38,7 @@ function VideoCard( {element} ){
                     />
                 </svg>
                 </a>
+                </Link>
                 }
             </div>
             <div className={`col-span-9 lg:col-span-7 xl:col-span-5 ${element.left && 'order-first'}`}>

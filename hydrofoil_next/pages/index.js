@@ -58,7 +58,6 @@ export async function getStaticProps({ locale }){
   const homeRes = await axios.get(`${process.env.STRAPI_URL}/api/home-page/?locale=${locale}&populate=deep`);
   const navRes = await axios.get(`${process.env.STRAPI_URL}/api/navigation-items/?populate=deep`);
 
-
   return {
     props: {
       posts: postRes.data,

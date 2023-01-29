@@ -32,12 +32,12 @@ export async function getStaticProps({params, locale}){
   }
 }
 
-export async function getStaticPaths(){
+export async function getStaticPaths({locales}){
 const postsRes = await axios.get(`${process.env.STRAPI_URL}/api/posts`);
 
-const paths = postsRes.data.data.map((post) => {
-  return {params: {id: post.id.toString()}}
-});
+const paths = postsRes.data.data.map((post) => locales.map((locale) => ({
+   params: {id: post.id.toString()}, locale
+}))).flat();
 
   return{
     paths,
