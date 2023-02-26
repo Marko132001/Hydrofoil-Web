@@ -1,3 +1,4 @@
+/*
 module.exports = ({ env }) => ({
     url: env('MY_HEROKU_URL'),
     proxy: true,
@@ -5,3 +6,4 @@ module.exports = ({ env }) => ({
         keys: env.array("APP_KEYS", ["DATABASE_URL", "MY_HEROKU_URL", "NODE_ENV"]),
     },
   });
+  */
