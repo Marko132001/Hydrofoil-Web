@@ -4,10 +4,10 @@ mail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async (req, res) => {
 
-
+try{
   await mail.send({
-      to: process.env.email,
-      from: process.env.email,    
+      to: `${process.env.email}`,
+      from: `${process.env.email}`,    
       subject: `${req.body.subject}`,
       html: `<p>You have a new contact form submission</p><br>
       <p><strong>Name: </strong> ${req.body.fullname} </p><br>
@@ -16,7 +16,10 @@ export default async (req, res) => {
 
       `,
   });
-
+} catch (error) {
+     console.log(error);
+     return res.status(error.statusCode || 500).json({ error: error.message });
+}
   res.status(200).json({ status: 'Ok' });
 
 
