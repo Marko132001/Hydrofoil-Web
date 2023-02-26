@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 function WebForm( {t} ) {
 
@@ -16,12 +16,6 @@ function WebForm( {t} ) {
   // Setting success or failure messages states
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showFailureMessage, setShowFailureMessage] = useState(false);
-
-  useEffect(() => {
-    if((buttonText != `${t("contact:button_send")}`) && (buttonText != `${t("contact:button_sending")}`)){
-      setButtonText(`${t("contact:button_send")}`)
-    }
-  });
 
   // Validation check method
   const handleValidation = () => {
@@ -78,7 +72,7 @@ function WebForm( {t} ) {
         console.log(error);
         setShowSuccessMessage(false);
         setShowFailureMessage(true);
-        setButtonText(`${t("contact:button_send")}`);
+        setButtonText("Send");
 
         // Reset form fields
         setFullname("");
@@ -89,7 +83,7 @@ function WebForm( {t} ) {
       }
       setShowSuccessMessage(true);
       setShowFailureMessage(false);
-      setButtonText(`${t("contact:button_send")}`);
+      setButtonText("Send");
       // Reset form fields
       setFullname("");
       setEmail("");
@@ -141,119 +135,63 @@ function WebForm( {t} ) {
                     </a>
                 </div>
             </div>
-            
-        <form
-          onSubmit={handleSubmit}
-          className="rounded-lg shadow-xl flex flex-col px-8 py-8 bg-black bg-opacity-30"
-        >
+            <form onSubmit={handleSubmit}>
+                <div className="col">
+                    <div className="form-group">
+                        <label htmlFor="fullname">{t("contact:name")}</label>
+                        <input 
+                        type="text" 
+                        value={fullname}
+                        onChange={(e) => {
+                        setFullname(e.target.value);
+                        }}
+                        name="fullname"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="email">{t("contact:e-mail")}</label>
+                        <input 
+                        type="email" 
+                        name="email"
+                        value={email}
+                        onChange={(e) => {
+                        setEmail(e.target.value);
+                        }}
+                        />
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="form-group">
+                        <label htmlFor="subject">{t("contact:subject")}</label>
+                        <input 
+                        type="text" 
+                        name="subject"
+                        value={subject}
+                        onChange={(e) => {
+                        setSubject(e.target.value);
+                        }}
+                        />
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="form-group solo">
+                        <label htmlFor="message">{t("contact:message")}</label>
+                        <textarea 
+                        name="message"
+                        value={message}
+                        onChange={(e) => {
+                        setMessage(e.target.value);
+                        }}
+                        ></textarea>
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="form-group solo right">
+                        <button type="submit" className="primary">{buttonText}</button>
+                    </div>
+                </div>    
 
-          <label
-            htmlFor="fullname"
-            className="text-gray-500 font-light mt-8 dark:text-gray-50"
-          >
-            {t("contact:name")}<span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            value={fullname}
-            onChange={(e) => {
-              setFullname(e.target.value);
-            }}
-            name="fullname"
-            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-300"
-          />
-          {errors?.fullname && (
-            <p className="text-red-500">{t("contact:name_error")}</p>
-          )}
-
-          <label
-            htmlFor="email"
-            className="text-gray-500 font-light mt-4 dark:text-gray-50"
-          >
-            {t("contact:e-mail")}<span className="text-red-500">*</span>
-          </label>
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-300"
-          />
-          {errors?.email && (
-            <p className="text-red-500">{t("contact:email_error")}</p>
-          )}
-
-          <label
-            htmlFor="subject"
-            className="text-gray-500 font-light mt-4 dark:text-gray-50"
-          >
-            {t("contact:subject")}<span className="text-red-500">*</span>
-          </label>
-          <input
-            type="text"
-            name="subject"
-            value={subject}
-            onChange={(e) => {
-              setSubject(e.target.value);
-            }}
-            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-300"
-          />
-          {errors?.subject && (
-            <p className="text-red-500">{t("contact:subject_error")}</p>
-          )}
-          <label
-            htmlFor="message"
-            className="text-gray-500 font-light mt-4 dark:text-gray-50"
-          >
-            {t("contact:message")}<span className="text-red-500">*</span>
-          </label>
-          <textarea
-            name="message"
-            value={message}
-            onChange={(e) => {
-              setMessage(e.target.value);
-            }}
-            className="bg-transparent border-b py-2 pl-4 focus:outline-none focus:rounded-md focus:ring-1 ring-blue-500 font-light text-gray-300"
-          ></textarea>
-          {errors?.message && (
-            <p className="text-red-500">{t("contact:message_error")}</p>
-          )}
-          <div className="flex flex-row items-center justify-start">
-            <button
-              type="submit"
-              className="px-10 mt-8 py-2 bg-[#130F49] text-gray-50 font-light rounded-md text-lg flex flex-row items-center"
-            >
-              {buttonText}
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="text-cyan-500 ml-2"
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.00967 5.12761H11.0097C12.1142 5.12761 13.468 5.89682 14.0335 6.8457L16.5089 11H21.0097C21.562 11 22.0097 11.4477 22.0097 12C22.0097 12.5523 21.562 13 21.0097 13H16.4138L13.9383 17.1543C13.3729 18.1032 12.0191 18.8724 10.9145 18.8724H8.91454L12.4138 13H5.42485L3.99036 15.4529H1.99036L4.00967 12L4.00967 11.967L2.00967 8.54712H4.00967L5.44417 11H12.5089L9.00967 5.12761Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </button>
-          </div>
-          <div className="text-left">
-            {showSuccessMessage && (
-              <p className="text-green-500 font-semibold text-sm my-2">
-                {t("contact:success_message")}
-              </p>
-            )}
-            {showFailureMessage && (
-              <p className="text-red-500">
-                {t("contact:failure_message")}
-              </p>
-            )}
-          </div>
-        </form>
+            </form>
         </div>
 
     </div>
