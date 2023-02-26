@@ -3,11 +3,9 @@ import ImageSlider from './ImageSlider';
 import VideoPlayer from './VideoPlayer';
 import CountingAnimation from './CountingAnimation';
 import HeroSection from './HeroSection';
-import ParallelParagraphs from './ParallelParagraphs';
 import TextAndImage from './TextAndImage';
 import TitleAndText from './TitleAndText';
 import ImageAndCaption from './ImageAndCaption';
-import TextAndButton from './TextAndButton';
 import WebForm from './WebForm';
 import LogoSlider from './LogoSlider';
 import SplitScreen from './SplitScreen';
@@ -68,15 +66,6 @@ function Layout( {element} ){
             </>
         );
     }
-    else if(element.__component == "components.parallel-paragraphs"){        
-
-        return(
-           <>
-                <ParallelParagraphs element={element} />
-           </>
-        );
-
-    }
     else if(element.__component == "components.title-and-images"){
 
         return(
@@ -84,15 +73,6 @@ function Layout( {element} ){
                 <ImageAndCaption element={element} />
             </>
         );
-    }
-    else if(element.__component == "components.text-and-button"){
-
-        return(
-            <>
-                <TextAndButton element={element} />
-            </>
-        );
-
     }
     else if(element.__component == "components.web-form"){
 

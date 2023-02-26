@@ -16,8 +16,8 @@ function Partners( {partners, locale} ){
             <LayoutElements elements={partners} />
             <div className="partners-page-diamond-sponors">
             <div className="partners-page-diamond-sponsors-title">
-              <div class="partners-page-diamond-sponsors-title-bg"> DIAMOND </div>
-              <div class="partners-page-diamond-sponsors-title-fg"> DIAMOND </div>
+              <div className="partners-page-diamond-sponsors-title-bg"> DIAMOND </div>
+              <div className="partners-page-diamond-sponsors-title-fg"> DIAMOND </div>
             </div>
             <div className="partners-page--diamond-sponsors-container">
               <div className="parners-page-diamond-sponsors-1"></div>
@@ -28,8 +28,8 @@ function Partners( {partners, locale} ){
 
           <div className="partners-page-platinum-sponors">
             <div className="partners-page-platinum-sponsors-title">
-              <div class="partners-page-platinum-sponsors-title-bg"> PLATINUM </div>
-              <div class="partners-page-platinum-sponsors-title-fg"> PLATINUM </div>
+              <div className="partners-page-platinum-sponsors-title-bg"> PLATINUM </div>
+              <div className="partners-page-platinum-sponsors-title-fg"> PLATINUM </div>
             </div>
             <div className="partners-page--platinum-sponsors-container">
               <div className="parners-page-platinum-sponsors-1"></div>
@@ -44,8 +44,8 @@ function Partners( {partners, locale} ){
 
           <div className="partners-page-gold-sponors">
             <div className="partners-page-gold-sponsors-title">
-              <div class="partners-page-gold-sponsors-title-bg"> GOLD </div>
-              <div class="partners-page-gold-sponsors-title-fg"> GOLD </div>
+              <div className="partners-page-gold-sponsors-title-bg"> GOLD </div>
+              <div className="partners-page-gold-sponsors-title-fg"> GOLD </div>
             </div>
             <div className="partners-page--gold-sponsors-container">
               <div className="parners-page-gold-sponsors-1"></div>
@@ -59,8 +59,8 @@ function Partners( {partners, locale} ){
 
           <div className="partners-page-bronze-sponors">
             <div className="partners-page-bronze-sponsors-title">
-              <div class="partners-page-bronze-sponsors-title-bg"> BRONZE </div>
-              <div class="partners-page-bronze-sponsors-title-fg"> BRONZE </div>
+              <div className="partners-page-bronze-sponsors-title-bg"> BRONZE </div>
+              <div className="partners-page-bronze-sponsors-title-fg"> BRONZE </div>
             </div>
             <div className="partners-page--bronze-sponsors-container">
               <div className="parners-page-bronze-sponsors-1"></div>

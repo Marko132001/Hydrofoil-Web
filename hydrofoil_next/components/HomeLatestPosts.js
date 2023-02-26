@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Timeline from './DataComponents/Timeline';
 import { t } from 'i18next';
 import Link from 'next/link';
 

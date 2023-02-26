@@ -41,31 +41,6 @@ const Tag = ({image}) => (
 
 
   return (
-    /*
-    <div className="logo-slider">
-        <h2>{element.title}</h2>
-        <p>{element.subtitle}</p>
-        <div className="slider-container">
-            <div className="slider-content-wrapper fast">
-            {element.images.data.map((image) => {
-
-                return(
-                    <div key={image.id} className="logo-slide">
-                        <Image
-                                src = {process.env.IMAGES_STRAPI_URL + image.attributes.url}
-                                alt = "image"
-                                layout="responsive"
-                                width="250"
-                                height="100"
-                        />
-                    </div>
-                );
-            })}
-            </div>
-        </div>
-        <a href={element.link.url}>{element.link.caption}</a>
-    </div>
-    */
 
 	<> 
 	 <div className='app'>
@@ -76,8 +51,8 @@ const Tag = ({image}) => (
     <div className='tag-list'>
       {[...new Array(ROWS)].map((_, i) => (
         <InfiniteLoopSlider key={i} duration={random(DURATION - 5000, DURATION + 5000)} reverse={i % 2}>
-          {shuffle(element.images.data).slice(0, TAGS_PER_ROW).map(tag => (
-            <Tag image={tag}/>
+          {shuffle(element.images.data).slice(0, TAGS_PER_ROW).map((tag, index) => (
+            <Tag key={index} image={tag}/>
           ))}
         </InfiniteLoopSlider>
       ))}

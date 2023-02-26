@@ -48,7 +48,7 @@ function HeroSection( {element} ) {
 							<h1 className="mt-3 text-[3.5rem] font-bold leading-[4rem] tracking-tight">
 							{element.title}
 							</h1>
-							<p class="mt-3 text-lg leading-relaxed text-slate-300">{element.subtitle}</p>
+							<p className="mt-3 text-lg leading-relaxed text-slate-300">{element.subtitle}</p>
 						</div>
 					</div>
 				</div>

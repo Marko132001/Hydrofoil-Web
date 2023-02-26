@@ -6,11 +6,11 @@ function SplitScreen( {element} ) {
     <>
     <div className="wrapper-splitScreen">
 
-        {element.splitScreen.map((item) => {
+        {element.splitScreen.map((item, index) => {
 
           return(
 
-            <div key={item.id} className={item.fullScreen ? 'left center' : 'left'}>
+            <div key={index} className={item.fullScreen ? 'left center' : 'left'}>
                 <div className="image">
                 <Image
                   priority

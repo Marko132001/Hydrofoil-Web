@@ -63,8 +63,8 @@ function ImageSlider( {element} ){
     
         return (
             <>
-            <div class="text-center mt-12">
-                <h1 class="text-4xl md:text-6xl text-gray-700 font-semibold">{element.caption}</h1>
+            <div className="text-center mt-12">
+                <h1 className="text-4xl md:text-6xl text-gray-700 font-semibold">{element.caption}</h1>
             </div>
             <div className='max-w-[800px] h-[480px] w-full m-auto py-16 px-4 relative group'>
                 <div

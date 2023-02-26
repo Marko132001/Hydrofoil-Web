@@ -17,8 +17,8 @@ function GridGallery({ element }) {
 
   return (
     <>
-    <div class="text-center mb-12 mt-12">
-        <h1 class="text-4xl md:text-6xl text-gray-700 font-semibold">{element.title}</h1>
+    <div className="text-center mb-12 mt-12">
+        <h1 className="text-4xl md:text-6xl text-gray-700 font-semibold">{element.title}</h1>
     </div>
     <div className="grid grid-cols-2 gap-1">
       {element.images &&

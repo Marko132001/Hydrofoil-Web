@@ -3,8 +3,8 @@ import Layout from "./DataComponents/Layout";
 
 function LayoutElements({ elements }){
     function renderLayoutElements(){
-        return elements.data.attributes.layout.map((element) => {
-            return <Layout element={element} />
+        return elements.data.attributes.layout.map((element, index) => {
+            return <Layout key={index} element={element} />
         });
     }
 

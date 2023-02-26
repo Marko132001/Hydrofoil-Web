@@ -10,10 +10,10 @@ function ImageAndCaption( {element} ) {
             <h1 className="about-title">{element.title}</h1>
             <div className="allElements">
                 
-                {element.imageComponent.map((item) => {
+                {element.imageComponent.map((item, index) => {
 
                     return(
-                        <a href={item.link} key={item.id}>
+                        <a href={item.link} key={index}>
                             <div className="imageAndCaption">
                                 <div className="image">
                                     <Image src={process.env.IMAGES_STRAPI_URL + item.image.data.attributes.url} 
@@ -36,21 +36,15 @@ function ImageAndCaption( {element} ) {
         }
         else{
         return(
-        <section class="bg-white dark:bg-gray-900">
-            <div class="container px-6 py-10 mx-auto">
-                <h1 class="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">{element.title}</h1>
+        <section className="bg-white dark:bg-gray-900">
+            <div className="container px-6 py-10 mx-auto">
+                <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">{element.title}</h1>
                 
-                {/*
-                <p class="max-w-2xl mx-auto my-6 text-center text-gray-500 dark:text-gray-300">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo incidunt ex placeat modi magni quia error alias, adipisci rem similique, at omnis eligendi optio eos harum.
-                </p>
-                */
-                }
                 <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
-                    {element.imageComponent.map((item) => {
+                    {element.imageComponent.map((item, index) => {
                         
                         return(
-                            <div className="flex flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group hover:bg-blue-600 rounded-xl">
+                            <div key={index} className="flex flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group hover:bg-blue-600 rounded-xl">
                                 
                                 <Image
                                     className="object-cover w-32 h-32 rounded-full" 

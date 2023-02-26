@@ -31,11 +31,11 @@ function CountingAnimation( {element} ){
 
     return(
         <section className="mb-32 mt-32 text-gray-800 text-center">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-0 items-center">
-            {element.CountElement.map((item) => {
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-0 items-center">
+            {element.CountElement.map((item, index) => {
                 
                 return(                   
-                      <div className="mb-12 lg:mb-0 relative">
+                      <div key={index} className="mb-12 lg:mb-0 relative">
 
                         <Image
                             className="w-12 h-12 mx-auto mb-6"

@@ -23,7 +23,7 @@ function PostPagePreview( {post} ){
                     {post.data.attributes.paragraph.map((par, index) => {
                         return(
                             <>
-                                <h2 class="text-2xl text-gray-800 font-semibold mb-4 mt-4">{par.subtitle}</h2>
+                                <h2 className="text-2xl text-gray-800 font-semibold mb-4 mt-4">{par.subtitle}</h2>
                                 <p className="pb-6">{par.content}</p>
                             </>
                         );
