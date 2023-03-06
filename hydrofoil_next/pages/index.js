@@ -56,7 +56,7 @@ export default Home;
 
 export async function getStaticProps({ locale }){
 
-  const postRes = await axios.get(`${process.env.STRAPI_URL}/api/posts/?populate=*`);
+  const postRes = await axios.get(`${process.env.STRAPI_URL}/api/posts/?sort=date%3Adesc&pagination[pageSize]=4&populate=*`);
   const homeRes = await axios.get(`${process.env.STRAPI_URL}/api/home-page/?locale=${locale}&populate=deep`);
 
   return {

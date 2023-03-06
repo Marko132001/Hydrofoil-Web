@@ -4,11 +4,6 @@ import Link from "next/link";
 
 function AllPosts({ posts, t }){
 
-    const [allPosts, setAllPosts] = useState([]);
-
-    useEffect(() => {
-        setAllPosts(posts.data);
-    }, [posts.data]);
 
     function renderPostPreviews(){
         
@@ -20,7 +15,7 @@ function AllPosts({ posts, t }){
                         <h1 className="text-4xl md:text-6xl text-gray-700 font-semibold">Adria Hydrofoil Blog</h1>
                     </div>
                     <div className="flex flex-wrap -m-4">
-                        {allPosts.reverse().map((post, index) => {
+                        {posts.data.map((post, index) => {
                             return(
                                 <>
                                 <div key={index} className="p-4 sm:w-1/2 lg:w-1/3">
