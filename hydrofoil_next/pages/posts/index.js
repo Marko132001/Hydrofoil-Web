@@ -11,10 +11,12 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 
 function Button2({ content, onClick, active, disabled }) {
+
+
   return (
     <button
       className={`flex flex-col cursor-pointer items-center justify-center w-9 h-9 shadow-[0_4px_10px_rgba(0,0,0,0.03)] text-sm font-normal transition-colors rounded-lg
-      ${active ? "bg-blue-300 text-blue-500" : "text-blue-500"}
+      ${active ? " bg-blue-400 bg-opacity-40 text-blue-500" : " text-blue-500"}
       ${
         !disabled
           ? "bg-white hover:bg-blue-500 hover:text-white"
@@ -100,15 +102,10 @@ function PaginationNav1({
 
 
 function Posts({ posts, locale }){
-
     const [pageIndex, setPageIndex] = useState(0);
-    const { data } = useSWR(
-      `${process.env.STRAPI_URL}/api/posts/?sort=date%3Adesc&pagination[page]=${pageIndex+1}&pagination[pageSize]=3&populate=*`,
-      async (url) => await axios.get(url).then((res) => res.data),
-      {
-        fallbackData: posts,
-      }
-    );
+    const address = `http://localhost:1337/api/posts/?sort=date%3Adesc&pagination[page]=${pageIndex+1}&pagination[pageSize]=3&populate=*`;
+    const fetcher = async (url) => await axios.get(url).then((res) => res.data);
+    const { data } = useSWR(address, fetcher, {fallbackData: posts});
 
     const { t }  = useTranslation();
 

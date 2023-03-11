@@ -1,0 +1,59 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    container_name: hydrofoil_nginx
+    ports:
+      - 3000:3000
+      - 1337:1337
+    networks:
+      - internal
+    volumes:
+      - ./hydrofoil_strapi/public:/app/hydrofoil_strapi/public
+      - ./hydrofoil_next/public:/app/hydrofoil_next/public
+      - ./conf/nginx/:/etc/nginx:ro
+      - ./logs/nginx/:/var/log/nginx
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - hydrofoil_next_dev
+      - hydrofoil_strapi_dev
+  hydrofoil_next_dev:
+    container_name: hydrofoil_next_dev
+    build:
+      context: .
+      dockerfile: ./hydrofoil_next/Dockerfile
+      args:
+        - NODE_ENV=${ENVIRONMENT}
+    restart: unless-stopped
+    networks:
+      - internal
+    volumes:
+      - ./hydrofoil_next:/app
+      - /app/node_modules
+      - /app/.next
+    env_file:
+      - ./.env
+    depends_on:
+      - hydrofoil_strapi_dev
+
+  hydrofoil_strapi_dev:
+    container_name: hydrofoil_strapi_dev
+    build:
+      context: .
+      dockerfile: ./hydrofoil_strapi/Dockerfile
+      args:
+        - NODE_ENV=${ENVIRONMENT}
+    restart: unless-stopped
+    env_file: ./.env
+    volumes:
+      - ./hydrofoil_strapi:/app
+      - /app/node_modules
+      - ./.env:/app/.env
+    networks:
+      - internal
+  
+networks:
+  internal:
+    name: hydrofoil_internal
+    driver: bridge

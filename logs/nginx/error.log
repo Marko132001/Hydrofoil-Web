@@ -1,0 +1,14 @@
+2023/03/08 12:11:50 [emerg] 1#1: host not found in upstream "frontend" in /etc/nginx/default.conf:13
+2023/03/08 12:12:01 [emerg] 1#1: host not found in upstream "frontend" in /etc/nginx/default.conf:13
+2023/03/08 12:12:12 [emerg] 1#1: host not found in upstream "frontend" in /etc/nginx/default.conf:13
+2023/03/08 12:12:23 [emerg] 1#1: host not found in upstream "frontend" in /etc/nginx/default.conf:13
+2023/03/08 12:12:34 [emerg] 1#1: host not found in upstream "frontend" in /etc/nginx/default.conf:13
+2023/03/11 12:36:49 [emerg] 1#1: duplicate location "/" in /etc/nginx/default.conf:8
+2023/03/11 12:36:50 [emerg] 1#1: duplicate location "/" in /etc/nginx/default.conf:8
+2023/03/11 12:36:51 [emerg] 1#1: duplicate location "/" in /etc/nginx/default.conf:8
+2023/03/11 12:36:52 [emerg] 1#1: duplicate location "/" in /etc/nginx/default.conf:8
+2023/03/11 12:36:53 [emerg] 1#1: duplicate location "/" in /etc/nginx/default.conf:8
+2023/03/11 12:36:55 [emerg] 1#1: duplicate location "/" in /etc/nginx/default.conf:8
+2023/03/11 12:36:59 [emerg] 1#1: duplicate location "/" in /etc/nginx/default.conf:8
+2023/03/11 12:37:06 [emerg] 1#1: duplicate location "/" in /etc/nginx/default.conf:8
+2023/03/11 12:37:19 [emerg] 1#1: duplicate location "/" in /etc/nginx/default.conf:8
