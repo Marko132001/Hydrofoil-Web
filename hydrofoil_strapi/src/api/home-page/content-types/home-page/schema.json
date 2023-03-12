@@ -21,7 +21,6 @@
       "components": [
         "components.logo-slider",
         "components.image-slider",
-        "components.text-and-button",
         "components.zig-zag",
         "components.title-and-text",
         "components.title-and-images",

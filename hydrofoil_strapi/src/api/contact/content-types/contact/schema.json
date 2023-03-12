@@ -15,8 +15,7 @@
     "layout": {
       "type": "dynamiczone",
       "components": [
-        "components.hero-section-image",
-        "components.web-form"
+        "components.hero-section-image"
       ]
     }
   }

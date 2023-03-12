@@ -6,7 +6,6 @@ import HeroSection from './HeroSection';
 import TextAndImage from './TextAndImage';
 import TitleAndText from './TitleAndText';
 import ImageAndCaption from './ImageAndCaption';
-import WebForm from './WebForm';
 import LogoSlider from './LogoSlider';
 import SplitScreen from './SplitScreen';
 import FeaturesSection from './FeaturesSection';
@@ -71,14 +70,6 @@ function Layout( {element} ){
         return(
             <>
                 <ImageAndCaption element={element} />
-            </>
-        );
-    }
-    else if(element.__component == "components.web-form"){
-
-        return(
-            <>
-                <WebForm element={element} />
             </>
         );
     }

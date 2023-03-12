@@ -4,7 +4,8 @@
   "info": {
     "singularName": "open-source",
     "pluralName": "open-sources",
-    "displayName": "Open Source"
+    "displayName": "Open Source",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +15,6 @@
     "layout": {
       "type": "dynamiczone",
       "components": [
-        "components.text-and-button",
         "components.title-and-text"
       ]
     }
