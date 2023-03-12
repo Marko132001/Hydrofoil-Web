@@ -10,6 +10,7 @@ module.exports = {
 
   env: {
     STRAPI_URL: process.env.STRAPI_URL,
+    STRAPI_PAGINATION: process.env.STRAPI_PAGINATION,
     IMAGES_DOMAIN: process.env.IMAGES_DOMAIN,
     IMAGES_STRAPI_URL: process.env.IMAGES_STRAPI_URL
   },

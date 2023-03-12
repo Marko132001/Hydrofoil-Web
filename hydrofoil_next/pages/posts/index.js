@@ -19,7 +19,7 @@ function Button2({ content, onClick, active, disabled }) {
       ${active ? " bg-blue-400 bg-opacity-40 text-blue-500" : " text-blue-500"}
       ${
         !disabled
-          ? "bg-white hover:bg-blue-500 hover:text-white"
+          ? " hover:bg-blue-500 hover:text-white"
           : "text-blue-300 bg-white cursor-not-allowed"
       }
       `}
@@ -103,7 +103,7 @@ function PaginationNav1({
 
 function Posts({ posts, locale }){
     const [pageIndex, setPageIndex] = useState(0);
-    const address = `http://localhost:1337/api/posts/?sort=date%3Adesc&pagination[page]=${pageIndex+1}&pagination[pageSize]=3&populate=*`;
+    const address = `${process.env.STRAPI_PAGINATION}/api/posts/?sort=date%3Adesc&pagination[page]=${pageIndex+1}&pagination[pageSize]=3&populate=*`;
     const fetcher = async (url) => await axios.get(url).then((res) => res.data);
     const { data } = useSWR(address, fetcher, {fallbackData: posts});
 
