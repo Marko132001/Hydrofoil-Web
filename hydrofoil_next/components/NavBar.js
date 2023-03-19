@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import hydrofoil_logo from '../images/hydrofoil_logo.png';
+import uptz_text from '../images/uptz_text-remove.png';
+import uptz_logo from '../images/uptz_logo.png';
 import cro_flag from '../images/flag-for-croatia-svgrepo-com.svg';
 import eng_flag from '../images/united-kingdom-svgrepo-com.svg';
 import Link from 'next/link';
@@ -9,11 +11,20 @@ import { useRouter } from "next/router";
 const Logo = () => {
   return <Image
           className="logo" 
-          src = {hydrofoil_logo}
+          src = {uptz_logo}
           alt = "hydrofoil logo"
-          width="100px"
-          height="90px"
+          width="90px"
+          height="80px"
           />
+}
+
+const LogoText = () => {
+	return <Image
+			src = {uptz_text}
+			alt = "uptz text"
+			width="184px"
+			height="87px"
+			/>
 }
 
 
@@ -37,9 +48,10 @@ function NavBar( {t} ) {
 							{/*logo*/}
 							<div>
 								<Link href="/">
-								<a href="#" className="flex items-center py-4 px-2 text-gray-700">
+								<a href="#" className="flex items-center py-2 px-4 text-gray-700">
 									<Logo />
-									<span className="text-black text-xl sm:text-2xl mr-4 font-semibold">Adria<span className="text-sky-500 hover:text-sky-600">Hydrofoil</span></span>
+									{/*<span className="text-black text-xl sm:text-2xl mr-4 font-semibold">Adria<span className="text-sky-500 hover:text-sky-600">Hydrofoil</span></span>*/}
+									<span className="ml-4 mr-4 mt-3"><LogoText /></span>
 								</a>
 								</Link>
 							</div>
