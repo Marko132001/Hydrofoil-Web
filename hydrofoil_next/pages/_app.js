@@ -1,3 +1,4 @@
+import "../styles/imports.css";
 import "../styles/index.scss";
 import { appWithTranslation } from "next-i18next"; 
 

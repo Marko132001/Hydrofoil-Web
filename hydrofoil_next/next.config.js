@@ -16,7 +16,7 @@ module.exports = {
   },
 
   images: {
-    domains: [process.env.IMAGES_DOMAIN, process.env.IMAGES_LOCAL],
+    domains: ['res.cloudinary.com', 'localhost'],
   },
   i18n,
 
