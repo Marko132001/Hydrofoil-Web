@@ -80,9 +80,18 @@ function TextAndImage( {element} ) {
                     )}                          
                 </div>
                 <div className={element.changeLayout ? 'grid grid-cols-1 mt-8 -order-1' : 'grid grid-cols-1 mt-8'}>
+                    {((element.youtube_url != null && element.youtube_url != "") &&
+                    <>
+                        <iframe class="w-full aspect-video" src={element.youtube_url}></iframe>
+                    </>
+                    )}
+                    {((element.videos.data != null) &&
+                    <>
                     <video controls className="h-full w-full object-cover">
                     <source src={process.env.IMAGES_STRAPI_URL + element.videos.data[0].attributes.url} type="video/mp4" />
                     </video>
+                    </>
+                    )}                
                 </div>
             </div>
         </section>

@@ -32,6 +32,9 @@
       "type": "component",
       "repeatable": false,
       "component": "global.link"
+    },
+    "youtube_url": {
+      "type": "string"
     }
   }
 }

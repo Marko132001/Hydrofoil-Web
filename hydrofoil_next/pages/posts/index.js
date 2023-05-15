@@ -103,7 +103,7 @@ function PaginationNav1({
 
 function Posts({ posts, locale }){
     const [pageIndex, setPageIndex] = useState(0);
-    const address = `${process.env.STRAPI_PAGINATION}/api/posts/?sort=date%3Adesc&pagination[page]=${pageIndex+1}&pagination[pageSize]=3&populate=*`;
+    const address = `${process.env.STRAPI_PAGINATION}/api/${locale}/posts/?sort=date%3Adesc&pagination[page]=${pageIndex+1}&pagination[pageSize]=3&populate=*`;
     const fetcher = async (url) => await axios.get(url).then((res) => res.data);
     const { data } = useSWR(address, fetcher, {fallbackData: posts});
 
@@ -133,7 +133,7 @@ export default Posts;
 
 export async function getStaticProps({locale}){
 
-  const postRes = await axios.get(`${process.env.STRAPI_URL}/api/posts/?sort=date%3Adesc&pagination[page]=1&pagination[pageSize]=3&populate=*`);
+  const postRes = await axios.get(`${process.env.STRAPI_URL}/api/posts/?locale=${locale}&sort=date%3Adesc&pagination[page]=1&pagination[pageSize]=3&populate=*`);
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
