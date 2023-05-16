@@ -1,95 +1,12 @@
-/*
-.logo-slider{
-    text-align: center;
-    padding-bottom: 80px;
-    padding-top: 80px;
-    background-color: rgb(127, 202, 255);
-    h2{
-        text-align: center;
-        color: black;
-        font-size: 3rem;
-        text-shadow: 0px 1px 3px rgba(0,0,0,0.6);
-    }
 
-    p{
-        color:black;
-        text-align: center;
-        font-size: 1.5rem;
-        text-shadow: 0px 1px 3px rgba(0,0,0,0.6);
-        margin: 20px;
-    }
 
-    a{
-        color:black;
-        text-align: center;
-        font-size: 1.5rem;
-        text-shadow: 0px 1px 3px rgba(0,0,0,0.9);
-        margin: 20px;
-        text-decoration: none;
-        display:inline-block;
-    }
-}
-*/
 .logo-slide{
     display: inline-block;
     height: 40px;
     width: 200px;
     margin: 20px;
 }
-/*
-.slider-container {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  
-  .slider-content-wrapper {
-    display: inline-block;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-  
-  .slider-content-wrapper.fast {
-    -webkit-animation: scroll 20s linear infinite;
-    animation: scroll 20s linear infinite;
-  }
-  
-  
-  .slider-content-wrapper > div {
-    display: inline-block;
-  }
-  
-  @-webkit-keyframes scroll {
-    from {
-      -webkit-transform: translate3d(0, 0, 0);
-      -ms-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-    to {
-      -webkit-transform: translate3d(-50%, 0, 0);
-      -ms-transform: translate3d(-50%, 0, 0);
-      transform: translate3d(-50%, 0, 0);
-    }
-  }
-  @keyframes scroll {
-    from {
-      -webkit-transform: translate3d(0, 0, 0);
-      -ms-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-    to {
-      -webkit-transform: translate3d(-50%, 0, 0);
-      -ms-transform: translate3d(-50%, 0, 0);
-      transform: translate3d(-50%, 0, 0);
-    }
-  }
-*/
 
-  
-
-
-
-  
   .app {
     min-height: 100vh;
     display: flex;
@@ -155,29 +72,22 @@
     background-color: white;
     border-radius: 0.4rem;
     padding: 1.7rem 1rem;
-    margin-right: 1rem; // Must used margin-right instead of gap for the loop to be 
-    /*
-    box-shadow: 
-      0 0.1rem 0.2rem rgb(0 0 0 / 20%),
-      0 0.1rem 0.5rem rgb(0 0 0 / 30%),
-      0 0.2rem 1.5rem rgb(0 0 0 / 40%);
-    */
+    margin-right: 1rem; 
 
   }
   
   .fade {
     pointer-events: none;
-    //background: linear-gradient(90deg, #1e293b, transparent 30%, transparent 70%, #1e293b);
     position: absolute;
     inset: 0;
   }
   
   @keyframes loop {
     0% {
-      transform: translateX(0);
+      transform: translateX(10%);
     }
     100% {
-      transform: translateX(-30%);
+      transform: translateX(-20%);
     }
   }
   

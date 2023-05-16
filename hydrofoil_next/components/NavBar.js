@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import hydrofoil_logo from '../images/hydrofoil_logo.png';
 import uptz_text from '../images/uptz_text-remove.png';
 import uptz_logo from '../images/uptz_logo.png';
 import cro_flag from '../images/flag-for-croatia-svgrepo-com.svg';

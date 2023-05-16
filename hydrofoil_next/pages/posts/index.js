@@ -135,11 +135,10 @@ export async function getStaticProps({locale}){
 
   const postRes = await axios.get(`${process.env.STRAPI_URL}/api/posts/?locale=${locale}&sort=date%3Adesc&pagination[page]=1&pagination[pageSize]=3&populate=*`);
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
+
   return {
     props: {
-      posts: postRes.data,        //postsRes.data -> array of posts
+      posts: postRes.data,       
       ...(await serverSideTranslations(locale, ["posts", "navbar", "footer"])),
     },       
   };

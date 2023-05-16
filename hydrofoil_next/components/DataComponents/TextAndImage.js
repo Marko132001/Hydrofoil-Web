@@ -25,7 +25,7 @@ function TextAndImage( {element} ) {
                                     <p className="mb-4">{element.description}</p>
                                 </>
                             )}
-                            {((element.link != null) &&
+                            {((element.link != null && element.link.url != null) &&
                                 <> 
                                     <a href={element.link.url} className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">
                                         {element.link.caption}
@@ -70,7 +70,7 @@ function TextAndImage( {element} ) {
                             <p className="mb-4">{element.description}</p>
                         </>
                     )}
-                    {((element.link != null) &&
+                    {((element.link != null && element.link.url != null) &&
                     <> 
                         <a href={element.link.url} className="inline-flex items-center font-medium text-blue-600 hover:text-blue-800 dark:text-blue-500 dark:hover:text-blue-700">
                             {element.link.caption}

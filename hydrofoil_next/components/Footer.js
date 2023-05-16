@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Uptz from "../images/uptz-logo.png";
+import Uptz from "../images/uptz_logo2.png";
 import RitehWeb from "../images/riteh-web2.png";
 import CreativeCommons from "../images/cc.png";
 
@@ -31,12 +31,13 @@ function Footer({t}) {
         <div className="footerColumn">
           <div className="logoText">
             <Image
+                className="rounded-lg"
                 src = {Uptz}
                 alt = "image"
                 width="100px"
                 height="100px"
             />
-            <h5>COPYRIGHT © 2020. UPTZ • {t("footer:copyright")}</h5>
+            <h5>COPYRIGHT © 2023. UPTZ • {t("footer:copyright")}</h5>
           </div>
         </div>
         <div className="footerColumn">
@@ -49,7 +50,7 @@ function Footer({t}) {
                   height="100px"
               />
             </a>
-            <h5>RitehWebTeam, 2022.</h5>
+            <h5>RitehWebTeam, 2023.</h5>
             <a href="http://creativecommons.org/licenses/by/4.0/">
               <Image
                   src = {CreativeCommons}

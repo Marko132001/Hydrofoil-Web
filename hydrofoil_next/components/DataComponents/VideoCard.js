@@ -16,7 +16,7 @@ function VideoCard( {element} ){
                 <p className="mb-6 text-lg font-medium leading-6 text-gray-500 xl:text-xl xl:leading-8">
                 {element.content}
                 </p>
-                {element.link!=null &&
+                {(element.link!=null && element.link.url!=null) &&
                 <Link href={element.link.url}>
                 <a
                 href="#"

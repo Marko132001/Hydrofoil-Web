@@ -24,9 +24,17 @@ export default PostPage;
 export async function getStaticProps({params, locale}){
   const postRes = await axios.get(`${process.env.STRAPI_URL}/api/posts/${params.id}/?populate=deep`);
 
+  let retPost = null
+  if(locale == "hr" && postRes.data.data.attributes.locale == "en")
+    retPost = postRes.data.data.attributes.localizations.data[0]
+  else if(locale == "en" && postRes.data.data.attributes.locale == "hr")
+    retPost = postRes.data.data.attributes.localizations.data[0]
+  else
+    retPost = postRes.data.data
+
   return {
     props: {
-      post: postRes.data,
+      post: retPost,
       ...(await serverSideTranslations(locale, ["navbar", "footer"])),
     }
   }

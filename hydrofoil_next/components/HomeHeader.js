@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import header from '../images/header.jpg';
+import { useRouter } from "next/router";
 
 const Header = () => {
 	return <Image
@@ -15,6 +16,8 @@ const Header = () => {
 
 function HomeHeader({t}) {
 
+	const router = useRouter();
+
 	return(
 	<>
 		<div className="relative pt-10 sm:pt-0 px-3 pb-28">
@@ -27,10 +30,18 @@ function HomeHeader({t}) {
 						Adria Hydrofoil 
 					</span>
 				</div>
+				{(router.locale === "en") &&
 				<p className="text-[37px] lg:text-[45px] xl:text-[55px] font-bold leading-tight mt-5 sm:mt-0">
 					THE MAIN <span className="text-blue-500">PROJECT</span> <br />
 					OF THE <span className="text-blue-500">ASSOCIATION</span> 
 				</p>
+				}
+				{(router.locale === "hr") &&
+				<p className="text-[37px] lg:text-[45px] xl:text-[55px] font-bold leading-tight mt-5 sm:mt-0">
+					GLAVNI <span className="text-blue-500">PROJEKT</span> <br />
+					UDRUGE 
+				</p>
+				}
 				<p className="mt-5 md:text-md ">
 					{t("home:home_header")}
 				</p>

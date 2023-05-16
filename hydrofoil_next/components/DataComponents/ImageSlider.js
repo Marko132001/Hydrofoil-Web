@@ -5,38 +5,7 @@ import { RxDotFilled } from 'react-icons/rx';
 
 
 function ImageSlider( {element} ){
-/*
 
-    useEffect(() => {
-
-    
-        let defaultTransform = 0;
-        function goNext() {
-            defaultTransform = defaultTransform - 500;
-            var slider = document.getElementById("slider");
-            if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7)
-                defaultTransform = 0;
-            slider.style.transform = "translateX(" + defaultTransform + "px)";
-        }
-        var next = document.getElementById("next");
-        next.addEventListener("click", goNext);
-        function goPrev() {
-            var slider = document.getElementById("slider");
-            if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
-            else defaultTransform = defaultTransform + 500;
-            slider.style.transform = "translateX(" + defaultTransform + "px)";
-        }
-        var prev = document.getElementById("prev")
-        prev.addEventListener("click", goPrev);
-    });
-
-    
-    const [blur, setBlur] = useState(0);
-
-
-    const [current, setCurrent] = useState(0);
-    const length = element.images.data.length;
-*/
 
 
     const [currentIndex, setCurrentIndex] = useState(0);
