@@ -8,6 +8,7 @@ import { useTranslation, UseTranslation } from "next-i18next";
 import useSWR from 'swr';
 import { useState, useCallback } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useRouter } from "next/router";
 
 
 function Button2({ content, onClick, active, disabled }) {
@@ -102,8 +103,9 @@ function PaginationNav1({
 
 
 function Posts({ posts, locale }){
+    const router = useRouter()
     const [pageIndex, setPageIndex] = useState(0);
-    const address = `${process.env.STRAPI_PAGINATION}/api/${locale}/posts/?sort=date%3Adesc&pagination[page]=${pageIndex+1}&pagination[pageSize]=3&populate=*`;
+    const address = `${process.env.STRAPI_PAGINATION}/api/posts/?locale=${router.locale}&sort=date%3Adesc&pagination[page]=${pageIndex+1}&pagination[pageSize]=3&populate=*`;
     const fetcher = async (url) => await axios.get(url).then((res) => res.data);
     const { data } = useSWR(address, fetcher, {fallbackData: posts});
 

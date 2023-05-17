@@ -82,7 +82,7 @@ function TextAndImage( {element} ) {
                 <div className={element.changeLayout ? 'grid grid-cols-1 mt-8 -order-1' : 'grid grid-cols-1 mt-8'}>
                     {((element.youtube_url != null && element.youtube_url != "") &&
                     <>
-                        <iframe class="w-full aspect-video" src={element.youtube_url}></iframe>
+                        <iframe className="w-full aspect-video" src={element.youtube_url}></iframe>
                     </>
                     )}
                     {((element.videos.data != null) &&
