@@ -17,7 +17,7 @@ function VideoCard( {element} ){
                 {element.content}
                 </p>
                 {(element.link!=null && element.link.url!=null) &&
-                <Link href={element.link.url} passHref={true}>
+                <Link passHref href={element.link.url}>
                 <a
                 href="#"
                 className="text-xl font-medium text-blue-600 transition-colors duration-200 hover:text-blue-800 hover:underline xl:text-2xl"
