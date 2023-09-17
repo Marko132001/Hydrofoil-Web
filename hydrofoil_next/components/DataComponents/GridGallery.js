@@ -53,7 +53,8 @@ function GridGalleryCard({ imageUrl, show }) {
           {imageUrl.text}
         </div>
       </div>
-      {(imageUrl.image.data.attributes.ext == ".jpg" || imageUrl.image.data.attributes.ext == ".png") && 
+      {(imageUrl.image.data.attributes.ext == ".jpg" || imageUrl.image.data.attributes.ext == ".png" ||
+      imageUrl.image.data.attributes.ext == ".JPG") && 
       (
         <img className="w-full h-full" src={process.env.IMAGES_STRAPI_URL + imageUrl.image.data.attributes.url} alt="" />
       )

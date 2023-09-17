@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "malo_vitras",
+  "info": {
+    "singularName": "malo-vitra",
+    "pluralName": "malo-vitras",
+    "displayName": "Malo-Vitra"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "layout": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "components.features-section",
+        "components.grid-gallery",
+        "components.hero-section-image",
+        "components.hero-section-video",
+        "components.image-slider",
+        "components.text-and-video",
+        "components.title-and-text",
+        "components.zig-zag"
+      ]
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import uptz_text from '../images/uptz_text-remove.png';
-import uptz_logo from '../images/uptz_logo.png';
+import uptz_logo from '../images/hydrofoil_logo2.jpg';
 import cro_flag from '../images/flag-for-croatia-svgrepo-com.svg';
 import eng_flag from '../images/united-kingdom-svgrepo-com.svg';
 import Link from 'next/link';
@@ -9,11 +9,11 @@ import { useRouter } from "next/router";
 
 const Logo = () => {
   return <Image
-          className="logo" 
+          className="rounded-full mix-blend-darken" 
           src = {uptz_logo}
           alt = "hydrofoil logo"
           width="90px"
-          height="80px"
+          height="90px"
           />
 }
 
@@ -100,6 +100,16 @@ function NavBar( {t} ) {
 											<Link href="/hydro-contest">
 											<li>
 											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">HydroContest</a>
+											</li>
+											</Link>
+											<Link href="/malo-vitra">
+											<li>
+											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Malo Vitra</a>
+											</li>
+											</Link>
+											<Link href="/rihack">
+											<li>
+											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">RiHack-2023</a>
 											</li>
 											</Link>
 										</ul>
@@ -216,6 +226,16 @@ function NavBar( {t} ) {
 											<Link href="/hydro-contest">
 											<li>
 											<a href="#" className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded">HydroContest</a>
+											</li>
+											</Link>
+											<Link href="/malo-vitra">
+											<li>
+											<a href="#" className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded">Malo Vitra</a>
+											</li>
+											</Link>
+											<Link href="/rihack">
+											<li>
+											<a href="#" className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded">RiHack-2023</a>
 											</li>
 											</Link>
 										</ul>
