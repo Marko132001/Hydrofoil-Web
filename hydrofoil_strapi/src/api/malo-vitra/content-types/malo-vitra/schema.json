@@ -24,13 +24,13 @@
       "type": "dynamiczone",
       "components": [
         "components.features-section",
-        "components.grid-gallery",
         "components.hero-section-image",
         "components.hero-section-video",
         "components.image-slider",
         "components.text-and-video",
         "components.title-and-text",
-        "components.zig-zag"
+        "components.zig-zag",
+        "components.grid-gallery"
       ]
     }
   }
