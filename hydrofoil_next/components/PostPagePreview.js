@@ -13,7 +13,6 @@ function PostPagePreview( {post} ){
                         {post.attributes.title}
                         </h2>
                     </div>
-
                     <img className="w-full object-cover lg:rounded" src={process.env.IMAGES_STRAPI_URL + post.attributes.image.data.attributes.url} style={{height: '28em'}} />
                 </div>
 

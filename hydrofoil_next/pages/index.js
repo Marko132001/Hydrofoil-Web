@@ -73,36 +73,38 @@ function Home( {posts, home, locale} ) {
       <NavBar t={t} />
       <Vector1 /><Vector2 />
       <CountdownTimer t={t}/>
-      <h1 className="text-4xl text-center mt-3 font-extralight">{t("home:rec_title")}</h1>
-      <h1 className="text-xl text-center mt-10 font-extralight">{t("home:contact_us")} <span className="font-bold">uptzri@gmail.com</span></h1>
-      <div className="grid grid-cols-2 gap-1 mb-20 mt-12 text-center">
-        <div
-        className={`relative transition ease-in duration-300 transform`}
-        >
-          <div className="absolute inset-0 z-10 flex transition duration-200 ease-in hover:opacity-0">
-            <div className="absolute inset-0 bg-black opacity-70"></div>
-            <div className="mx-auto text-white z-10 self-center uppercase tracking-widest text-sm leading-8 max-sm:text-xs">
-              <b>{t("home:marketing")}</b> <br/>
-              {t("home:social_media")} <br/>
-              {t("home:web_design")} <br/>
-              {t("home:foto_video")}
+      <div>
+        <h1 className="text-4xl text-center mt-3 font-extralight">{t("home:rec_title")}</h1>
+        <h1 className="text-xl text-center mt-10 font-extralight">{t("home:contact_us")} <span className="font-bold">uptzri@gmail.com</span></h1>
+        <div className="grid grid-cols-2 gap-1 mt-12 mb-20">
+          <div
+          className={`relative transition ease-in duration-300 transform`}
+          >
+            <div className="absolute inset-0 z-10 flex transition duration-200 ease-in hover:opacity-0">
+              <div className="absolute inset-0 bg-black opacity-70"></div>
+              <div className="mx-auto text-white z-10 self-center uppercase tracking-widest text-sm leading-8 max-sm:text-xs text-center">
+                <b>{t("home:marketing")}</b> <br/>
+                {t("home:social_media")} <br/>
+                {t("home:web_design")} <br/>
+                {t("home:foto_video")}
+              </div>
             </div>
+            <img className="w-full h-full" src={process.env.IMAGES_STRAPI_URL + gridGalleryData.images[0].image.data.attributes.url} alt="" />
           </div>
-          <img className="w-full h-full" src={process.env.IMAGES_STRAPI_URL + gridGalleryData.images[0].image.data.attributes.url} alt="" />
-        </div>
-        <div
-        className={`relative transition ease-in duration-300 transform`}
-        >
-          <div className="absolute inset-0 z-10 flex transition duration-200 ease-in hover:opacity-0">
-            <div className="absolute inset-0 bg-black opacity-70"></div>
-            <div className="mx-auto text-white z-10 self-center uppercase tracking-widest text-sm leading-8 max-sm:text-xs">
-              <b>{t("home:engineering")}</b> <br/>
-              {t("home:propulsion")} <br/>
-              {t("home:electronics")} <br/>
-              {t("home:shipbuilding")}
+          <div
+          className={`relative transition ease-in duration-300 transform`}
+          >
+            <div className="absolute inset-0 z-10 flex transition duration-200 ease-in hover:opacity-0">
+              <div className="absolute inset-0 bg-black opacity-70"></div>
+              <div className="mx-auto text-white z-10 self-center uppercase tracking-widest text-sm leading-8 max-sm:text-xs text-center">
+                <b>{t("home:engineering")}</b> <br/>
+                {t("home:propulsion")} <br/>
+                {t("home:electronics")} <br/>
+                {t("home:shipbuilding")}
+              </div>
             </div>
+            <img className="w-full h-full" src={process.env.IMAGES_STRAPI_URL + gridGalleryData.images[1].image.data.attributes.url} alt="" />
           </div>
-          <img className="w-full h-full" src={process.env.IMAGES_STRAPI_URL + gridGalleryData.images[1].image.data.attributes.url} alt="" />
         </div>
       </div>
       <HomeHeader t={t}/>
