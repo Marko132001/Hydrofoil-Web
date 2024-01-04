@@ -5,7 +5,7 @@ import Link from 'next/link';
 function VideoCard( {element} ){
 
     return(
-        <div className="gap-16 items-center my-8 mx-8 max-w-screen-xl md:py-16 md:px-6 lg:grid lg:grid-cols-12 lg:py-16 lg:px-6">
+        <div className="gap-16 items-center my-8 mx-8 max-w-screen-xl 2xl:mx-auto md:py-16 md:px-6 lg:grid lg:grid-cols-12 lg:py-16 lg:px-6">
             <div className="col-span-12 lg:col-span-5 xl:col-span-7">
                 <p className="mb-3 text-lg font-semibold uppercase leading-snug tracking-wide text-blue-600">
                 {element.category}

@@ -10,29 +10,34 @@ function CountdownTimer({t}){
     const [seconds, setSeconds] = useState(0);
 
     useEffect(() => {
-        const target = new Date("1/1/2024 23:59:59");
+        const target = new Date("1/15/2024 23:59:59");
 
         const interval = setInterval(() => {
-        const now = new Date();
-        const difference = target.getTime() - now.getTime();
+            const now = new Date();
+            const difference = target.getTime() - now.getTime();
+            
+            if(difference >= 0){
 
-        const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-        setDays(d);
+                const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+                setDays(d);
 
-        const h = Math.floor(
-            (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        setHours(h);
+                const h = Math.floor(
+                    (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+                );
+                setHours(h);
 
-        const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        setMinutes(m);
+                const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                setMinutes(m);
 
-        const s = Math.floor((difference % (1000 * 60)) / 1000);
-        setSeconds(s);
+                const s = Math.floor((difference % (1000 * 60)) / 1000);
+                setSeconds(s);
 
-        if (d <= 0 && h <= 0 && m <= 0 && s <= 0) {
-            setPartyTime(true);
-        }
+                if (d <= 0 && h <= 0 && m <= 0 && s <= 0) {
+                    setPartyTime(true);
+                }
+
+            }
+
         }, 1000);
 
         return () => clearInterval(interval);
