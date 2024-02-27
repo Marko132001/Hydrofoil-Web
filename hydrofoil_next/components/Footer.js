@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Uptz from "../images/uptz_logo2.png";
 import RitehWeb from "../images/riteh-web2.png";
 import CreativeCommons from "../images/cc.png";
+import burza_nautike_logo from "../images/burza_nautike_logo.png";
 
 function Footer({t}) {
   return (
@@ -59,6 +60,19 @@ function Footer({t}) {
                   height="15px"
               />
             </a>
+          </div>
+        </div>
+        <div className="footerColumn">
+          <div className="logoText mt-12">
+            <a href="https://www.burzanautike.com/">
+              <Image
+                  src = {burza_nautike_logo}
+                  alt = "image"
+                  width="150px"
+                  height="50px"
+              />
+            </a>
+            <h5>{t("footer:media_partner")}</h5>
           </div>
         </div>
       </div>

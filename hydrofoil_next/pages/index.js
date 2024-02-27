@@ -33,6 +33,7 @@ const Vector2 = () => {
           />
 }
 
+/* Recruiting section (fetching images) -- temporary
 const gridGalleryData = {
     title: "",
     images: [
@@ -62,7 +63,7 @@ const gridGalleryData = {
     ]
 }
 
-
+*/
 
 function Home( {posts, home, locale} ) {
 
@@ -72,6 +73,8 @@ function Home( {posts, home, locale} ) {
     <>
       <NavBar t={t} />
       <Vector1 /><Vector2 />
+      {//Recruiting section (temporary)
+      /*
       <CountdownTimer t={t}/>
       <div>
         <h1 className="text-4xl text-center mt-3 font-extralight">{t("home:rec_title")}</h1>
@@ -107,6 +110,7 @@ function Home( {posts, home, locale} ) {
           </div>
         </div>
       </div>
+      */}
       <HomeHeader t={t}/>
       <HomeLatestPosts posts={posts} t={t}/>
       {/*<Testimonials t={t}/>*/}

@@ -6,6 +6,7 @@ import cro_flag from '../images/flag-for-croatia-svgrepo-com.svg';
 import eng_flag from '../images/united-kingdom-svgrepo-com.svg';
 import Link from 'next/link';
 import { useRouter } from "next/router";
+import { links } from "./MyLinks";
 
 const Logo = () => {
   return <Image
@@ -31,11 +32,11 @@ function NavBar( {t} ) {
 
 	const router = useRouter();
 
-	const [dropdown1, setDropdown1] = React.useState(false);
-	const [dropdown2, setDropdown2] = React.useState(false);
+	const [heading, setHeading] = useState("");
+    const [subHeading, setSubHeading] = useState("");
 
 	const [showMobile, setShowMobile] = React.useState(false);
-
+	
 
 	return(
 		<>
@@ -57,72 +58,94 @@ function NavBar( {t} ) {
 							{/*primary nav*/}
 							<div className="hidden lg:block items-center space-x-1">
 							<ul className="flex flex-col p-4 mt-4 md:flex-row items-baseline space-x-2">
-								
-								<li onMouseLeave={() => setDropdown1(false)} onMouseOver={() => setDropdown1(true)}>
-									<button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">{t("navbar:news")}<svg className="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg></button>
-									{dropdown1 && (
-									<div className="absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-										<ul className="py-1 text-sm text-gray-700 dark:text-gray-400">
-											<Link href="/posts">
-											<li>
-											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{t("navbar:blog")}</a>
-											</li>
-											</Link>
-											<Link href="/media">
-											<li>
-											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{t("navbar:media")}</a>
-											</li>
-											</Link>
-											<Link href="/professional-articles">
-											<li>
-											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{t("navbar:articles")}</a>
-											</li>
-											</Link>
-										</ul>
+							{links.map((link, index) => (
+								<div key={index}>
+									<div className="text-left md:cursor-pointer group">
+									<li className={`${showMobile ? "block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" : "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"}`} type="button"
+										onClick={() => {
+											heading !== link.name ? setHeading(link.name) : setHeading("");
+											setSubHeading("");
+										}}
+										>
+										{t(link.name)}
+										{!showMobile && <svg className="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>}
+										</li>
+										{link.submenu && (
+										<div>
+											<div className="absolute top-20 hidden group-hover:lg:block hover:lg:block">
+											<div className="py-3">
+												<div
+												className="w-4 h-4 left-3 absolute 
+												mt-1 bg-blue-700 rotate-45"
+												></div>
+											</div>
+											<div className="bg-blue-200 p-5 grid grid-cols-3 gap-10 rounded-lg">
+												{link.sublinks.map((mysublinks, index) => (
+												<div key={index}>
+													<h1 className="text-lg font-semibold">
+													{t(mysublinks.Head)}
+													</h1>
+													{mysublinks.sublink.map((slink, index) => (
+													<li key={index} className="text-sm text-gray-600 my-2.5 hover:text-blue-800">
+														<Link
+														href={slink.link}
+														className="hover:text-primary"
+														>
+														{t(slink.name)}
+														</Link>
+													</li>
+													))}
+												</div>
+												))}
+											</div>
+											</div>
+										</div>
+										)}
 									</div>
-									)}
-								</li>
-								<li onMouseLeave={() => setDropdown2(false)} onMouseOver={() => setDropdown2(true)}>
-									<button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">{t("navbar:projects")} <svg className="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg></button>
-									{dropdown2 && (
-									<div className="absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-										<ul className="py-1 text-sm text-gray-700 dark:text-gray-400">
-											<Link href="/teredo-navalis">
-											<li>
-											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Teredo Navalis</a>
-											</li>
-											</Link>
-											<Link href="/delta-one">
-											<li>
-											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Delta One</a>
-											</li>
-											</Link>
-											<Link href="/hydro-contest">
-											<li>
-											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">HydroContest</a>
-											</li>
-											</Link>
-											<Link href="/malo-vitra">
-											<li>
-											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Malo Vitra</a>
-											</li>
-											</Link>
-											<Link href="/rihack">
-											<li>
-											<a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">RiHack-2023</a>
-											</li>
-											</Link>
-										</ul>
+									{/* Mobile menus */}
+									<div
+										className={`
+										${heading === link.name ? "lg:hidden" : "hidden"}
+									`}
+									>
+										{/* sublinks */}
+										{link.sublinks.map((slinks, index) => (
+										<div key={index}>
+											<div>
+											<h1
+												onClick={() =>
+												subHeading !== slinks.Head
+													? setSubHeading(slinks.Head)
+													: setSubHeading("")
+												}
+												className="py-4 pl-7 font-semibold md:pr-0 pr-5 flex justify-between items-center"
+											>
+												{t(slinks.Head)}
+											</h1>
+											<div
+												className={`${
+												subHeading === slinks.Head ? "lg:hidden" : "hidden"
+												}`}
+											>
+												{slinks.sublink.map((slink, index) => (
+												<li key={index} className="py-3 pl-14">
+													<Link href={slink.link}>{t(slink.name)}</Link>
+												</li>
+												))}
+											</div>
+											</div>
+										</div>
+										))}
 									</div>
-									)}
-								</li>
+								</div>
+								))}																	
 								<Link href="/open-source"><li><a href="#" className="block py-4 px-3 text-gray-700 hover:text-black text-base">Open Source</a></li></Link>
 								<Link href="/partners"><li><a href="#" className="block py-4 px-3 text-gray-700 hover:text-black text-base">{t("navbar:partners")}</a></li></Link>
 							</ul>
-							</div>
 							
+							</div>			
 						</div>
-
+						
 						
 
 						{/*secondary nav*/}
@@ -184,64 +207,88 @@ function NavBar( {t} ) {
 					</div>
 					<div>
 						<ul>
-							<li onMouseLeave={() => setDropdown1(false)} onMouseOver={() => setDropdown1(true)} className="mb-1">
-								<a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:news")}</a>
-								{dropdown1 && (
-									<div className="absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-										<ul className="py-1 text-sm text-gray-700 dark:text-gray-400">
-											<Link href="/posts">
-											<li>
-											<a className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:blog")}</a>
-											</li>
-											</Link>
-											<Link href="/media">
-											<li>
-											<a className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:media")}</a>
-											</li>
-											</Link>
-											<Link href="/professional-articles">
-											<li>
-											<a className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:articles")}</a>
-											</li>
-											</Link>
-										</ul>
+						{links.map((link, index) => (
+							<div key={index}>
+								<div className="text-left md:cursor-pointer group">
+								<li className={`${showMobile ? "block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" : "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"}`} type="button"
+									onClick={() => {
+										heading !== link.name ? setHeading(link.name) : setHeading("");
+										setSubHeading("");
+									}}
+									>
+									{t(link.name)}
+									{!showMobile && <svg className="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>}
+									</li>
+									{link.submenu && (
+									<div>
+										<div className="absolute top-20 hidden group-hover:lg:block hover:lg:block">
+										<div className="py-3">
+											<div
+											className="w-4 h-4 left-3 absolute 
+											mt-1 bg-blue-700 rotate-45"
+											></div>
+										</div>
+										<div className="bg-blue-200 p-5 grid grid-cols-3 gap-10 rounded-lg">
+											{link.sublinks.map((mysublinks, index) => (
+											<div key={index}>
+												<h1 className="text-lg font-semibold">
+												{t(mysublinks.Head)}
+												</h1>
+												{mysublinks.sublink.map((slink, index) => (
+												<li key={index} className="text-sm text-gray-600 my-2.5 hover:text-blue-800">
+													<Link
+													href={slink.link}
+													className="hover:text-primary"
+													>
+													{t(slink.name)}
+													</Link>
+												</li>
+												))}
+											</div>
+											))}
+										</div>
+										</div>
 									</div>
 									)}
-							</li>
-							<li onMouseLeave={() => setDropdown2(false)} onMouseOver={() => setDropdown2(true)} className="mb-1">
-								<a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:projects")}</a>
-								{dropdown2 && (
-									<div className="absolute z-10 font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-										<ul className="py-1 text-sm text-gray-700 dark:text-gray-400">
-											<Link href="/teredo-navalis">
-											<li>
-											<a href="#" className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded">Teredo Navalis</a>
+								</div>
+								{/* Mobile menus */}
+								<div
+									className={`
+									${heading === link.name ? "lg:hidden" : "hidden"}
+								`}
+								>
+									{/* sublinks */}
+									{link.sublinks.map((slinks, index) => (
+									<div key={index}>
+										<div>
+										<h1
+											onClick={() =>
+											subHeading !== slinks.Head
+												? setSubHeading(slinks.Head)
+												: setSubHeading("")
+											}
+											className="py-4 pl-7 font-semibold md:pr-0 pr-5 flex justify-between items-center"
+										>
+											{t(slinks.Head)}
+
+										</h1>
+										<div
+											className={`${
+											subHeading === slinks.Head ? "lg:hidden" : "hidden"
+											}`}
+										>
+											{slinks.sublink.map((slink, index) => (
+											<li key={index} className="py-3 pl-14">
+												<Link href={slink.link}>{t(slink.name)}</Link>
 											</li>
-											</Link>
-											<Link href="/delta-one">
-											<li>
-											<a href="#" className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded">Delta One</a>
-											</li>
-											</Link>
-											<Link href="/hydro-contest">
-											<li>
-											<a href="#" className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded">HydroContest</a>
-											</li>
-											</Link>
-											<Link href="/malo-vitra">
-											<li>
-											<a href="#" className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded">Malo Vitra</a>
-											</li>
-											</Link>
-											<Link href="/rihack">
-											<li>
-											<a href="#" className="block px-4 py-2 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded">RiHack-2023</a>
-											</li>
-											</Link>
-										</ul>
+											))}
+										</div>
+										</div>
 									</div>
-									)}
-							</li>
+									))}
+								</div>
+							</div>
+							))}
 							<li className="mb-1">
 								<Link href="/partners"><a className="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="#">{t("navbar:partners")}</a></Link>
 							</li>
@@ -272,7 +319,7 @@ function NavBar( {t} ) {
 									/>
 								</a>
 							</Link>
-							<Link href="/about-us"><a className="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="#">{t("navbar:about-us")}</a></Link>
+							<Link href="/about-us"><a className="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold bg-gray-50 hover:bg-gray-100 rounded-xl" href="#">{t("navbar:about-us")}</a></Link>
 							<Link href="/contact"><a className="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700  rounded-xl" href="#">{t("navbar:contact")}</a></Link>
 						</div>
 
