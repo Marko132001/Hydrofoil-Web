@@ -59,8 +59,9 @@ function WebForm( {t} ) {
 
     if (isValidForm) {
       setButtonText(`${t("contact:button_sending")}`);
-      const res = await fetch("/api/sendmail", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         body: JSON.stringify({
+          access_key: `${process.env.EMAIL_API_KEY}`,
           email: email,
           fullname: fullname,
           subject: subject,

@@ -12,7 +12,8 @@ module.exports = {
     STRAPI_URL: process.env.STRAPI_URL,
     STRAPI_PAGINATION: process.env.STRAPI_PAGINATION,
     IMAGES_DOMAIN: process.env.IMAGES_DOMAIN,
-    IMAGES_STRAPI_URL: process.env.IMAGES_STRAPI_URL
+    IMAGES_STRAPI_URL: process.env.IMAGES_STRAPI_URL,
+    EMAIL_API_KEY: process.env.EMAIL_API_KEY
   },
 
   images: {
